@@ -1,0 +1,32 @@
+
+*{
+
+}
+
+.foodBreakfast{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    min-width: 492px;
+    height: 510px;
+}
+
+.break{
+    display: flex;
+}
+
+.contentBreak {
+    width: 204px;
+    height: fit-content;
+    background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
+    border-radius: 21px;
+    position: relative;
+}
+
+img{
+    width: 90px;
+}
+
+.add {
+    width: 30px;
+}
