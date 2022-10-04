@@ -20,7 +20,7 @@
     position: relative */
 }
 
-.content-waiter1{
+.content-login{
     display: flex;
     position: relative;
     z-index: 10;
@@ -52,6 +52,17 @@ h1{
     width: 100%;
     filter: opacity(90%);
     align-items: flex-start;
+}
+
+.bienvenido{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--black);
+    padding: 1rem 0 0 0;
+}
+
+label{
+    font-size: 1.2rem; 
 }
 
 .content-form{
@@ -89,4 +100,5 @@ h1{
     border: none;
     background-color: #B85C38;
     margin: 10px;
+    font-size: 1.2rem;
 } 

@@ -17,7 +17,7 @@ export const Login = () => {
 
 return (
     <section className="login">
-        <div className="content-waiter1">
+        <div className="content-login">
             <div className="brand">
                 <h1>BURGER QUEEN</h1>
                 <img src= { imgBackground } className= "img-background"/>
@@ -28,7 +28,7 @@ return (
                     <img src = { logo } className = "logo"/>
                 </picture>
 
-                <div>¡BIENVENIDO(A)!</div>
+                <div className="bienvenido">¡BIENVENIDO(A)!</div>
                 <form className="form1" onSubmit = {handleSubmit}>
                     <label> Usuario 
                         <input className="dataInput"
