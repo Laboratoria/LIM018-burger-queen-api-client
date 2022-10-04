@@ -12,16 +12,16 @@ function containerWaiter(){
             <div className = {style.break}>
             <div className = {style.contentBreak}>
                 <img className = {style.imgBreak} src={cafe} alt="cafe" title="cafe"></img>
-                <h5>Cafe americano</h5>
-                <span>$</span>
-                12
+                <span>Cafe americano</span>
+                <div className = {style.infoBreak}>
+                <span>$</span><span>12</span>
                 <img className={style.add} src={add} alt="add" title="add"></img>
+                </div>
             </div>
             <div className = {style.contentBreak}>
                 <img src={cafeleche} alt="cafe" title="cafe"></img>
                 <h5>Cafe con leche</h5>
-                <span>$</span>
-                12
+                <span>$</span><span>12</span>
                 <img className={style.add} src={add} alt="add" title="add"></img>
             </div>
             </div>

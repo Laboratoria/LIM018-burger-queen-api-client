@@ -1,8 +1,3 @@
-
-*{
-
-}
-
 .foodBreakfast{
     display: flex;
     flex-direction: column;
@@ -16,17 +11,32 @@
 }
 
 .contentBreak {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
     width: 204px;
-    height: fit-content;
+    height: 143px;
     background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
     border-radius: 21px;
     position: relative;
 }
 
-img{
-    width: 90px;
+.imgBreak{
+    position: absolute;
+    width: 110px;
+    bottom: 100px;
+    left: 50px;
+}
+
+.infoBreak{
+    padding-bottom: 1.5rem;
 }
 
 .add {
     width: 30px;
+}
+
+img{
+    width: 90px;
 }
