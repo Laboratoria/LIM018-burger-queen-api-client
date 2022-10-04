@@ -1,18 +1,20 @@
-// import logo from './logo.svg';
-import './App.css';
-import Login from './Login.jsx';
-import Modal from './Modal';
+import  ReactDOM  from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import './App.module.css';
+import Login from './components/Login.jsx';
+import Waiter from './components/waiter';
+
 
 function App() {
-  
+
   return (
-    <div className="App">
-      
-      <Login/>
-      <Modal>
-          <p> Error desde children </p>
-      </Modal>
-    </div>
+   <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Login/>}></Route>
+      <Route path="waiter" element={<Waiter/>}> </Route>
+    </Routes>
+   </BrowserRouter>
   );
 }
 

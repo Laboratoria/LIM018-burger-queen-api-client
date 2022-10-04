@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react"; // Crea estados
-import logo from "./img/logo.webp"
-import "./Login.css"
-
+import logo from "../img/logo.png"
+import "../css/Login.css"
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
