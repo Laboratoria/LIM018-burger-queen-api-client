@@ -23,6 +23,7 @@
 
 h1 {
     text-transform: uppercase;
+    text-align: center;
     font-size: 5rem;
     text-shadow: 0 0 2px black;
     margin: 2rem 0;

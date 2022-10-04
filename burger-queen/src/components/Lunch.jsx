@@ -1,14 +1,14 @@
 import React from "react";
 import Header from './header.js';
-import ContainerWaiter from './ContainerWaiter.js';
 import OrderSheet from './orderSheet.js';
+import ContainerWaiter from './ContainerWaiter.js'
 import style from '../css/containerWaiter.module.css';
-import cafe from '../img/cafe.png'
-import latte from '../img/cafeconleche.png'
-import sandwich from '../img/emparedado.png'
-import jugo from '../img/jugofrutas.png'
+import egg from '../img/hamburconhuevo.png'
+import double from '../img/hamburdoble.png'
+import cheeseburger from '../img/hamburqueso.png'
+import simple from '../img/hambursimple.png'
 
-export default function Waiter() {
+export default function Lunch() {
     const newClient = {
         name: 'Gabriela',
         items: [
@@ -20,10 +20,10 @@ export default function Waiter() {
 
     const menu = {
         items: [
-            { img: cafe, name: 'Café americano', price: 12 },
-            { img: latte, name: 'Café con leche', price: 12 },
-            { img: sandwich, name: 'Sandwich de jamón y queso', price: 12 },
-            { img: jugo, name: 'Jugo de frutas', price: 12 },
+            { img: simple, name: 'Hamburguesa simple', price: 12 },
+            { img: double, name: 'Hamburguesa doble', price: 12 },
+            { img: cheeseburger, name: 'Hamburguesa con queso', price: 12 },
+            { img: egg, name: 'Hamburguesa con huevo', price: 12 },
         ],
     }
 

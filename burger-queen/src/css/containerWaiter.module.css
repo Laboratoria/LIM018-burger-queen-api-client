@@ -1,30 +1,43 @@
-
-*{
-
+.container {
+    display: flex;
+    padding: 0 2rem;
+    gap: 2rem;
 }
 
-.foodBreakfast{
+.menuContainer{
+    width: 50%;
     display: flex;
-    flex-direction: column;
     gap: 1.5rem;
-    min-width: 492px;
-    height: 510px;
-}
-
-.break{
-    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
 .contentBreak {
-    width: 204px;
-    height: fit-content;
     background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
-    border-radius: 21px;
-    position: relative;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 35%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.contentBreak:hover {
+    background: #e0c9c0;
+}
+
+.contentBreak p {
+    margin: 0;
+    text-align: center;
 }
 
 img{
     width: 90px;
+    cursor: pointer;
 }
 
 .add {

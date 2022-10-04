@@ -1,9 +1,9 @@
-import  ReactDOM  from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.module.css';
 import Login from './components/Login.jsx';
-import Waiter from './components/waiter';
+import Waiter from './components/waiter.js';
+import Lunch from './components/Lunch';
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login/>}></Route>
       <Route path="waiter" element={<Waiter/>}> </Route>
+      <Route path='lunch' element={<Lunch/>}/>
     </Routes>
    </BrowserRouter>
   );
