@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
 import logo from '../../Images/logo.png'
+import imgBackground from "../../Images/img-login.jpeg"
 import './Login.css'
 
 export const Login = () => {
@@ -16,32 +17,40 @@ export const Login = () => {
 
 return (
     <section className="login">
-        <div className="brand">
-            <h1>BURGER QUEEN</h1>
-        </div>
+        <div className="content-waiter1">
+            <div className="brand">
+                <h1>BURGER QUEEN</h1>
+                <img src= { imgBackground } className= "img-background"/>
+            </div>
 
-        <div className="content-form">
-            <img src = { logo } className = "logo"/>
-            <div>¡BIENVENIDO(A)!</div>
-            <form onSubmit = {handleSubmit}>
-                <label> Usuario
-                    <input
-                        type = "email"
-                        value = {data.email}
-                        onChange = {(e) => setName(e.target.value)}
-                    />
-                </label>
+            <div className="content-form">
+                <picture>
+                    <img src = { logo } className = "logo"/>
+                </picture>
 
-                <label> Contraseña
-                    <input
-                        type = "password"
-                        value = {data.password}
-                        onChange = {(e) => setName(e.target.value)}
-                    />
-                </label>
-                <button type = 'submit'> Iniciar sesión </button>
-            </form>
+                <div>¡BIENVENIDO(A)!</div>
+                <form className="form1" onSubmit = {handleSubmit}>
+                    <label> Usuario 
+                        <input className="dataInput"
+                            type = "email"
+                            value = {data.email}
+                            onChange = {(e) => setName(e.target.value)}
+                        />
+                    </label>
+                    
+                    <label> Contraseña 
+                        <input className="dataInput"
+                            type = "password"
+                            value = {data.password}
+                            onChange = {(e) => setName(e.target.value)}
+                        />
+                    </label>
+                    
+                    <button className="buttonIniciar" type = 'submit'> Iniciar sesión </button>
+                </form>
+            </div>
         </div>
+        <div className="back-blur"></div>
 
     </section>
 )
