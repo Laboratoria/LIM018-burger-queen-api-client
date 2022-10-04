@@ -1,0 +1,10 @@
+.btn-menu{
+    width: 13rem;
+    height: 3rem;
+    background-color: var(--beige);
+    color: var(--black);
+}
+
+.bg-orange{
+    background-color: var(--orange);
+}
