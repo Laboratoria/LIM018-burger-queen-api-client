@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react"; // Crea estados
 import logo from "../img/logo.png"
 import "../css/Login.css"
+//import {useNavigate} from 'react-router-dom'
+
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,6 +16,7 @@ function Login() {
         alert(`El email con el que ingresaste es: ${email} y la contraseña ${password}`)
 
     }
+
     return (
         <section className="login">
             <div className="background-logo">
