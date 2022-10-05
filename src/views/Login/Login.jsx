@@ -5,13 +5,12 @@ import imgBackground from "../../Images/img-login.jpeg"
 import './Login.css'
 
 export const Login = () => {
-    const [data, setName] = useState({
+    const [data, setState] = useState({
         email : '',
         password : ''
     });
 
-   const handleSubmit = (event) => {
-    event.prevenDefault();
+   const handleSubmit = () => {
     alert(`Bienvenido(a) ${data.email}`)
    }
 
@@ -34,7 +33,7 @@ return (
                         <input className="dataInput"
                             type = "email"
                             value = {data.email}
-                            onChange = {(e) => setName(e.target.value)}
+                            onChange = {(e) => setState(e.target.value)}
                         />
                     </label>
                     
@@ -42,7 +41,10 @@ return (
                         <input className="dataInput"
                             type = "password"
                             value = {data.password}
-                            onChange = {(e) => setName(e.target.value)}
+                            onChange = {(e) => {
+                                setState(e.target.value)
+                            } }
+                                
                         />
                     </label>
                     
