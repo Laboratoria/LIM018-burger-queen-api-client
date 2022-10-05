@@ -1,13 +1,33 @@
-.foodBreakfast{
+.container {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    min-width: 492px;
-    height: 510px;
+    padding: 0 2rem;
+    gap: 2rem;
 }
 
-.break{
+.menuContainer{
+    width: 50%;
     display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.contentBreak {
+    background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 35%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.contentBreak:hover {
+    background: #e0c9c0;
 }
 
 .contentBreak {
