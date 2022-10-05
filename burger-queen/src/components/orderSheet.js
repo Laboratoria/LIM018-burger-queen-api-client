@@ -14,6 +14,8 @@ function orderSheet(props) {
         <div className="orderSheet">
             <label for="client"> Cliente </label>
             <input type="text" value={props.name} />
+            <label for="table"> Mesa </label>
+            <input type="text" value={props.name} />
             {fullOrder}
             <p> Total </p>
             <button> Enviar pedido </button>
