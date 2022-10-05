@@ -1,0 +1,100 @@
+{
+    "products": [
+      {
+        "id": "001",
+        "name": "Café americano",
+        "price": 5,
+        "image": " " ,
+        "type": "Breakfast",
+        "dateEntry": ""
+      },
+      {
+        "id": "002",
+        "name": "Café con leche",
+        "price": 7,
+        "image": " ",
+        "type": "Breakfast",
+        "dateEntry": ""
+      },
+      {
+        "id": "003",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "image": "",
+        "type": "Breakfast",
+        "dateEntry": ""
+      },
+      {
+        "id": "004",
+        "name": "Jugo de frutas al natural",
+        "price": 7,
+        "image":"" ,
+        "type": "Breakfast",
+        "dateEntry": ""
+      },
+      {
+        "id": "005",
+        "name": "Hamburguesa simple",
+        "price": 10,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "006",
+        "name": "Hamburguesa doble",
+        "price": 15,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "007",
+        "name": "Papas fritas",
+        "price": 5,
+        "image": " ",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "008",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image":"",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "009",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "010",
+        "name": "Agua 750ml",
+        "price": 7,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "011",
+        "name": "Bebida/gaseosa 500ml",
+        "price": 7,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      },
+      {
+        "id": "012",
+        "name": "Bebida/gaseosa 750ml",
+        "price": 10,
+        "image": "",
+        "type": "Lunch and dinner",
+        "dateEntry": ""
+      }
+    ]
+  }
