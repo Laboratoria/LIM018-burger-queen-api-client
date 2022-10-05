@@ -9,10 +9,10 @@ export const WaiterView = () => {
         <section className="waiter">
             <div className="content-waiter">
                 <div className="container-menu">
-                    <div className="nav-menu">
+                    <nav className="nav-menu">
                         <MenuButton title='Desayuno'/>
                         <MenuButton title='Almuerzo y Cena'/>
-                    </div>
+                    </nav>
                     <div className="container-card-menu">
                         <CardMenu/>
                         <CardMenu/>
