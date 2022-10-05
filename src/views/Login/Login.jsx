@@ -1,18 +1,21 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import React, { useState } from "react";
 import logo from '../../Images/logo.png'
 import imgBackground from "../../Images/img-login.jpeg"
 import './Login.css'
 
+import { useNavigate } from 'react-router-dom';
+
 export const Login = () => {
-    const [data, setName] = useState({
+    const navigate = useNavigate();
+    const [data, setData] = useState({
         email : '',
         password : ''
     });
 
-   const handleSubmit = (event) => {
-    event.prevenDefault();
+   const handleSubmit = () => {
     alert(`Bienvenido(a) ${data.email}`)
+    navigate("/menu");
    }
 
 return (
@@ -23,32 +26,31 @@ return (
                 <img src= { imgBackground } className= "img-background"/>
             </div>
 
-            <div className="content-form">
+            <form className="content-form">
                 <picture>
                     <img src = { logo } className = "logo"/>
                 </picture>
 
                 <div className="bienvenido">¡BIENVENIDO(A)!</div>
-                <form className="form1" onSubmit = {handleSubmit}>
+                <div className="form1">
                     <label> Usuario 
                         <input className="dataInput"
                             type = "email"
-                            value = {data.email}
-                            onChange = {(e) => setName(e.target.value)}
+                            onChange = {(e) => setData({...data, email: e.target.value})
+                            }
                         />
                     </label>
                     
                     <label> Contraseña 
                         <input className="dataInput"
                             type = "password"
-                            value = {data.password}
-                            onChange = {(e) => setName(e.target.value)}
+                            onChange = {(e) => setData({...data, password: e.target.value})}
                         />
                     </label>
                     
-                    <button className="buttonIniciar" type = 'submit'> Iniciar sesión </button>
-                </form>
-            </div>
+                    <button className="buttonIniciar" type ='submit' onClick= {handleSubmit}>Iniciar sesión</button>
+                </div>
+            </form>
         </div>
         <div className="back-blur"></div>
 
