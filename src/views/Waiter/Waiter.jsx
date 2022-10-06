@@ -13,7 +13,7 @@ export const WaiterView = () => {
                         <MenuButton title='Desayuno'/>
                         <MenuButton title='Almuerzo y Cena'/>
                     </nav>
-                    <div className="container-card-menu">
+                    <div className="container-card-menu mg-top">
                         <CardMenu/>
                         <CardMenu/>
                         <CardMenu/>
@@ -21,18 +21,25 @@ export const WaiterView = () => {
                     </div>
                 </div>
 
-                <div className="container-menu items-orders">
+                <div className="container-menu">
                     <div className="nav-menu">
                         <label>Cliente
                             <input type="text"/>
                         </label>
                     </div>
-                    <div className="container-orders">
+                    <div className="container-orders mg-top">
                         <p>Item</p>
                         <p>Item</p>
                         <p>Item</p>
                         <p>Item</p>
                         <p>Item</p>
+                        <div className="container-total-sell">
+                            <div className="total-sell">
+                                <h3>TOTAL:</h3>
+                                <p>S/. 45.00</p>
+                            </div>
+                            <MenuButton title='Enviar orden' bg="bg-orange"/>
+                        </div>
                     </div>  
                 </div>
             </div>    

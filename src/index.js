@@ -11,15 +11,12 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<Login/>} />
-            <Route path="/menu" element={<WaiterView/>} />
-
+            <Route path="/" element={<Login />} />
+            <Route path="/menu" element={<WaiterView />} />
         </Routes>
     </BrowserRouter>
 
 )
-
-
 
 
 

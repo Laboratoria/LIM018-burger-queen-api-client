@@ -1,25 +1,18 @@
 *{
-    margin: 0;
     font-family: 'Montserrat', sans-serif;
-}
-
-:root{
-    --beige: #E0C097;
-    --orange: #B85C38;
-    --bronw: #5C3D2E;
-    --black: #2D2424;
-    --white: rgba(255, 255, 255, 0.9);
-    --background: linear-gradient(180deg, #5C3D2E 33.33%, rgba(18, 17, 17, 0.59) 100%);
 }
 
 .waiter{
     width: 100%;
-    height: 25rem;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-waiter{
     display: flex;
+    justify-content: space-evenly;
     position: relative;
     z-index: 10;
 }
@@ -28,36 +21,28 @@
     background: linear-gradient(180deg, #5C3D2E 54.17%, #000000 100%);
     opacity: 0.64;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: -1;
 }
 
 .container-menu{
-    width: 50%;
-    margin: 30px;
+    width: 45%;
+    height: 100%;
 }
-
 
 .container-card-menu{
     background: linear-gradient(180deg, #5C3D2E 33.33%, rgba(18, 17, 17, 0.59) 100%);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30px;
     padding: 20px;
     border-radius: 10px;
-}
-
-.items-orders{
-    width: 50%;
-    margin: 30px;
 }
 
 .nav-menu{
     background-color: var(--black);
     color: var(--white);
-    width: 100%;
     height: 70px;
     border-radius: 10px;
     display: flex;
@@ -67,7 +52,29 @@
 
 .container-orders{
     background-color: var(--beige);
-    height: 27rem;
-    margin-top: 30px; 
+    height: 30rem;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+}
 
+.mg-top{
+    margin-top: 1.87rem;
+}
+
+.total-sell{
+    width: 80%;
+    height: 2.2rem;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-total-sell{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
 }

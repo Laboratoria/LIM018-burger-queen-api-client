@@ -1,19 +1,9 @@
 {
-    "users": [
-        {
-          "id": 1,
-          "email": "liseth.lira.123@gmail.com",
-          "password": "123456"
-        },
-        {
-          "id": 2,
-          "email": "joselyn.condori@gmail.com",
-          "password": "123456"
-        },
-        {
-          "id": 3,
-          "email": "mesero1@gmail.com",
-          "password": "123456"
-        }
-      ]
+  "users": [
+    {
+      "id": 1,
+      "email": "mesero1@gmail.com",
+      "password": "123456"
+    }
+  ]
 }
