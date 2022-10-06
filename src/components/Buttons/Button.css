@@ -12,3 +12,7 @@
 .btn-menu:active{
     background-color: var(--orange);
 }
+
+.bg-orange{
+    background-color: var(--orange);
+}
