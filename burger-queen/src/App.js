@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.module.css';
-import Login from './components/Login.jsx';
-import Waiter from './components/waiter.js';
-import Lunch from './components/Lunch.jsx';
+import Login from './pages/Login.jsx';
+import Waiter from './pages/Waiter.js';
+import Lunch from './pages/Lunch.jsx';
 
 
 function App() {

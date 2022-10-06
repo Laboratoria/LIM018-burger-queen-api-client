@@ -1,6 +1,6 @@
 import React from "react";
 import Header from './header.jsx';
-import ContainerWaiter from './ContainerWaiter.js';
+import ContainerWaiter from '../components/ContainerWaiter.js';
 import OrderSheet from './orderSheet.js';
 import style from '../css/containerWaiter.module.css';
 import cafe from '../img/cafe.png'

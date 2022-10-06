@@ -1,6 +1,6 @@
 import React from "react";
 import Header from '../components/header.jsx';
-import OrderSheet from './orderSheet.js';
+import OrderSheet from './components/orderSheet.js';
 import ContainerWaiter from './ContainerWaiter.js'
 import style from '../css/containerWaiter.module.css';
 import egg from '../img/hamburconhuevo.png'
