@@ -4,7 +4,7 @@
         "id": "001",
         "name": "Café americano",
         "price": 5,
-        "image": " " ,
+        "image": "https://user-images.githubusercontent.com/105660480/194344040-c8bf9234-ba14-437a-b04a-9c505b6dab7e.png" ,
         "type": "Breakfast",
         "dateEntry": ""
       },
@@ -12,7 +12,7 @@
         "id": "002",
         "name": "Café con leche",
         "price": 7,
-        "image": " ",
+        "image": "https://user-images.githubusercontent.com/105660480/194344343-b4964d2c-7f02-4504-b990-35f5d1d9892e.png",
         "type": "Breakfast",
         "dateEntry": ""
       },
@@ -95,6 +95,14 @@
         "image": "",
         "type": "Lunch and dinner",
         "dateEntry": ""
+      }
+    ],
+    "users": [
+      {
+        "id": "001",
+        "email": "maria@gmail.com",
+        "password": "1234",
+        "roles": "waiter"
       }
     ]
   }

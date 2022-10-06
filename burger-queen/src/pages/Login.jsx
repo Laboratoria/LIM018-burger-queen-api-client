@@ -2,19 +2,35 @@ import React from "react";
 import { useState } from "react"; // Crea estados
 import logo from "../img/logo.png"
 import "../css/Login.css"
-//import {useNavigate} from 'react-router-dom'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     const handleSubmit = e => {
         e.preventDefault()
         if (email === '') {
             return alert('Por favor ingresa tu credencial')
         }
-        alert(`El email con el que ingresaste es: ${email} y la contraseña ${password}`)
 
+        const API_URL = "http://localhost:3001/auth"
+        console.log(email, password)
+
+        axios.post(`${API_URL}`, { email, password })
+            .then((res) => {
+                console.log(res.data.token)
+                if( res.status === 200 ){
+                    localStorage.setItem('users', JSON.stringify(res.data.token))
+                    navigate('/waiter')
+                } 
+            })
+            .catch(err => alert('Ingresa tus datos correctamente'))
+    
+        
     }
 
     return (

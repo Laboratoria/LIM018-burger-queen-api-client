@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import '../css/sheet.css'
 
-function orderSheet(props) {
-    const fullOrder = props.items.map(item => {
+function OrderSheet(props) {
+    const items = props.items
+
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState("")
+
+    const fullOrder = items.map(item => {
         return (
-            <div className='item'>
+            <div className='item' key={item.id}>
                 <p> {item.name}</p>
                 <p> S/.{item.price} </p>
                 <p> {item.quantity} </p>
@@ -12,10 +18,10 @@ function orderSheet(props) {
     })
     return (
         <div className="orderSheet">
-            <label for="client"> Cliente </label>
-            <input type="text" value={props.name} />
-            <label for="table"> Mesa </label>
-            <input type="text" value={props.name} />
+            <label htmlFor="client"> Cliente </label>
+            <input type="text" value={client} onChange={e => setClient(e.target.value)} />
+            <label htmlFor="table"> Mesa </label>
+            <input type="text" value={table} onChange={e => setTable(e.target.value)} />
             {fullOrder}
             <p> Total </p>
             <button> Enviar pedido </button>
@@ -23,4 +29,4 @@ function orderSheet(props) {
     )
 }
 
-export default orderSheet
+export default OrderSheet
