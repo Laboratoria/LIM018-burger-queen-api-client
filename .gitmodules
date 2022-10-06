@@ -1,3 +1,0 @@
-[submodule "burger-queen/mini-json-server"]
-	path = burger-queen/mini-json-server
-	url = https://github.com/fakel/mini-json-server.git

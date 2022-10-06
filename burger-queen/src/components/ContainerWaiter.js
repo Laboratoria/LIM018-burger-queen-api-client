@@ -4,9 +4,11 @@
 import style from '../css/containerWaiter.module.css'
 
 function containerWaiter(props) {
-    const fullMenu = props.items.map(item =>{
+    const items = props.items
+
+    const fullMenu = items.map(item =>{
         return(
-            <div className={style.contentBreak}>
+            <div className={style.contentBreak} key={item.id}>
                 <img className = {style.imgBreak} src={item.img} alt={item.name} title="cafe"/>
                 <p>{item.name}</p>
                 <p>S/.{item.price}</p>
