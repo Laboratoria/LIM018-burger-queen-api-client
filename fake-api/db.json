@@ -5,5 +5,59 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "name": "typicode" },
+    "resp": [
+      {
+        "resp.token": ""
+      }
+    ],
+    "orders": [
+      {
+        "id": "",
+        "userId": "",
+        "client": "",
+        "products": [{"qty":1, "product":{"id":"", "name":"", "image":"https://giphy.com/embed/V5hODlkcyo9ARK28mj/video"}}],
+        "status": "",
+        "order.dateEntry": "",
+        "order.dateProcessed": ""
+      },
+      {
+        "id": "",
+        "userId": "",
+        "client": "",
+        "products": [{"qty":1, "product":{}}],
+        
+        "order.status": "",
+        "order.dateEntry": "",
+        "order.dateProcessed": ""
+      }
+    ],
+    "products": [
+      {
+        "id": "1",
+        "name": "",
+        "price": 1,
+        "image": "",
+        "type": "",
+        "dateEntry": ""
+      },
+      {
+        "email": "iam@fakel.lol",
+        "password": "apasswordtochange",
+        "id": "t5LE4Km"
+      },
+      {
+        "email": "iam@fakepppppl.lol",
+        "password": "apasswordtochange",
+        "id": "2Z-nAmc"
+      }
+    ],
+    "users": [
+      {
+        "id": "",
+        "email": {},
+        "roles": {},
+        "user.roles.admin": ""
+      }
+    ]
   }
