@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import imgBackground from "../../Images/img-login.jpeg";
 import './Login.css';
@@ -9,42 +9,43 @@ export const Login = () => {
     const API_URL= "http://localhost:3001";
     const authPath = "/auth"; 
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+
     const [data, setData] = useState({
         email : '',
         password : ''
     });
 
    const handleSubmit = (e) => {
-    e.preventDefault();
-    const inputEmail = document.getElementById("email").value;
-    const inputPassword = document.getElementById("password").value;
+        e.preventDefault();
+        const inputEmail = document.getElementById("email").value;
+        const inputPassword = document.getElementById("password").value;
 
-    if (inputEmail === "" || inputPassword === ""){
-        alert('Complete todos los campos');
-    } else {
-        console.log(data)
-        fetch(`${API_URL}${authPath}`, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(data)
-        })
-        .then((res) => {
-            console.log(res.status);
-            if (res.status === 200) {
-                // navigate('/menu');
-            }
-            return res.json() 
-        })
-        .then((resp) => {
-            console.log(resp.token);
-            localStorage.setItem("token", resp.token)
-        })
-        .catch(err => console.log(err, "el error"))
+        if (inputEmail === "" || inputPassword === ""){
+            alert('Complete todos los campos');
+        } else {
+            console.log(data)
+            fetch(`${API_URL}${authPath}`, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            })
+            .then((res) => {
+                console.log(res.status);
+                if (res.status === 200) {
+                navigate('/menu');
+                }
+                return res.json() 
+            })
+            .then((resp) => {
+                console.log(resp.token);
+                localStorage.setItem("token", resp.token)
+            })
+            .catch(err => console.log(err, "el error"))
+        }
     }
- }
-
-return (
+    
+    return (
     <section className="login">
         <div className="content-login">
             <div className="brand">
