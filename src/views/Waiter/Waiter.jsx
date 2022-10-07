@@ -14,10 +14,7 @@ export const WaiterView = () => {
                         <MenuButton title='Almuerzo y Cena'/>
                     </nav>
                     <div className="container-card-menu mg-top">
-                        <CardMenu/>
-                        <CardMenu/>
-                        <CardMenu/>
-                        <CardMenu/>           
+                                 
                     </div>
                 </div>
 
