@@ -12,7 +12,7 @@
       "id": 1,
       "name": "Cafe Americano",
       "price": 5,
-      "image":"../Images/coffee.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/590/590749.png",
       "type": "breakfast",
       "dateEntry":""
     },
@@ -20,7 +20,7 @@
       "id": 2,
       "name": "Cafe con Leche",
       "price": 7,
-      "image":"../Images/coffee-milk.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
       "type": "breakfast",
       "dateEntry":""
     },
@@ -28,7 +28,7 @@
       "id": 3,
       "name": "Jugo Natural",
       "price": 7,
-      "image": "../Images/fruit-juice.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
       "type": "breakfast",
       "dateEntry": ""
     },
@@ -36,7 +36,7 @@
       "id": 4,
       "name": "sandwich de Queso",
       "price": 10,
-      "image": "../Images/sandwich-cheese.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/2821/2821805.png",
       "type": "breakfast",
       "dateEntry": ""
     },
@@ -45,7 +45,7 @@
       "name": "Agua 500 ml",
       "price": 5,
       "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
-      "type": "bebidas",
+      "type": "drinks",
       "dateEntry": ""
     },
     {
@@ -53,7 +53,7 @@
       "name": "Agua 750 ml",
       "price": 7,
       "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
-      "type": "bebidas",
+      "type": "drinks",
       "dateEntry": ""
     },
     {
@@ -61,7 +61,7 @@
       "name": "Gaseosa 500 ml",
       "price": 7,
       "image": "https://cdn-icons-png.flaticon.com/512/536/536658.png",
-      "type": "bebidas",
+      "type": "drinks",
       "dateEntry": ""
     },
     {
@@ -76,7 +76,7 @@
       "id": 9,
       "name": "Hamburguesa Clasica",
       "price": 10,
-      "image": "../Images/burguer-simple.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/4385/4385092.png",
       "type": "dinner",
       "dateEntry": ""
     },
@@ -84,7 +84,7 @@
       "id": 10,
       "name": "Hamburguesa Doble",
       "price": 15,
-      "image": "../Images/burguer-doble.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
       "type": "dinner",
       "dateEntry": ""
     },
@@ -93,7 +93,7 @@
       "name": "Papas Fritas",
       "price": 5,
       "image": "https://cdn-icons-png.flaticon.com/512/1046/1046786.png",
-      "type": "",
+      "type": "other",
       "dateEntry":"",
       "menu": "dinner"
     }
