@@ -9,7 +9,7 @@ server.use(jsonServer.bodyParser)
 server.use(middlewares)
 
 server.use((req, res, next) => {
-    console.log(req.headers);
+    // console.log(req.headers);
   if(req.method === "POST" && req.path === "/auth") {
    next();
   } else if(req.headers.authorization === `Bearer ${secret}`) {
