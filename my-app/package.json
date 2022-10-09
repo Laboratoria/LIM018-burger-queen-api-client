@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "server": "json-server--watch db.json" // que se reinicie cada vez que existe un cambio en ds.json
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
