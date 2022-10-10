@@ -16,3 +16,8 @@
 .bg-orange{
     background-color: var(--orange);
 }
+
+.bg-lightBeige{
+    background-color: rgba(232, 177, 105, 1);
+    width: 9rem;
+}
