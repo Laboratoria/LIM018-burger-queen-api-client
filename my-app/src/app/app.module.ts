@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { Vista2Component } from './components/vista2/vista2.component';
+import { CabeceraComponent } from './components/cabecera/cabecera.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { ContadorComponent } from './components/contador/contador.component';
+import { PedidoComponent } from './components/pedido/pedido.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mesero.component';
@@ -15,6 +20,11 @@ const appRoutes:Routes =[
 @NgModule({
   declarations: [
     AppComponent,
+    Vista2Component,
+    CabeceraComponent,
+    MenuComponent,
+    ContadorComponent,
+    PedidoComponent,
     LoginComponent,
     PedidosMeseroComponent
   ],
