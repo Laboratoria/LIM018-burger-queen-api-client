@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useEffect} from "react";
 import Header from "../components/header.js";
 import ContainerWaiter from "../components/ContainerWaiter.js";
 import OrderSheet from "../components/OrderSheet.js";
@@ -6,7 +6,7 @@ import style from "../css/containerWaiter.module.css";
 import sandwich from "../img/emparedado.png";
 import jugo from "../img/jugofrutas.png";
 import axios from "axios";
-import { useEffect } from "react";
+
 
 const API_URL = "http://localhost:3001/products";
 
@@ -44,26 +44,25 @@ export default function Waiter() {
     ],
   };
 
-  /*useEffect(() => {
-        let token = 'EsUnSecreto'
-
-        axios.get(API_URL, `Bearer ${token}`)
-            .then(res => console.log(res))
-
-    })*/
+  
 
   const token = localStorage.getItem("users").slice(1, -1);
 
-  console.log(token);
+  //console.log(token);
+  const [products, setProducts] = useState([])
 
+useEffect(()=>{
   axios
     .get(API_URL, {
       headers: {
         authorization: `Bearer ${token}`,
       },
     })
-    .then((res) => (res.data))
+    .then((res) => setProducts(res.data))
     .catch((err) => console.log(err));
+  },[]);
+  
+  //console.log(products)
 
   return (
     <div>
