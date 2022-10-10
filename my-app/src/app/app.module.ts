@@ -1,24 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mesero.component';
 
+const appRoutes:Routes =[
+  {path:'', component:LoginComponent},
+  {path:'pedido', component:PedidosMeseroComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
-    MenuComponent
+    LoginComponent,
+    PedidosMeseroComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
