@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { MenuButton } from "../../components/Buttons/Button";
 import { CardMenu } from "../../components/Card/Card";
 import './Waiter.css';
@@ -7,6 +7,7 @@ import api from "../../fakeApi/db.json"
 
 export const WaiterView = () => {
     const products = api.products;
+    const [menu, setMenu] = useState("breakfast")
 
     const filteredProducts = (typeMenu) => {
         const typeProducts = products.filter((prod) => {
@@ -24,15 +25,29 @@ export const WaiterView = () => {
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
-                        <MenuButton title='Desayuno' createCards = {()=>{}}/>
-                        <MenuButton title='Almuerzo y Cena' createCards = {()=>{}} />
+                        <MenuButton 
+                        title='Desayuno' 
+                        createCards = {()=>setMenu("breakfast")}/>
+                        <MenuButton 
+                        title='Almuerzo y Cena' 
+                        createCards = {()=>setMenu("dinner")} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
-                        {filteredProducts("breakfast")}
-                        {/* {filteredProducts("dinner")} */}
-                        {/* {filteredProducts("drinks")} */}
-                        {/* {filteredProducts("other")}         */}
-                         
+                        <nav>
+                            <MenuButton 
+                            title='Hamburguesa' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("dinner")}/>
+                            <MenuButton 
+                            title='Extras' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("other")} />
+                            <MenuButton 
+                            title='Bebidas' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("drinks")} />
+                        </nav>
+                        {filteredProducts(menu)}
                     </div>
                 </div>
 
