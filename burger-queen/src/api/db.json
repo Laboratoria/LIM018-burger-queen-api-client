@@ -20,7 +20,7 @@
         "id": "003",
         "name": "Sandwich de jamón y queso",
         "price": 10,
-        "image": "",
+        "image": "https://user-images.githubusercontent.com/77763655/194434784-debfecf2-4c0c-492a-a483-551693b70605.png",
         "type": "Breakfast",
         "dateEntry": ""
       },
@@ -28,7 +28,7 @@
         "id": "004",
         "name": "Jugo de frutas al natural",
         "price": 7,
-        "image":"" ,
+        "image":"https://user-images.githubusercontent.com/77763655/194434852-7f698dd1-4af1-47a4-9a06-17f157ba4b5e.png" ,
         "type": "Breakfast",
         "dateEntry": ""
       },
@@ -36,7 +36,7 @@
         "id": "005",
         "name": "Hamburguesa simple",
         "price": 10,
-        "image": "",
+        "image": "https://user-images.githubusercontent.com/77763655/194434875-5da0edf2-23f3-4981-807b-170011213a6b.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       },
@@ -44,7 +44,7 @@
         "id": "006",
         "name": "Hamburguesa doble",
         "price": 15,
-        "image": "",
+        "image": "https://user-images.githubusercontent.com/77763655/194434907-730833c9-0e66-449c-8d33-7dc3e4f4ecfa.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       },
@@ -52,7 +52,7 @@
         "id": "007",
         "name": "Papas fritas",
         "price": 5,
-        "image": " ",
+        "image": "https://user-images.githubusercontent.com/77763655/194434951-77173541-316e-4b0e-a7c5-e3d18aa1c01e.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       },
@@ -60,7 +60,7 @@
         "id": "008",
         "name": "Aros de cebolla",
         "price": 5,
-        "image":"",
+        "image":"https://user-images.githubusercontent.com/77763655/194434989-bdbc9298-50a1-4a1b-b147-65c50493bad8.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       },
@@ -68,7 +68,7 @@
         "id": "009",
         "name": "Agua 500ml",
         "price": 5,
-        "image": "",
+        "image": "https://user-images.githubusercontent.com/77763655/194435040-29183ca2-07f9-4ae1-923a-20dd97bc3cde.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       },
@@ -92,7 +92,7 @@
         "id": "012",
         "name": "Bebida/gaseosa 750ml",
         "price": 10,
-        "image": "",
+        "image": "https://user-images.githubusercontent.com/77763655/194435136-a6dcb8c5-9b36-471d-98b7-d50e12a6632a.png",
         "type": "Lunch and dinner",
         "dateEntry": ""
       }

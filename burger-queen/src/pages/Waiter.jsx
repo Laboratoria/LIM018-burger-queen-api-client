@@ -1,5 +1,5 @@
 import React from "react";
-import Header from '../components/header.js';
+import Header from '../components/header.jsx';
 import ContainerWaiter from '../components/ContainerWaiter.js';
 import OrderSheet from '../components/OrderSheet.js';
 import style from '../css/containerWaiter.module.css';
