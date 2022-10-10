@@ -15,7 +15,7 @@ import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mese
 
 const appRoutes:Routes =[
   {path:'', component:LoginComponent},
-  {path:'pedido', component:PedidosMeseroComponent}
+  {path:'vista2', component:Vista2Component}
 ];
 @NgModule({
   declarations: [
