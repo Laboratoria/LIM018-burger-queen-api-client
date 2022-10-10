@@ -8,21 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  product : Product = {
-    id:'1',
-    name: "cafe con leche",
-    price: 10,
-    img: './assets/icons/icon.png'
-  }
+  // product : Product = {
+  //   id:'1',
+  //   name: "cafe con leche",
 
+  //   price: 10,
+  //   img: './assets/icons/icon.png'
+  // }
 
-
-    {
-      id:'2',
-      name: "cafe americano",
-      price: 20,
-      img: 'https://www.splenda.com/wp-content/themes/bistrotheme/assets/recipe-images/cafe-con-leche.jpg'
-    }
+  // {
+  //   id:'2',
+  //   name: "cafe americano",
+  //   price: 20,
+  //   img: 'https://www.splenda.com/wp-content/themes/bistrotheme/assets/recipe-images/cafe-con-leche.jpg'
+  // }
 
   // newName = '';
   // toggleButton(){
