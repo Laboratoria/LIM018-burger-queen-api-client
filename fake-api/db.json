@@ -1,21 +1,111 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "1",
+      "name": "Café americano",
+      "price": 5,
+      "image": "",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": "2",
+      "name": "Café con leche",
+      "price": 7,
+      "image": "",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": "3",
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": "",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": "4",
+      "name": "Jugo de frutas natural",
+      "price": 7,
+      "image": "",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": "5",
+      "name": "Hamburguesa simple",
+      "price": 10,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "6",
+      "name": "Hamburguesa doble",
+      "price": 15,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "7",
+      "name": "Papas fritas",
+      "price": 5,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "8",
+      "name": "Aros de cebolla",
+      "price": 5,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "9",
+      "name": "Agua 500ml",
+      "price": 5,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "10",
+      "name": "Agua 750ml",
+      "price": 7,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "11",
+      "name": "Bebida/gaseosa 500ml",
+      "price": 7,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    },
+    {
+      "id": "12",
+      "name": "Bebida/gaseosa 750ml",
+      "price": 10,
+      "image": "",
+      "type": "lunch",
+      "dateEntry": ""
+    }
+
+  ],
+  "users": [
+    {
+      "id": "",
+      "email": {},
+      "roles": {},
+      "user.roles.admin": ""
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "resp": [
     {
       "resp.token": ""
@@ -53,58 +143,6 @@
       "order.status": "",
       "order.dateEntry": "",
       "order.dateProcessed": ""
-    },
-    {
-      "email": "stefani@fakel.lol",
-      "password": "apasswordtochappppppppppooijjhnge",
-      "id": "DP3yLRC"
-    },
-    {
-      "email": "belen@fakel.lol",
-      "password": "apasswordtochappppppppppooijjhnge",
-      "id": "1m1eB0_"
-    }
-  ],
-  "products": [
-    {
-      "id": "1",
-      "name": "",
-      "price": 1,
-      "image": "",
-      "type": "",
-      "dateEntry": ""
-    },
-    {
-      "id": "1",
-      "name": "",
-      "price": 1,
-      "image": "",
-      "type": "",
-      "dateEntry": ""
-    },
-    {
-      "id": "1",
-      "name": "",
-      "price": 1,
-      "image": "",
-      "type": "",
-      "dateEntry": ""
-    },
-    {
-      "id": "1",
-      "name": "",
-      "price": 1,
-      "image": "",
-      "type": "",
-      "dateEntry": ""
-    }
-  ],
-  "users": [
-    {
-      "id": "",
-      "email": {},
-      "roles": {},
-      "user.roles.admin": ""
     }
   ]
 }
