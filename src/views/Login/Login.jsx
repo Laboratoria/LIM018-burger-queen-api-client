@@ -15,6 +15,8 @@ export const Login = () => {
         password : ""
     });
 
+    const [errorMessage, setErrorMessage] = useState('');
+
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
@@ -45,10 +47,18 @@ export const Login = () => {
                 localStorage.setItem("token", resp.token)
             })
             .catch(err => {
-                alert('usuario no registrado');
-                console.log(err, "el error")
+                // alert('usuario no registrado');
+                console.log(err, "el error");
+                setErrorMessage('Usuario no registrado, revise su correo o contraseña');
+                setTimeout(()=>{
+                    setErrorMessage('');
+                }, 4000);
+                
+
             });
-            e.target.reset()                
+            setTimeout(()=>{
+                e.target.reset()
+            }, 4000)                
         }
     }
 
@@ -75,7 +85,7 @@ return (
                             id="email"
                             onChange = {(e) => setData({...data, email: e.target.value})}
                         />
-                    
+                  
                     <label> Contraseña   </label>
                         <input  type = "password"
                             className="dataInput"
@@ -84,7 +94,7 @@ return (
                             onChange = {(e) => setData({...data, password: e.target.value})}
                         />
                   
-                    
+                    <p className="input-error">{errorMessage}</p>
                     <button className="buttonIniciar" type ='submit'>Iniciar sesión</button>
                 </div>
             </form>

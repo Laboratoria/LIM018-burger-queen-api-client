@@ -6,6 +6,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -26,6 +27,42 @@
     z-index: -1;
 }
 
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: var(--brown);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    position: fixed;
+    top: 0;  
+}
+
+.burger{
+    font-size: 18px;
+    width: 10rem;
+}
+
+.btn-header{
+    width: 9rem;
+    height: 2rem;
+    background-color: var(--brown);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.active{
+    background-color: rgba(224, 123, 84, 0.8);
+}
+
+.log-out{
+    width: 40px;
+    height: 40px;
+}
 .container-menu{
     width: 45%;
     height: 100%;
@@ -82,3 +119,4 @@
     align-items: center;
     gap: 1.25rem;
 }
+

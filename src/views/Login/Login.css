@@ -6,7 +6,7 @@
 :root{
     --beige: #E0C097;
     --orange: #B85C38;
-    --bronw: #5C3D2E;
+    --brown: #5C3D2E;
     --black: #2D2424;
     --white: rgba(255, 255, 255, 0.9);
 }
@@ -102,4 +102,9 @@ label{
     background-color: #B85C38;
     margin: 10px;
     font-size: 1.2rem;
-} 
+}
+
+.input-error{
+    color: rgb(158, 33, 33);
+    padding: 5px;
+}
