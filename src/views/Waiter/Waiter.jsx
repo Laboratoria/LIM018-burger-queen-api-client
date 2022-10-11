@@ -1,19 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { MenuButton } from "../../components/Buttons/Button";
 import { CardMenu } from "../../components/Card/Card";
+import getProducts from "../../api_functions/getProducts";
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
-import api from "../../fakeApi/db.json"
 import logOut from "../../Images/logout.png"
 
 export const WaiterView = () => {
-    const products = api.products;
-    const [menu, setMenu] = useState("breakfast")
+ 
+    const [menu, setMenu] = useState("breakfast"); // menu primero vale breakfast y setMenu se actialza al dar click xej: drinks
+    const [products, setProducts] = useState([]);
 
-    const filteredProducts = (typeMenu) => {
-        const typeProducts = products.filter((prod) => {
+    useEffect(() => {
+        getProducts(setProducts);
+    }, []);
+    
+    const filteredAndPrintProducts = (typeMenu) => { // typeMenu es un string xej 'dinner'
+        const typeProducts = products.filter((prod) => {  //product es el [{},{},...] de productos de la data
         return prod.type === typeMenu })
-        
+        console.log(typeProducts);
         const cards = typeProducts.map((type)=> {
             return (<CardMenu 
                 name = {type.name} 
@@ -35,32 +40,32 @@ export const WaiterView = () => {
             </header>
             <div className="content-waiter"> 
                 <div className="container-menu">
-                        <nav className="nav-menu">
+                    <nav className="nav-menu">
+                        <MenuButton 
+                        title='Desayuno' 
+                        createCards = {()=>setMenu("breakfast")}/>
+                        <MenuButton 
+                        title='Almuerzo y Cena' 
+                        createCards = {()=>setMenu("dinner")} />
+                    </nav>
+                    <div id= "containerMenu" className="container-card-menu mg-top">
+                        <nav>
                             <MenuButton 
-                            title='Desayuno' 
-                            createCards = {()=>setMenu("breakfast")}/>
+                            title='Hamburguesa' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("dinner")}/>
                             <MenuButton 
-                            title='Almuerzo y Cena' 
-                            createCards = {()=>setMenu("dinner")} />
+                            title='Extras' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("other")} />
+                            <MenuButton 
+                            title='Bebidas' 
+                            bg = "bg-lightBeige" 
+                            createCards = {()=>setMenu("drinks")} />
                         </nav>
-                        <div id= "containerMenu" className="container-card-menu mg-top">
-                            <nav>
-                                <MenuButton 
-                                title='Hamburguesa' 
-                                bg = "bg-lightBeige" 
-                                createCards = {()=>setMenu("dinner")}/>
-                                <MenuButton 
-                                title='Extras' 
-                                bg = "bg-lightBeige" 
-                                createCards = {()=>setMenu("other")} />
-                                <MenuButton 
-                                title='Bebidas' 
-                                bg = "bg-lightBeige" 
-                                createCards = {()=>setMenu("drinks")} />
-                            </nav>
-                            {filteredProducts(menu)}
-                        </div>
+                        {filteredAndPrintProducts(menu)}
                     </div>
+                </div>
 
                     <div className="container-menu">
                         <div className="nav-menu">

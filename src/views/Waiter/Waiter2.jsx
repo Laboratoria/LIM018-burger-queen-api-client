@@ -1,40 +1,32 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { MenuButton } from "../../components/Buttons/Button";
 import { CardMenu } from "../../components/Card/Card";
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
-
+import getProducts from "../../api_functions/getProducts";
 
 export const WaiterView = () => {
    
-    const [menu, setMenu] = useState("breakfast")
+    const [menu, setMenu] = useState("breakfast");
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getProducts(setProducts) 
+    }, [])
+
 
     const filteredProducts = (typeMenu) => {
-        const API_URL = "http://localhost:3001";
-        const productPath = '/product'
-        fetch(`${API_URL}${productPath}`, {
-            method: "GET",
-            headers: {
-                "Content-type": "application/json;charset=UTF-8",
-                "Authorization": `Bearer ${localStorage.getItem('token')}`
-            }
-        })
-        .then((res)=>res.json())
-        .then((products)=>{
-            const typeProducts = products.filter((prod) => {
-                return prod.type === typeMenu })
-                
-                const cards = typeProducts.map((type)=> {
-                    return (<CardMenu 
-                        name = {type.name} 
-                        image = {type.image} 
-                        key = {type.id} 
-                        id = {type.id} />)
-                })
-                return cards;
-        })
-
-  
+        const typeProducts = products.filter((prod) => {
+            return prod.type === typeMenu })
+            
+            const cards = typeProducts.map((type)=> {
+                return (<CardMenu 
+                    name = {type.name} 
+                    image = {type.image} 
+                    key = {type.id} 
+                    id = {type.id} />)
+            })
+            return cards;
     }
 
  
