@@ -11,23 +11,35 @@ export class Vista2Component implements OnInit {
   menu: Menu[] =[
     {
       id: '1',
-      name:'Producto1',
-      price: 10
+      name:'Café americano',
+      price:5,
+      image:'',
+      type:'',
+      dateEntry:''
     },
     {
       id: '2',
-      name:'Producto2',
-      price: 20
+      name:'Café con leche',
+      price: 7,
+      image:'',
+      type:'',
+      dateEntry:''
     },
     {
       id: '3',
-      name:'Producto3',
-      price: 30
+      name:'Sandwich de jamón y queso',
+      price: 10,
+      image:'',
+      type:'',
+      dateEntry:''
     },
     {
       id: '4',
-      name:'Producto4',
-      price: 40
+      name:'Jugo de frutas natural',
+      price: 7,
+      image:'',
+      type:'',
+      dateEntry:''
     },
   ]
 
