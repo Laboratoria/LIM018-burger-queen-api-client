@@ -75,14 +75,28 @@
       "dateEntry": ""
     },
     {
-      "email": "iam@fakel.lol",
-      "password": "apasswordtochange",
-      "id": "t5LE4Km"
+      "id": "1",
+      "name": "",
+      "price": 1,
+      "image": "",
+      "type": "",
+      "dateEntry": ""
     },
     {
-      "email": "iam@fakepppppl.lol",
-      "password": "apasswordtochange",
-      "id": "2Z-nAmc"
+      "id": "1",
+      "name": "",
+      "price": 1,
+      "image": "",
+      "type": "",
+      "dateEntry": ""
+    },
+    {
+      "id": "1",
+      "name": "",
+      "price": 1,
+      "image": "",
+      "type": "",
+      "dateEntry": ""
     }
   ],
   "users": [
