@@ -11,7 +11,10 @@ export class MenuComponent implements OnInit {
   @Input() menu: Menu = {
     id: '',
     price: 0,
-    name: ''
+    name: '',
+    image:'',
+    type:'',
+    dateEntry:''
   };
 
   constructor() { }
