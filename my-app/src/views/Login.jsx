@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 // import axios from 'axios'
 import logo from '../assets/logo.png'
 import './login.css'
-<<<<<<<< HEAD:my-app/src/views/Login.jsx
+
 import { Menu } from './TakeOrders.jsx'
 import { auth } from '../helpers/api'
 const baseUrl = "http://localhost:3001/usuarios"
-========
+
 // import { Menu } from './Menu.jsx'
 // import Navbar from '../components/Navbar';
->>>>>>>> 69dd303fb997692c9a20c8af9b834f63d0821aed:my-app/src/pages/Login.jsx
+
 
 import { auth } from '../helpers/api'
 import Navbar from '../components/Navbar'
@@ -30,15 +30,15 @@ export const Login = () => {
         if (txtEmail.length === 0 || txtPassword.length === 0) {
             alert("Completa tus datos...");
         } else {
-<<<<<<<< HEAD:my-app/src/views/Login.jsx
+
             // auth(txtEmail, txtPassword)
             //     .then((res) => {
             //        if (res.status === '200') {
-========
+
             auth(txtEmail, txtPassword)
                 .then((res) => {
                     if (res.status === 200) {
->>>>>>>> 69dd303fb997692c9a20c8af9b834f63d0821aed:my-app/src/pages/Login.jsx
+
                         // guardar el token: se puede guardar en el localStorage o en el sessionStorage
                         // tener en cuenta que la mejor man era es en una cookie
                         setLogin("true");
