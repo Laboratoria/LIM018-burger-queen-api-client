@@ -1,8 +1,8 @@
 import axios from 'axios'
 const API_URL = "http://localhost:3001/products";
-const token = localStorage.getItem("users").slice(1, -1);
+const token = JSON.parse(localStorage.getItem("users"))
 
-const peticionHTTP = async(state)=>{
+const peticionHTTP = async (state)=>{
     const peticion = await axios.get(API_URL, {
         headers: {
           authorization: `Bearer ${token}`,

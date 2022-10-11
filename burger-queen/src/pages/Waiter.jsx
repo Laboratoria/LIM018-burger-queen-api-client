@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/header.js";
+import Header from "../components/Header.jsx";
 
-import OrderSheet from "../components/OrderSheet.js";
-import style from "../css/containerWaiter.module.css";
-import sandwich from "../img/emparedado.png";
-import jugo from "../img/jugofrutas.png";
+import OrderSheet from "../components/OrderSheet.jsx";
+import style from "../css/Waiter.module.css";
 
 import peticionHTTP from "../function/peticionaxios.js";
-
 
 export default function Waiter() {
   const newClient = {
@@ -19,34 +16,48 @@ export default function Waiter() {
     ],
   };
 
-
-
-
-  
-
-  //console.log(token);
-  const [products, setProducts] = useState([])
-
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-   peticionHTTP(setProducts)
-  },[]);
+    peticionHTTP(setProducts);
+  }, []);
 
+  const [type, setType] = useState("Breakfast")
 
-    return (
-      <div>
-        <Header></Header>
-        <button> Desayuno</button>
-        <button> Almuerzos y cena </button>
-        <div className={style.container}>
-        {products.map((product) => (
-            <div key={product.name}>
-              <img src={product.image} alt={product.name}/>
-              <p>{product.name}</p>
-              <p>S/.{product.price}</p>
-            </div>
-          ))}
-          <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
-        </div>
+  const createCards = (productType) => {
+    const filtered = products.filter((product) => product.type === productType);
+
+    const filteredCards = filtered.map((product) => (
+      <div key={product.name} className={style.productCard}>
+        <img
+          src={product.image}
+          alt={product.name}
+          className={style.imgBreak}
+        />
+        <p>{product.name} </p>
+        <p>S/.{product.price}</p>
       </div>
-    );
-    }
+    ));
+
+    return filteredCards;
+  };
+
+  return (
+    <div>
+      <Header></Header>
+      <div className={style.buttonContainer}>
+        <button className={style.buttonMenu} onClick={() => setType("Breakfast")}> Desayuno</button>
+      <button className={style.buttonMenu} onClick={() => setType("Lunch and dinner")}>
+        Almuerzos y cena
+      </button>
+      </div>
+      
+      <div className={style.container}>
+        
+        <div className={style.menuContainer}>
+          {createCards(type)}
+          </div>
+        <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
+      </div>
+    </div>
+  );
+}
