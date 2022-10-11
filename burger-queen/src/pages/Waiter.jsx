@@ -4,9 +4,7 @@ import Header from "../components/Header.jsx";
 import OrderSheet from "../components/OrderSheet.js";
 import style from "../css/containerWaiter.module.css";
 
-import axios from "axios";
-
-const API_URL = "http://localhost:3001/products";
+import peticionHTTP from "../function/peticionaxios.js";
 
 export default function Waiter() {
   const newClient = {
@@ -19,17 +17,8 @@ export default function Waiter() {
   };
 
   const [products, setProducts] = useState([]);
-
   useEffect(() => {
-    const token = localStorage.getItem("users").slice(1, -1);
-    axios
-      .get(API_URL, {
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
+    peticionHTTP(setProducts);
   }, []);
 
   //console.log(filtered);
@@ -58,7 +47,9 @@ export default function Waiter() {
     <div>
       <Header></Header>
       <button onClick={() => createCards("Breakfast")}> Desayuno</button>
-      <button onClick={() => createCards("Lunch and dinner")}>Almuerzos y cena</button>
+      <button onClick={() => createCards("Lunch and dinner")}>
+        Almuerzos y cena
+      </button>
       <div className={style.container}>
         <div className={style.menuContainer}>{createCards("Breakfast")}</div>
         <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
