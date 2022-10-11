@@ -7,12 +7,12 @@ import api from "../../fakeApi/db.json"
 
 export const WaiterView = () => {
     const products = api.products;
+   
+    const filteredProducts = (typeMenu) => { // tipo de menu breakfast, dinner
+        const typeProducts = products.filter((prod) => { // es 1 array de obj con el tipo de menú
+            return prod.type === typeMenu })
 
-    const filteredProducts = (typeMenu) => {
-        const typeProducts = products.filter((prod) => {
-        return prod.type === typeMenu })
-        
-        const cards = typeProducts.map((type)=> {
+        const cards = typeProducts.map((type)=> { // entro a cd obj
             return (<CardMenu name = {type.name} image = {type.image} key = {type.id} id = {type.id} />)
         })
         return cards;

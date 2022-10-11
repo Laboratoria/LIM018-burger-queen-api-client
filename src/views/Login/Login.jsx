@@ -15,6 +15,7 @@ export const Login = () => {
         password : ""
     });
 
+    // Para limpiar imput
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
@@ -41,14 +42,15 @@ export const Login = () => {
                 return res.json() 
             })
             .then((resp) => {
-                console.log(resp.token);
+                console.log(resp, 'token');
                 localStorage.setItem("token", resp.token)
             })
             .catch(err => {
                 alert('usuario no registrado');
                 console.log(err, "el error")
             });
-            e.target.reset()                
+            // limpia los valores del input
+            e.target.reset()    
         }
     }
 
@@ -71,7 +73,7 @@ return (
                     <label> Usuario </label>
                         <input type = "email"
                             className="dataInput"
-                            ref={emailRef}
+                            ref={emailRef} // hook para limpiar input
                             id="email"
                             onChange = {(e) => setData({...data, email: e.target.value})}
                         />
@@ -79,7 +81,7 @@ return (
                     <label> Contraseña   </label>
                         <input  type = "password"
                             className="dataInput"
-                            ref={passwordRef}
+                            ref={passwordRef} // hook para limpiar input
                             id="password"
                             onChange = {(e) => setData({...data, password: e.target.value})}
                         />
