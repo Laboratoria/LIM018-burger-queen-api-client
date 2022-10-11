@@ -11,7 +11,7 @@ function Header(){
             <h2 className = {style.titleLogo}>BURGER QUEEN</h2>
             </div>
             <div className = {style.navWaiter}>
-            <a href="hacerpedidos">Hacer pedidos</a>
+            <a href="#hacerpedidos">Hacer pedidos</a>
             <a href="#verpedidos">Ver pedidos</a>
             <img className= {style.mesero}src={mesero} alt="mesero" title="mesero"></img>
             </div>

@@ -25,7 +25,7 @@ function Login() {
                 console.log(res.data.token)
                 if( res.status === 200 ){
                     localStorage.setItem('users', JSON.stringify(res.data.token))
-                    navigate('/products')
+                    navigate('/products#hacerpedidos')
                 } 
             })
             .catch(err => alert('Ingresa tus datos correctamente'))

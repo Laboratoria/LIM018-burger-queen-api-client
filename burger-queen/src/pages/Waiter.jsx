@@ -1,12 +1,10 @@
-import React, { useState , useEffect} from "react";
-import Header from "../components/header.js";
-import ContainerWaiter from "../components/ContainerWaiter.js";
+import React, { useState, useEffect } from "react";
+import Header from "../components/Header.jsx";
+
 import OrderSheet from "../components/OrderSheet.js";
 import style from "../css/containerWaiter.module.css";
-import sandwich from "../img/emparedado.png";
-import jugo from "../img/jugofrutas.png";
-import axios from "axios";
 
+import axios from "axios";
 
 const API_URL = "http://localhost:3001/products";
 
@@ -20,57 +18,49 @@ export default function Waiter() {
     ],
   };
 
-  const menu = {
-    items: [
-      {
-        id: "001",
-        img: "https://user-images.githubusercontent.com/105660480/194344040-c8bf9234-ba14-437a-b04a-9c505b6dab7e.png",
-        name: "Café americano",
-        price: 12,
-      },
-      {
-        id: "002",
-        img: "https://user-images.githubusercontent.com/105660480/194344343-b4964d2c-7f02-4504-b990-35f5d1d9892e.png",
-        name: "Café con leche",
-        price: 12,
-      },
-      {
-        id: "003",
-        img: sandwich,
-        name: "Sandwich de jamón y queso",
-        price: 12,
-      },
-      { id: "004", img: jugo, name: "Jugo de frutas", price: 12 },
-    ],
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.getItem("users").slice(1, -1);
+    axios
+      .get(API_URL, {
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => setProducts(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  //console.log(filtered);
+
+  const createCards = (productType) => {
+    const filtered = products.filter((product) => product.type === productType);
+
+    const filteredCards = filtered.map((product) => (
+      <div key={product.name} className={style.contentBreak}>
+        <img
+          src={product.image}
+          alt={product.name}
+          className={style.imgBreak}
+        />
+        <p>{product.name} </p>
+        <p>S/.{product.price}</p>
+      </div>
+    ));
+
+    return filteredCards;
   };
 
-  
-
-  const token = localStorage.getItem("users").slice(1, -1);
-
-  //console.log(token);
-  const [products, setProducts] = useState([])
-
-useEffect(()=>{
-  axios
-    .get(API_URL, {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => setProducts(res.data))
-    .catch((err) => console.log(err));
-  },[]);
-  
-  //console.log(products)
+  //console.log(createCards("Breakfast"));
 
   return (
     <div>
       <Header></Header>
-      <button> Desayuno</button>
-      <button> Almuerzos y cena </button>
+      <button onClick={() => createCards("Breakfast")}> Desayuno</button>
+      <button onClick={() => createCards("Lunch and dinner")}>Almuerzos y cena</button>
       <div className={style.container}>
-        <ContainerWaiter items={menu.items}></ContainerWaiter>
+        <div className={style.menuContainer}>{createCards("Breakfast")}</div>
         <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
       </div>
     </div>
