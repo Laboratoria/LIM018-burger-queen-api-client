@@ -35,6 +35,6 @@ a{
     color: #333C83;
 }
 
-a:focus{
+a:hover{
     color: #F24A72;
 }
