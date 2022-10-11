@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import logo from '../assets/logo.png'
 import './login.css'
-import { Menu } from './Menu.jsx'
+import { Menu } from './TakeOrders.jsx'
 import { auth } from '../helpers/api'
 const baseUrl = "http://localhost:3001/usuarios"
 
@@ -21,22 +21,23 @@ export const Login = () => {
         if (txtEmail.length === 0 || txtPassword.length === 0) {
             alert("Completa tus datos...");
         } else {
-            auth(txtEmail, txtPassword)
-                .then((res) => {
-                    if (res.status === '200') {
+            // auth(txtEmail, txtPassword)
+            //     .then((res) => {
+            //        if (res.status === '200') {
                         // guardar el token: se puede guardar en el localStorage o en el sessionStorage
                         // tener en cuenta que la mejor man era es en una cookie
                         setLogin("true");
                         document.getElementById("viewLogin").style.display = "none"
-                    } else if (res.status === '400') {
-                        setLogin("false");
-                        alert("El usuario o contraseña son incorrectos...");
-                        document.getElementById("emailInput").value = "";
-                        document.getElementById("passwordInput").value = "";
-                        document.getElementById("emailInput").focus();
-                    }
-                })
-                .catch((err)=>{alert('error')})
+            //         } 
+            //         else if (res.status === '400') {
+            //              setLogin("false");
+            //              alert("El usuario o contraseña son incorrectos...");
+            //              document.getElementById("emailInput").value = "";
+            //             document.getElementById("passwordInput").value = "";
+            //              document.getElementById("emailInput").focus();
+            //          }
+            //     })
+            //    .catch((err)=>{alert('error')})
         }
     }
 

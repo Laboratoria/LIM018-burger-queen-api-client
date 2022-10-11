@@ -2,7 +2,7 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import {Login} from './components/Login';
+import {Login} from './views/Login';
 
 function App() {
   return (
