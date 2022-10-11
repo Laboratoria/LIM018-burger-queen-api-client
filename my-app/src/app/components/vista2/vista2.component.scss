@@ -1,23 +1,116 @@
 
-.content{
-  background-color: rgba(253, 252, 198, 1);
+// .content{
+//   background: rgba(253, 252, 198, 1);
+// }
+
+// .menu--options{
+//   button{
+//     border-radius: 80px;
+
+//   }
+
+//   // padding: 1em;
+//   // display: flex;
+//   // justify-content: space-between;
+//   // align-items: center;
+
+// }
+
+
+// .menu--grid{
+//   padding: 1em;
+//   display: grid;
+//   grid-template-columns: repeat(2,1fr);
+//   grid-gap: 15px;
+// }
+
+// .footer{
+//   background: rgba(184, 217, 138, 1);
+//   padding: 0.1em 6em;
+//   text-align: center;
+// }
+
+
+
+// // desktop
+// @media screen and (min-width: 64em){
+//   .menu--grid{
+//     display: grid;
+//     grid-template-columns: repeat(2,1fr);
+//     grid-gap: 15px;
+//   }
+// }
+
+
+.show-mobile{
+  display: block;
+  .content{
+    padding: 1em;
+    height: 750px;
+    background: rgba(253, 252, 198, 1);
+    .menu--options{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-bottom: 1em;
+    }
+    .menu--grid{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 15px;
+      padding-bottom: 1em;
+    }
+  }
+  .footer{
+    background: rgba(184, 217, 138, 1);
+    text-align: center;
+    padding: 1em;
+  }
 }
 
-.menu--grid{
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-gap: 15px;
+.hide-mobile{
+  display: none;
+  .content{
+    padding: 1em;
+    height: 750px;
+    background: rgba(253, 252, 198, 1);
+    .menu--options{
+      display: flex;
+      justify-content:left;
+      align-items: center;
+      padding-bottom: 1em;
+      width: 50%;
+    }
+    .menu--grid--desayuno{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 15px;
+      padding-bottom: 1em;
+      width: 50%;
+    }
+    .menu--grid--almuerzo{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-gap: 15px;
+      padding-bottom: 1em;
+      width: 50%;
+    }
+  }
+  .footer{
+    background: rgba(184, 217, 138, 1);
+    text-align: center;
+    padding: 1em;
+  }
 }
 
-.footer{
-  background-color: rgba(184, 217, 138, 1);
-}
 
-// desktop
-@media screen and (min-width: 64em){
-  .menu--grid{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 15px;
+
+/* desktop */
+@media screen and (min-width: 64em) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
   }
 }

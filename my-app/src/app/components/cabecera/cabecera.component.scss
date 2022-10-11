@@ -1,4 +1,48 @@
 
-h1{
-  color: rgba(239, 95, 43, 1)
+.show-mobile{
+  display: block;
+  >div{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      width: 70%;
+      height: auto;
+    }
+    .account{
+      color:rgba(239, 95, 43, 1);
+      margin-right: .5em;
+      font-size: 14px;
+    }
+  }
+}
+
+.hide-mobile{
+  display: none;
+  >div{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      width: 50%;
+      height: auto;
+    }
+    .account{
+      color:rgba(239, 95, 43, 1);
+      margin-right: .5em;
+      font-size: 16px;
+    }
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 64em) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
 }
