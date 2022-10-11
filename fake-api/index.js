@@ -9,10 +9,7 @@ server.use(jsonServer.bodyParser)
 server.use(middlewares)
 
 server.use((req, res, next) => {
-
   console.log(req.headers);
-
-
   if(req.method === "POST" && req.path === "/auth") {
    next();
   } else if(req.headers.authorization === `Bearer ${secret}`) {
@@ -21,7 +18,6 @@ server.use((req, res, next) => {
   res.sendStatus(401)
   }
  })
-
 
 server.post('/auth', (req, res) => {
 
