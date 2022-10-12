@@ -4,7 +4,7 @@ import Header from "../components/Header.jsx";
 import OrderSheet from "../components/OrderSheet.jsx";
 import style from "../css/Waiter.module.css";
 
-import peticionHTTP from "../function/peticionaxios.js";
+import peticionHTTP from "../functions/getProducts.js";
 
 export default function Waiter() {
   const newClient = {
@@ -21,13 +21,15 @@ export default function Waiter() {
     peticionHTTP(setProducts);
   }, []);
 
-  const [type, setType] = useState("Breakfast")
+  const [type, setType] = useState("Breakfast");
 
   const createCards = (productType) => {
     const filtered = products.filter((product) => product.type === productType);
 
+    const point = (event) => {console.log(event.target)}
+
     const filteredCards = filtered.map((product) => (
-      <div key={product.name} className={style.productCard}>
+      <div key={product.name} className={style.productCard} onClick={point}>
         <img
           src={product.image}
           alt={product.name}
@@ -42,22 +44,28 @@ export default function Waiter() {
   };
 
   return (
-    <div>
-      <Header></Header>
+    <>
+      <Header />
       <div className={style.buttonContainer}>
-        <button className={style.buttonMenu} onClick={() => setType("Breakfast")}> Desayuno</button>
-      <button className={style.buttonMenu} onClick={() => setType("Lunch and dinner")}>
-        Almuerzos y cena
-      </button>
+        <button
+          className={style.buttonMenu}
+          onClick={() => setType("Breakfast")}
+        >
+          {" "}
+          Desayuno
+        </button>
+        <button
+          className={style.buttonMenu}
+          onClick={() => setType("Lunch and dinner")}
+        >
+          Almuerzos y cena
+        </button>
       </div>
-      
+
       <div className={style.container}>
-        
-        <div className={style.menuContainer}>
-          {createCards(type)}
-          </div>
+        <div className={style.menuContainer}>{createCards(type)}</div>
         <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
       </div>
-    </div>
+    </>
   );
 }
