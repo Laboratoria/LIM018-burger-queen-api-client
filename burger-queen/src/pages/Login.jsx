@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react"; // Crea estados
-import logo from "../img/logo.png"
+import logo from "../img/logo2.png"
 import "../css/Login.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +38,7 @@ function Login() {
                 <img src={logo} alt="burger-queen-logo" className="logo" />
             </div>
             <div className="background-form">
-                <h1> Burger queen </h1>
+                <h1> BURGER QUEEN </h1>
                 <form onSubmit={handleSubmit}>
                     <p> Ingresa tus credenciales </p>
                     <input

@@ -1,32 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
 .buttonContainer {
-    width: 55%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10%;
+    padding: 0;
+    margin: 0;
+    gap: 0.4rem;
 }
 
 .buttonMenu {
-    background: #FFB4B4;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
     text-transform: uppercase;
+    list-style: none;
+    background: #FFB4B4;
+    width: 60%;
+    padding: 0.8rem;
+    font-size: 20px;
     font-weight: 700;
-    border: none;
-    margin: 0 0 1.5rem 0;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    transform: rotate(180deg);
+    color: #FFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .buttonMenu:hover {
-    background-color: #dc9c9c;
+    background-color: #f37794;
 }
 
 .container {
     display: flex;
-    padding: 0 3rem;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding-inline-end: 3rem;
 }
 
 .menuContainer{
-    width: 50%;
+    width: 45%;
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
@@ -37,7 +53,7 @@
     background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
     border-radius: 1rem;
     padding: 1rem 1.5rem;
-    width: 35%;
+    width: 45%;
     height: 40%;
     display: flex;
     flex-direction: column;
@@ -46,40 +62,33 @@
     cursor: pointer;
 }
 
-.productCard:hover {
-    background: #e0c9c0;
-}
-
 .productCard p {
     text-align: center;
     margin: 0;
 }
-
-/*.productCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    width: 204px;
-    height: 143px;
-    background: linear-gradient(0deg, #FFF5E4, #FFF5E4);
-    border-radius: 21px;
-    position: relative;
-} 
-
-.imgBreak{
-    position: absolute;
-    width: 110px;
-    bottom: 100px;
-    left: 50px;
-}*/
 
 .infoBreak{
     padding-bottom: 1.5rem;
 }
 
 .add {
-    width: 30px;
+    width: 28px;
+}
+
+.addContainer{
+    display: flex;
+    flex-direction: row;
+    gap:1.5rem;
+}
+
+.addButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(.9);
 }
 
 img{
@@ -109,4 +118,11 @@ img{
 .oneItem {
     display: flex;
     justify-content: space-between;
+}
+span{
+    color: #FE724C;
+}
+
+p{
+    font-weight: 600;
 }

@@ -37,63 +37,63 @@
         "name": "Hamburguesa simple",
         "price": 10,
         "image": "https://user-images.githubusercontent.com/105660480/194973482-8edcb644-05ff-49dd-9374-0c0386974bc9.png",
-        "type": "Lunch and dinner",
+        "type": "Lunch",
         "dateEntry": ""
       },
       {
         "id": "006",
         "name": "Hamburguesa doble",
         "price": 15,
-        "image": "https://user-images.githubusercontent.com/105660480/194973530-b199b12b-ee15-4a72-971b-e3bfa33d331f.png",
-        "type": "Lunch and dinner",
+        "image": "https://user-images.githubusercontent.com/77763655/195255062-87b53ff0-309c-48e8-988f-c5e4e5074607.png",
+        "type": "Lunch",
         "dateEntry": ""
       },
       {
         "id": "007",
-        "name": "Papas fritas",
-        "price": 5,
-        "image": "https://user-images.githubusercontent.com/105660480/194973561-e42bd7b0-3363-41a4-a7e6-96d806288643.png",
-        "type": "Lunch and dinner",
+        "name": "Hamburguesa con huevo",
+        "price": 15,
+        "image": "https://user-images.githubusercontent.com/77763655/195254630-ed017280-7db3-4e24-9f7e-e27c44226574.png",
+        "type": "Lunch",
         "dateEntry": ""
       },
       {
         "id": "008",
-        "name": "Aros de cebolla",
-        "price": 5,
-        "image":"https://user-images.githubusercontent.com/105660480/194973648-bc0453bc-b779-4e1a-9bf5-a1f2e077f276.png",
-        "type": "Lunch and dinner",
+        "name": "Hamburguesa con queso",
+        "price": 15,
+        "image": "https://user-images.githubusercontent.com/77763655/195254730-b4c01c6e-9d11-4c28-9bc3-a7a79df44da4.png",
+        "type": "Lunch",
         "dateEntry": ""
       },
       {
         "id": "009",
-        "name": "Agua 500ml",
+        "name": "Papas fritas",
         "price": 5,
-        "image": "https://user-images.githubusercontent.com/105660480/194973744-a1ab7a75-dbf9-480e-abdd-119234926de6.png",
-        "type": "Lunch and dinner",
+        "image": "https://user-images.githubusercontent.com/105660480/194973561-e42bd7b0-3363-41a4-a7e6-96d806288643.png",
+        "type": "Acompañamiento",
         "dateEntry": ""
       },
       {
         "id": "010",
-        "name": "Agua 750ml",
-        "price": 7,
-        "image": "https://user-images.githubusercontent.com/105660480/194973744-a1ab7a75-dbf9-480e-abdd-119234926de6.png",
-        "type": "Lunch and dinner",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image":"https://user-images.githubusercontent.com/105660480/194973648-bc0453bc-b779-4e1a-9bf5-a1f2e077f276.png",
+        "type": "Acompañamiento",
         "dateEntry": ""
       },
       {
         "id": "011",
-        "name": "Bebida/gaseosa 500ml",
-        "price": 7,
-        "image": "https://user-images.githubusercontent.com/105660480/194973855-2c03401b-4965-4bdc-9532-8768fd5f2330.png",
-        "type": "Lunch and dinner",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "https://user-images.githubusercontent.com/105660480/194973744-a1ab7a75-dbf9-480e-abdd-119234926de6.png",
+        "type": "Acompañamiento",
         "dateEntry": ""
       },
       {
         "id": "012",
-        "name": "Bebida/gaseosa 750ml",
-        "price": 10,
+        "name": "Bebida/gaseosa 500ml",
+        "price": 7,
         "image": "https://user-images.githubusercontent.com/105660480/194973855-2c03401b-4965-4bdc-9532-8768fd5f2330.png",
-        "type": "Lunch and dinner",
+        "type": "Acompañamiento",
         "dateEntry": ""
       }
     ],
