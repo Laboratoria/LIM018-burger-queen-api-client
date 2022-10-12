@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import '../css/sheet.css'
 
 function OrderSheet(props) {
     const items = props.items
+    useEffect(() => {
+        console.log(items)
+    }, [])
 
     const [client, setClient] = useState("");
     const [table, setTable] = useState("")
@@ -10,9 +14,9 @@ function OrderSheet(props) {
     const fullOrder = items.map(item => {
         return (
             <div className='item' key={item.id}>
-                <p> {item.name}</p>
+                <p> {item.product}</p>
                 <p> S/.{item.price} </p>
-                <p> {item.quantity} </p>
+                <p> {item.qyt} </p>
             </div>
         )
     })

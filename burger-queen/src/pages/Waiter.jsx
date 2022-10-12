@@ -4,7 +4,7 @@ import Header from "../components/Header.jsx";
 
 import OrderSheet from "../components/OrderSheet.jsx";
 import style from "../css/Waiter.module.css";
-import add from "../img/add.png"
+import add from "../img/add.png";
 import peticionHTTP from "../functions/getProducts";
 
 export default function Waiter() {
@@ -18,19 +18,28 @@ export default function Waiter() {
   };
 
   const [products, setProducts] = useState([]);
+  const [type, setType] = useState("Breakfast");
+  const [order, setOrder] = useState([]);
+
   useEffect(() => {
     peticionHTTP(setProducts);
   }, []);
 
-  const [type, setType] = useState("Breakfast");
+  const addProducts = (e) => {
+    const product = {};
+    product.product = e.currentTarget.value;
+    console.log(e.currentTarget.value)
+    product.qyt = 1;
+
+    setOrder([...order, product]);
+    console.log(order);
+  };
 
   const createCards = (productType) => {
     const filtered = products.filter((product) => product.type === productType);
 
-    const point = (event) => {console.log(event.target)}
-
     const filteredCards = filtered.map((product) => (
-      <div key={product.name} className={style.productCard} onClick={point}>
+      <div key={product.name} className={style.productCard}>
         <img
           src={product.image}
           alt={product.name}
@@ -38,8 +47,18 @@ export default function Waiter() {
         />
         <p>{product.name} </p>
         <div className={style.addContainer}>
-        <p><span>S/.</span>{product.price}</p>
-        <button className={style.addButton}> <img className ={style.add} src={add} title="add"></img></button>
+          <p>
+            <span>S/.</span>
+            {product.price}
+          </p>
+          <button
+            className={style.addButton}
+            onClick={addProducts}
+            value={product.name}
+          >
+            {" "}
+            <img className={style.add} src={add} title="add"></img>
+          </button>
         </div>
       </div>
     ));
@@ -53,19 +72,23 @@ export default function Waiter() {
 
       <div className={style.container}>
         <ul className={style.buttonContainer}>
-          <li className={style.buttonMenu} onClick={() => setType("Breakfast")}> Desayuno</li>
+          <li className={style.buttonMenu} onClick={() => setType("Breakfast")}>
+            {" "}
+            Desayuno
+          </li>
           <li className={style.buttonMenu} onClick={() => setType("Lunch")}>
             Almuerzo
           </li>
-          <li className={style.buttonMenu} onClick={() => setType("Acompañamiento")}>
+          <li
+            className={style.buttonMenu}
+            onClick={() => setType("Acompañamiento")}
+          >
             Acompañamiento
           </li>
         </ul>
 
-        <div className={style.menuContainer}>
-          {createCards(type)}
-        </div>
-      <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
+        <div className={style.menuContainer}>{createCards(type)}</div>
+        <OrderSheet name={newClient.name} items={order}></OrderSheet>
       </div>
     </>
   );
