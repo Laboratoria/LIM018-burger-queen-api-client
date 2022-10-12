@@ -1,13 +1,9 @@
-import { useEffect } from 'react';
 import { useState } from 'react';
 import '../css/sheet.css'
 
 function OrderSheet(props) {
     const items = props.items
-    useEffect(() => {
-        console.log(items)
-    }, [])
-
+    
     const [client, setClient] = useState("");
     const [table, setTable] = useState("")
 

@@ -8,15 +8,6 @@ import add from "../img/add.png";
 import peticionHTTP from "../functions/getProducts";
 
 export default function Waiter() {
-  const newClient = {
-    name: "Gabriela",
-    items: [
-      { id: "a", name: "Café expreso", price: 12, quantity: 1 },
-      { id: "b", name: "Hamburguesa", price: 12, quantity: 2 },
-      { id: "c", name: "Limonada", price: 12, quantity: 1 },
-    ],
-  };
-
   const [products, setProducts] = useState([]);
   const [type, setType] = useState("Breakfast");
   const [order, setOrder] = useState([]);
@@ -26,13 +17,11 @@ export default function Waiter() {
   }, []);
 
   const addProducts = (e) => {
-    const product = {};
-    product.product = e.currentTarget.value;
-    console.log(e.currentTarget.value)
-    product.qyt = 1;
-
-    setOrder([...order, product]);
-    console.log(order);
+    const item = {};
+    item.product = e.currentTarget.dataset.value.split(",")[0];
+    item.price = parseInt(e.currentTarget.dataset.value.split(",")[1]);
+    item.qyt = 1;
+    setOrder([...order, item]);
   };
 
   const createCards = (productType) => {
@@ -54,7 +43,7 @@ export default function Waiter() {
           <button
             className={style.addButton}
             onClick={addProducts}
-            value={product.name}
+            data-value={`${product.name}, ${product.price}`}
           >
             {" "}
             <img className={style.add} src={add} title="add"></img>
@@ -68,8 +57,7 @@ export default function Waiter() {
 
   return (
     <>
-      <Header></Header>
-
+      <Header />
       <div className={style.container}>
         <ul className={style.buttonContainer}>
           <li className={style.buttonMenu} onClick={() => setType("Breakfast")}>
@@ -86,9 +74,8 @@ export default function Waiter() {
             Acompañamiento
           </li>
         </ul>
-
         <div className={style.menuContainer}>{createCards(type)}</div>
-        <OrderSheet name={newClient.name} items={order}></OrderSheet>
+        <OrderSheet items={order} />
       </div>
     </>
   );
