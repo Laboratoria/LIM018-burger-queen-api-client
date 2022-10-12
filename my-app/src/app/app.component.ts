@@ -1,6 +1,9 @@
 import { NgIfContext } from '@angular/common';
 import { Component } from '@angular/core';
 
+import { AuthService } from './services/auth.service';
+import { UsersService } from './services/users.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +11,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  constructor(
+    private authService: AuthService,
+    private usersService: UsersService
+  ) {
+
+  }
+
+  createUser() {
+    this.usersService.create({
+      name: 'Sebas',
+      email: 'iam@fakel.lol',
+      password: 'apasswordtochange'
+    })
+    .subscribe(rta => {
+      console.log(rta);
+    });
+  }
+
+  login() {
+    this.authService.login("iam@fakel.lol", "apasswordtochange")
+    .subscribe(rta => {
+      console.log(rta.token);
+    });
+  }
+
+
+
 
 
   // product : Product = {

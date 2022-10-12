@@ -96,7 +96,6 @@
       "type": "lunch",
       "dateEntry": ""
     }
-
   ],
   "users": [
     {
@@ -104,11 +103,56 @@
       "email": {},
       "roles": {},
       "user.roles.admin": ""
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "hdc2sg4"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "IyYYi8i"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "pXLKcri"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "-a0Fxl-"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "uOVOaVV"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "9vwQg0f"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "9DfLsDQ"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "e_A7DA2"
+    },
+    {
+      "email": "iam@fakel.lol",
+      "password": "apasswordtochange",
+      "id": "r37pzDe"
     }
   ],
   "resp": [
     {
-      "resp.token": ""
+      "token": ""
     }
   ],
   "orders": [
