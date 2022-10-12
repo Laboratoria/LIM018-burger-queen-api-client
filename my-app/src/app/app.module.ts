@@ -1,30 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http'
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { Vista2Component } from './components/vista2/vista2.component';
+import { homeComponent } from './components/Home/home.component';
 import { CabeceraComponent } from './components/cabecera/cabecera.component';
-import { MenuComponent } from './components/menu/menu.component';
+import { ProductComponent } from './components/product/product.component';
 import { ContadorComponent } from './components/contador/contador.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { LoginComponent } from './components/login/login.component';
-import { RouterModule, Routes } from '@angular/router';
 import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mesero.component';
+
 
 const appRoutes:Routes =[
   {path:'', component:LoginComponent},
-  {path:'vista2', component:Vista2Component}
+  {path:'home', component:homeComponent}
 ];
 @NgModule({
   declarations: [
     AppComponent,
-    Vista2Component,
+    homeComponent,
     CabeceraComponent,
-    MenuComponent,
+    ProductComponent,
     ContadorComponent,
     PedidoComponent,
     LoginComponent,
@@ -32,9 +33,10 @@ const appRoutes:Routes =[
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
