@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header.jsx";
 
 import OrderSheet from "../components/OrderSheet.jsx";
 import style from "../css/Waiter.module.css";
-
+import add from "../img/add.png"
 import peticionHTTP from "../function/peticionaxios.js";
 
 export default function Waiter() {
@@ -34,7 +35,10 @@ export default function Waiter() {
           className={style.imgBreak}
         />
         <p>{product.name} </p>
-        <p>S/.{product.price}</p>
+        <div className={style.addContainer}>
+        <p><span>S/.</span>{product.price}</p>
+        <button className={style.addButton}> <img className ={style.add} src={add} title="add"></img></button>
+        </div>
       </div>
     ));
 
@@ -44,19 +48,22 @@ export default function Waiter() {
   return (
     <div>
       <Header></Header>
-      <div className={style.buttonContainer}>
-        <button className={style.buttonMenu} onClick={() => setType("Breakfast")}> Desayuno</button>
-      <button className={style.buttonMenu} onClick={() => setType("Lunch and dinner")}>
-        Almuerzos y cena
-      </button>
-      </div>
-      
+
       <div className={style.container}>
-        
+        <ul className={style.buttonContainer}>
+          <li className={style.buttonMenu} onClick={() => setType("Breakfast")}> Desayuno</li>
+          <li className={style.buttonMenu} onClick={() => setType("Lunch")}>
+            Almuerzo
+          </li>
+          <li className={style.buttonMenu} onClick={() => setType("Acompañamiento")}>
+            Acompañamiento
+          </li>
+        </ul>
+
         <div className={style.menuContainer}>
           {createCards(type)}
-          </div>
-        <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
+        </div>
+      <OrderSheet name={newClient.name} items={newClient.items}></OrderSheet>
       </div>
     </div>
   );

@@ -1,3 +1,6 @@
+*{
+    font-family: 'Poppins';
+}
 .login {
     height: 100vh;
     display: flex;
@@ -22,20 +25,20 @@
 }
 
 h1 {
-    text-transform: uppercase;
+    font-family: 'Rum Raisin';
     text-align: center;
-    font-size: 5rem;
+    font-size: 7.18rem;
+    line-height: 9rem;
     text-shadow: 0 0 2px black;
     margin: 2rem 0;
     color: #EB6105;
-    line-height: 4.5rem;
 }
 
 input {
-    border-radius: 5px;
-    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    padding: 0.75rem;
     border: none;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     font-size: 0.85rem;
     cursor: pointer;
 }
@@ -46,9 +49,11 @@ input[type=text] {
 
 input[type=submit] {
     background: #FFB4B4;
-    border: none;
+    color: #EB6105;
     width: 20%;
     font-weight: 700;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 form {
