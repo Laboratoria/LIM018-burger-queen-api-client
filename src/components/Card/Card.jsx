@@ -3,6 +3,7 @@ import "./Card.css";
 export const CardMenu = (props) => {
     const nameProduct = props.name
     const imgProduct = props.image
+    const pryceProd = props.pryce
     const dataId = props.id
 
     return (
@@ -14,7 +15,7 @@ export const CardMenu = (props) => {
                     </div>
                     <div className="item-controller">
                         <div className="counter">+</div>
-                        <p>1</p>
+                        <p>${pryceProd}</p>
                         <div className="counter">-</div>
                     </div>
                 </div>

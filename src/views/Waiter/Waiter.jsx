@@ -22,7 +22,8 @@ export const WaiterView = () => {
         const cards = typeProducts.map((type)=> {
             return (<CardMenu 
                 name = {type.name} 
-                image = {type.image} 
+                image = {type.image}
+                pryce = {type.price} 
                 key = {type.id} 
                 id = {type.id} />)
         })
