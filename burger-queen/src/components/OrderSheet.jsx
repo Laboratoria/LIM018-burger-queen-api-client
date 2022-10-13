@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import '../css/sheet.css'
 
-function OrderSheet(props) {
-    const items = props.items
+function OrderSheet({ items }) {
     
     const [client, setClient] = useState("");
     const [table, setTable] = useState("")
