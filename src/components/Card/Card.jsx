@@ -6,7 +6,7 @@ export const CardMenu = (props) => {
     const dataId = props.id
     const price = props.price
     const addProduct = props.adding
-    const remove = props.removing
+    const removeProduct = props.removing
 
     return (
         <>
@@ -18,7 +18,7 @@ export const CardMenu = (props) => {
                 <div className="item-controller">
                     <button className="counter" onClick={addProduct}>+</button>
                     <p>{price}</p>
-                    <button className="counter" onClick={remove}>-</button>
+                    <button className="counter" onClick={removeProduct}>-</button>
                 </div>
             </div>
         </>

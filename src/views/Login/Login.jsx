@@ -14,6 +14,7 @@ export const Login = () => {
     const [data, setData] = useState({
         email : "",
         password : ""
+
     });
 
     // Para capturar el error
@@ -50,7 +51,6 @@ export const Login = () => {
             })
             .catch(err => {
                 // alert('usuario no registrado');
-                console.log(err, "el error");
                 setErrorMessage('Usuario no registrado, revise su correo o contraseña');
                 setTimeout(()=>{
                     setErrorMessage('');
@@ -83,7 +83,7 @@ return (
                             onChange = {(e) => setData({...data, email: e.target.value})}
                         />
                   
-                    <label> Contraseña   </label>
+                    <label> Contraseña </label>
                         <input  type = "password"
                             className="dataInput"
                             /* ref={passwordRef} // hook para limpiar input */

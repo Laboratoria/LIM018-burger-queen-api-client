@@ -21,10 +21,8 @@ server.use((req, res, next) => {
 
 
 server.post('/auth', (req, res) => {
-    
     // res.jsonp(req.query);
-    if (
-        req.body.email === 'mesero1@gmail.com' &&
+    if (req.body.email === 'mesero1@gmail.com' &&
         req.body.password === '123456') {
             res.jsonp({
             token: secret
@@ -34,6 +32,7 @@ server.post('/auth', (req, res) => {
     }    
 })
 
+// Para probar sí esta corriendo el servidor
 server.use(router)
 server.listen(3001, () => {
   console.log('JSON Server is running')

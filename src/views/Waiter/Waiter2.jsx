@@ -9,10 +9,11 @@ export const WaiterView = () => {
    
     const [menu, setMenu] = useState("breakfast");
     const [products, setProducts] = useState([]);
+    console.log(products, 'productos')
     const [arrayOfOrder, setArrayOfOrder] = useState([])
 
     useEffect(() => {
-        getProducts(setProducts) 
+        getProducts(setProducts);
     }, [])
 
 
@@ -32,12 +33,19 @@ export const WaiterView = () => {
             })
             return cards;
     }
-
  
+    
     // Función para añadir productos a la orden
     const addProduct = (type) => {
+        console.log(type, 'tipo')
+        const itemProduct = {};
+        itemProduct.id = type.id;
+        itemProduct.products = type.name;
+        itemProduct.price = type.price;
+        itemProduct.qty = 1;
+        
         setArrayOfOrder([...arrayOfOrder, type])
-        console.log(arrayOfOrder, 'array orden')
+        console.log(arrayOfOrder, 'array order')
     }
 
 
