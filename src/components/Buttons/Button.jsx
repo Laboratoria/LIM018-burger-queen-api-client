@@ -2,13 +2,13 @@
 export const MenuButton = (props) => {
     const buttonTitle = props.title;
     const background = props.bg;
-    const createCards = props.createCards
+    const changeType = props.changeType
 
     return (
         <button 
         type = 'button' 
         className={`btn-menu ${background}`} 
-        onClick = {createCards}
+        onClick = {changeType}
         > {buttonTitle} </button>
     )
 }

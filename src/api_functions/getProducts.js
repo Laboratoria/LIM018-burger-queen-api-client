@@ -2,8 +2,6 @@ const API_URL = "http://localhost:3001";
 const productPath = '/products';
 const token = localStorage.getItem("token");
 
-console.log(token);
-
 const getProducts = async (newState) => {
     const res = await fetch(`${API_URL}${productPath}`, {
         method: "GET",
@@ -13,6 +11,7 @@ const getProducts = async (newState) => {
         }
     });
     console.log(res, 'res');
+    
     const dataProducts = await res.json();
     console.log(dataProducts, 'prods');
     return newState(dataProducts);

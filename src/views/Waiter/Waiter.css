@@ -78,6 +78,7 @@
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
+    
 }
 
 .nav-menu{
@@ -97,6 +98,7 @@
     padding: 20px;
     display: grid;
     align-items: center;
+    align-content: space-between;
 }
 
 .mg-top{
@@ -120,3 +122,23 @@
     gap: 1.25rem;
 }
 
+.showCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-option-menu{
+    gap: 1rem;
+    display: flex;
+}
+
+.header-order{
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-order{
+    display: flex;
+    justify-content: space-around;
+}
