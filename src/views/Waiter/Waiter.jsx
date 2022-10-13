@@ -4,6 +4,8 @@ import { CardMenu } from "../../components/Card/Card";
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import getProducts from "../../api_functions/getProducts";
+import trashCan from "../../Images/delete.png"
+import logOut from "../../Images/logout.png"
 
 export const WaiterView = () => {
    
@@ -11,7 +13,8 @@ export const WaiterView = () => {
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
 
     const [products, setProducts] = useState([]);
-    const [arrayOfOrder, setArrayOfOrder] = useState([])
+    const [arrayOfOrder, setArrayOfOrder] = useState([]);
+    // const [total, setTotal] = useState([])
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -28,7 +31,8 @@ export const WaiterView = () => {
                     name = {type.name} // type es el prod
                     image = {type.image} 
                     key = {type.id} 
-                    id = {type.id} 
+                    id = {type.id}
+                    price = {`S/. ${type.price}`} 
                     adding = {() => {addProduct(type)}}  
                     />)
             })
@@ -51,11 +55,23 @@ export const WaiterView = () => {
         // console.log(arrayOfOrder, 'array orden')
        
     }
-  
-console.log(arrayOfOrder);
+
+    let total = 0    
+    arrayOfOrder.map((item) => {
+        total += item.price
+        return total; 
+    })
+
     return (
         
         <section className="waiter">
+            <header className="header">
+                <h1 className="burger">BURGER QUEEN</h1>
+                <button className="btn-header active">Menú</button>
+                <button className="btn-header">Ver pedidos</button>
+                <img src={logOut} alt="logOut" className="log-out" />
+            </header>
+
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
@@ -67,7 +83,7 @@ console.log(arrayOfOrder);
                         changeType = {()=>setMenu("dinner")} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
-                        <nav>
+                        <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
                             bg = "bg-lightBeige" 
@@ -92,19 +108,33 @@ console.log(arrayOfOrder);
                         </label>
                     </div>
                     <div className="container-orders mg-top">
-                        <div className="header-order">
-                        <p>ÍTEM</p><p>CANT</p><p>PRECIO</p>
+                        <div className="container-table">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>ÍTEM</th>
+                                        <th>CANT</th>
+                                        <th>PRECIO</th>
+                                        <th></th>
+                                    </tr> 
+                                    {arrayOfOrder.map((order, i) => (
+                                        <tr key={i}>
+                                            <td>{order.name}</td>
+                                            <td>{order.qty}</td>
+                                            <td>{`S/. ${order.price}`}</td>
+                                            <td>
+                                                <button className="btn-delete">
+                                                <img className="img-trash" src={trashCan} alt="trash can" />
+                                                </button>
+                                            </td>
+                                        </tr>))}
+                                </tbody> 
+                            </table>
                         </div>
-                        {arrayOfOrder.map((order, i) => (
-                            <div key={i} className="item-order">
-                                <p>{order.name}</p><span>1</span><span>{order.price}</span>
-
-                            </div>))}
-                        
                         <div className="container-total-sell">
                             <div className="total-sell">
                                 <h3>TOTAL:</h3>
-                                <p>S/. 45.00</p>
+                                <p>{`S/. ${total}`}</p>
                             </div>
                             <MenuButton title='Enviar orden' bg="bg-orange"/>
                         </div>

@@ -38,6 +38,7 @@
     width: 25px;
     height: 25px;
     border-radius: 8px;
+    border-style: none;
     background-color: rgba(224, 123, 84, 1);
     margin-inline: 20px;
     text-align: center;
