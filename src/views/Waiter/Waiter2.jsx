@@ -8,6 +8,8 @@ import getProducts from "../../api_functions/getProducts";
 export const WaiterView = () => {
    
     const [menu, setMenu] = useState("breakfast");
+    // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
+
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([])
 
@@ -16,8 +18,8 @@ export const WaiterView = () => {
     }, [])
 
 
-    const filteredProducts = (typeMenu) => {
-        const typeProducts = products.filter((prod) => {
+    const filteredProducts = (typeMenu) => {  // typeMenu es un string xej 'dinner'
+        const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
             return prod.type === typeMenu })
             
             const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
@@ -27,7 +29,7 @@ export const WaiterView = () => {
                     image = {type.image} 
                     key = {type.id} 
                     id = {type.id} 
-                    adding = {() => {addProduct(type)}}
+                    adding = {() => {addProduct(type)}}  
                     />)
             })
             return cards;
@@ -36,12 +38,23 @@ export const WaiterView = () => {
  
     // Función para añadir productos a la orden
     const addProduct = (type) => {
-        setArrayOfOrder([...arrayOfOrder, type])
-        console.log(arrayOfOrder, 'array orden')
+        const newOrder = {
+            id: type.id,
+            name: type.name,
+            price: type.price,
+            qty: 1
+        }
+        // console.log(type);
+        arrayOfOrder.push(newOrder)
+        
+        setArrayOfOrder([...arrayOfOrder])
+        // console.log(arrayOfOrder, 'array orden')
+       
     }
-
-
+  
+console.log(arrayOfOrder);
     return (
+        
         <section className="waiter">
             <div className="content-waiter">
                 <div className="container-menu">
@@ -58,7 +71,7 @@ export const WaiterView = () => {
                             <MenuButton 
                             title='Hamburguesa' 
                             bg = "bg-lightBeige" 
-                            changeType= {()=>setMenu("dinner")}/>
+                            changeType= {()=>setMenu("dinner")}/>  {/* función onClick */}
                             <MenuButton 
                             title='Extras' 
                             bg = "bg-lightBeige" 
@@ -79,11 +92,15 @@ export const WaiterView = () => {
                         </label>
                     </div>
                     <div className="container-orders mg-top">
-                        <p>Item</p>
-                        <p>Item</p>
-                        <p>Item</p>
-                        <p>Item</p>
-                        <p>Item</p>
+                        <div className="header-order">
+                        <p>ÍTEM</p><p>CANT</p><p>PRECIO</p>
+                        </div>
+                        {arrayOfOrder.map((order, i) => (
+                            <div key={i} className="item-order">
+                                <p>{order.name}</p><span>1</span><span>{order.price}</span>
+
+                            </div>))}
+                        
                         <div className="container-total-sell">
                             <div className="total-sell">
                                 <h3>TOTAL:</h3>
