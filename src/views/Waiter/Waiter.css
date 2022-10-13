@@ -78,6 +78,7 @@
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
+    
 }
 
 .nav-menu{
@@ -120,3 +121,13 @@
     gap: 1.25rem;
 }
 
+.showCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-option-menu{
+    gap: 1rem;
+    display: flex;
+}

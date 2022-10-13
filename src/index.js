@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
 import { Login } from "./views/Login/Login";
-import { WaiterView } from "./views/Waiter/Waiter";
+import { WaiterView } from "./views/Waiter/Waiter2";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
+console.log(root, 'root index')
 
 root.render(
     <BrowserRouter>

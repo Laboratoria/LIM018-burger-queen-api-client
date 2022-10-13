@@ -8,7 +8,9 @@ import logOut from "../../Images/logout.png"
 
 export const WaiterView = () => {
  
-    const [menu, setMenu] = useState("breakfast"); // menu primero vale breakfast y setMenu se actialza al dar click xej: drinks
+    const [menu, setMenu] = useState("breakfast"); 
+    // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -18,7 +20,8 @@ export const WaiterView = () => {
     const filteredAndPrintProducts = (typeMenu) => { // typeMenu es un string xej 'dinner'
         const typeProducts = products.filter((prod) => {  //product es el [{},{},...] de productos de la data
         return prod.type === typeMenu })
-        console.log(typeProducts);
+        console.log(typeProducts , 'tipo de prod');
+
         const cards = typeProducts.map((type)=> {
             return (<CardMenu 
                 name = {type.name} 
@@ -43,27 +46,29 @@ export const WaiterView = () => {
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno' 
-                        createCards = {()=>setMenu("breakfast")}/>
+                        changeType = {()=>setMenu("breakfast")}/> {/* función onClick */}
                         <MenuButton 
                         title='Almuerzo y Cena' 
-                        createCards = {()=>setMenu("dinner")} />
+                        changeType  = {()=>setMenu("dinner")} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
-                        <nav>
+                        <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("dinner")}/>
+                            changeType  = {()=>setMenu("dinner")}/>
                             <MenuButton 
                             title='Extras' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("other")} />
+                            changeType  = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("drinks")} />
+                            changeType  = {()=>setMenu("drinks")} />
                         </nav>
-                        {filteredAndPrintProducts(menu)}
+                        <div className="showCards">
+                            {filteredAndPrintProducts(menu)}
+                        </div>
                     </div>
                 </div>
 

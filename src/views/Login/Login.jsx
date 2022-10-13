@@ -10,15 +10,17 @@ export const Login = () => {
     const API_URL= "http://localhost:3001";
     const authPath = "/auth"; 
 
+    // Valor inicial de los inputs ""
     const [data, setData] = useState({
         email : "",
         password : ""
     });
 
+    // Para capturar el error
     const [errorMessage, setErrorMessage] = useState('');
 
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
+    /* const emailRef = useRef(null);
+    const passwordRef = useRef(null); */
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,21 +31,21 @@ export const Login = () => {
         if (inputEmail === "" || inputPassword === ""){
             alert('Complete todos los campos');
         } else {
-            console.log(data)
+            /* console.log(data) */
             fetch(`${API_URL}${authPath}`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(data)
             })
             .then((res) => {
-                console.log(res.status);
+                /* console.log(res.status); */
                 if (res.status === 200) {
-                    navigate('/menu');
+                    navigate("/menu");
                 }
                 return res.json() 
             })
             .then((resp) => {
-                console.log(resp.token);
+                /* console.log(resp, 'token'); */
                 localStorage.setItem("token", resp.token)
             })
             .catch(err => {
@@ -53,12 +55,7 @@ export const Login = () => {
                 setTimeout(()=>{
                     setErrorMessage('');
                 }, 4000);
-                
-
-            });
-            setTimeout(()=>{
-                e.target.reset()
-            }, 4000)                
+            });               
         }
     }
 
@@ -81,7 +78,7 @@ return (
                     <label> Usuario </label>
                         <input type = "email"
                             className="dataInput"
-                            ref={emailRef}
+                            /* ref={emailRef} // hook para limpiar input */
                             id="email"
                             onChange = {(e) => setData({...data, email: e.target.value})}
                         />
@@ -89,7 +86,7 @@ return (
                     <label> Contraseña   </label>
                         <input  type = "password"
                             className="dataInput"
-                            ref={passwordRef}
+                            /* ref={passwordRef} // hook para limpiar input */
                             id="password"
                             onChange = {(e) => setData({...data, password: e.target.value})}
                         />

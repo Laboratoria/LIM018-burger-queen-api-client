@@ -9,6 +9,7 @@ export const WaiterView = () => {
    
     const [menu, setMenu] = useState("breakfast");
     const [products, setProducts] = useState([]);
+    const [arrayOfOrder, setArrayOfOrder] = useState([])
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -19,17 +20,27 @@ export const WaiterView = () => {
         const typeProducts = products.filter((prod) => {
             return prod.type === typeMenu })
             
-            const cards = typeProducts.map((type)=> {
+            const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
+                //typeProducts es el array de obj
                 return (<CardMenu 
-                    name = {type.name} 
+                    name = {type.name} // type es el prod
                     image = {type.image} 
                     key = {type.id} 
-                    id = {type.id} />)
+                    id = {type.id} 
+                    adding = {() => {addProduct(type)}}
+                    />)
             })
             return cards;
     }
 
  
+    // Función para añadir productos a la orden
+    const addProduct = (type) => {
+        setArrayOfOrder([...arrayOfOrder, type])
+        console.log(arrayOfOrder, 'array orden')
+    }
+
+
     return (
         <section className="waiter">
             <div className="content-waiter">
@@ -37,25 +48,25 @@ export const WaiterView = () => {
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno' 
-                        createCards = {()=>setMenu("breakfast")}/>
+                        changeType = {()=>setMenu("breakfast")}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
-                        createCards = {()=>setMenu("dinner")} />
+                        changeType = {()=>setMenu("dinner")} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
                         <nav>
                             <MenuButton 
                             title='Hamburguesa' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("dinner")}/>
+                            changeType= {()=>setMenu("dinner")}/>
                             <MenuButton 
                             title='Extras' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("other")} />
+                            changeType = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
                             bg = "bg-lightBeige" 
-                            createCards = {()=>setMenu("drinks")} />
+                            changeType = {()=>setMenu("drinks")} />
                         </nav>
                         {filteredProducts(menu)}
                     </div>
