@@ -4,7 +4,7 @@ import Header from "../components/Header.jsx";
 
 import OrderSheet from "../components/OrderSheet.jsx";
 import style from "../css/Waiter.module.css";
-import add from "../img/add.png";
+import Card from "../components/Card.jsx";
 import peticionHTTP from "../functions/getProducts";
 
 export default function Waiter() {
@@ -16,40 +16,21 @@ export default function Waiter() {
     peticionHTTP(setProducts);
   }, []);
 
-  const addProducts = (e) => {
+  const addProducts = (product) => {
     const item = {};
-    item.product = e.currentTarget.dataset.value.split(",")[0];
-    item.price = parseInt(e.currentTarget.dataset.value.split(",")[1]);
+    item.product = product.name;
+    item.price = product.price;
     item.qyt = 1;
-    setOrder([...order, item]);
+    setOrder((prevState) => [...prevState, item]);
   };
 
+  //Separar los productos filtrados en un estado y que el map y componente Card vayan en el return 
+  // Carpeta por componente donde combine su hoja de estilos y estructura
   const createCards = (productType) => {
     const filtered = products.filter((product) => product.type === productType);
 
     const filteredCards = filtered.map((product) => (
-      <div key={product.name} className={style.productCard}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className={style.imgBreak}
-        />
-        <p>{product.name} </p>
-        <div className={style.addContainer}>
-          <p>
-            <span>S/.</span>
-            {product.price}
-          </p>
-          <button
-            className={style.addButton}
-            onClick={addProducts}
-            data-value={`${product.name}, ${product.price}`}
-          >
-            {" "}
-            <img className={style.add} src={add} title="add"></img>
-          </button>
-        </div>
-      </div>
+      <Card product={product} onAddButtonClick={addProducts} />
     ));
 
     return filteredCards;
