@@ -6,6 +6,8 @@ function OrderSheet({ items }) {
     const [client, setClient] = useState("");
     const [table, setTable] = useState("")
 
+    console.log(items)
+
     const fullOrder = items.map(item => {
         return (
             <div className='item' key={item.id}>

@@ -11,17 +11,22 @@ export default function Waiter() {
   const [products, setProducts] = useState([]);
   const [type, setType] = useState("Breakfast");
   const [order, setOrder] = useState([]);
-
+  const [counter, setCounter] = useState(1)
   useEffect(() => {
     peticionHTTP(setProducts);
   }, []);
 
   const addProducts = (product) => {
     const item = {};
+    item.id= product.id;
     item.product = product.name;
     item.price = product.price;
-    item.qyt = 1;
-    setOrder((prevState) => [...prevState, item]);
+    item.qyt = counter;
+      setOrder((prevState) => [...prevState, item]);
+  
+      setCounter(counter+1)
+
+    
   };
 
   //Separar los productos filtrados en un estado y que el map y componente Card vayan en el return 
