@@ -161,10 +161,21 @@
     overflow-y: scroll;
     width: 100%;
     max-height: 430px ;
+    padding: 15px;
 }
 
 table{
     width: 100%;
     text-align: left;
 }
+
+tr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
 

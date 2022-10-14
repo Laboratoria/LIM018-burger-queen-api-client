@@ -41,26 +41,47 @@ export const WaiterView = () => {
 
  
     // Función para añadir productos a la orden
-    const addProduct = (type) => {
-        const newOrder = {
-            id: type.id,
-            name: type.name,
-            price: type.price,
-            qty: 1
-        }
-        // console.log(type);
-        arrayOfOrder.push(newOrder)
+    // const addProduct = (type) => {
+    //     console.log(arrayOfOrder);
+    //     const newOrder = {
+    //         id: type.id ,
+    //         name: type.name,
+    //         price: type.price,
+    //         qty: 1
+    //     }
+    //     // console.log(type);
+    //     arrayOfOrder.push(newOrder)
         
-        setArrayOfOrder([...arrayOfOrder])
-        // console.log(arrayOfOrder, 'array orden')
-       
-    }
+    //     setArrayOfOrder([...arrayOfOrder])
+    //     // console.log(arrayOfOrder, 'array orden')
+    // }
 
+   // productos unicos según id (no repetidos)
+  const uniqueProduct = (id) => {
+    const unique = arrayOfOrder.find((obj) => obj.id === id);
+    return unique;
+  };
+  // función del boton +
+  const addProduct = (type) => {
+      if (uniqueProduct(type.id)) {
+        const addQtyPrice = arrayOfOrder.map((order) => {
+            if (order.id === type.id) {
+              const newOrder = order;
+              newOrder.qty += 1;
+              newOrder.price = type.price * newOrder.qty;
+            }
+            return order;
+          })
+        setArrayOfOrder(addQtyPrice);
+    } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
+  };
+  console.log(arrayOfOrder, 'arrayorder');
     let total = 0    
     arrayOfOrder.map((item) => {
         total += item.price
         return total; 
     })
+
 
     return (
         
@@ -108,15 +129,22 @@ export const WaiterView = () => {
                         </label>
                     </div>
                     <div className="container-orders mg-top">
-                        <div className="container-table">
                             <table>
                                 <tbody>
                                     <tr>
                                         <th>ÍTEM</th>
+                                        <th></th>
+                                        <th></th>
                                         <th>CANT</th>
                                         <th>PRECIO</th>
                                         <th></th>
-                                    </tr> 
+                                        <th></th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <div className="container-table">
+                            <table>
+                                <tbody>
                                     {arrayOfOrder.map((order, i) => (
                                         <tr key={i}>
                                             <td>{order.name}</td>
