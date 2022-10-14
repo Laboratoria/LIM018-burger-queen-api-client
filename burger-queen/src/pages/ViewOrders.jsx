@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header.jsx";
-import Order from "../components/Sheets.jsx";
+import Header from "../components/Header/Header.jsx";
+import Order from "../components/Sheets/Sheets.jsx";
 import style from "../css/Waiter.module.css";
 import getOrders from "../functions/getOrders.js";
 

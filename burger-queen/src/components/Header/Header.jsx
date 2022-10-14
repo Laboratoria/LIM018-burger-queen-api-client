@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import logo from "../img/logo.png";
-import mesero from "../img/mesero.png";
-import style from "../css/header.module.css";
+import logo from "../../img/logo.png";
+import mesero from "../../img/mesero.png";
+import style from "./Header.module.css";
 
 function Header() {
   return (
