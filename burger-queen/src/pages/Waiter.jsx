@@ -1,59 +1,58 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState, useEffect } from "react";
-import Header from "../components/Header.jsx";
+import Header from "../components/Header/Header.jsx";
 
-import OrderSheet from "../components/OrderSheet.jsx";
+import OrderSheet from "../components/Sheets/OrderSheet.jsx";
 import style from "../css/Waiter.module.css";
-import add from "../img/add.png";
+import Card from "../components/Card.jsx";
 import peticionHTTP from "../functions/getProducts";
 
 export default function Waiter() {
   const [products, setProducts] = useState([]);
   const [type, setType] = useState("Breakfast");
   const [order, setOrder] = useState([]);
+  //const [counter, setCounter] = useState(1)
 
   useEffect(() => {
     peticionHTTP(setProducts);
   }, []);
 
-  const addProducts = (e) => {
+  const addProducts = (product) => {
     const item = {};
-    item.product = e.currentTarget.dataset.value.split(",")[0];
-    item.price = parseInt(e.currentTarget.dataset.value.split(",")[1]);
+    item.id = product.id;
+    item.product = product.name;
+    item.price = product.price;
     item.qyt = 1;
-    setOrder([...order, item]);
+    
+  
+    //const filterOrder = order.filter((idProd) => idProd.id !== item.id)
+    setOrder((prevState) => [...prevState, item]);
+    
+    //console.log(filterOrder)
+            
+    /*return order.forEach( elem => {
+      if( elem.id !== item.id) {
+        
+      }
+      if(elem.id === item.id) {
+        item.qyt += 1
+      } 
+      
+      console.log("Id de cada producto en la orden", elem.id);
+    console.log("Id del item a agregar", item.id)})*/
+
   };
 
-  const createCards = (productType) => {
-    const filtered = products.filter((product) => product.type === productType);
+  let total = 0;
+  order.map( item => {
+    total += item.price
+    return total
+  })
 
-    const filteredCards = filtered.map((product) => (
-      <div key={product.name} className={style.productCard}>
-        <img
-          src={product.image}
-          alt={product.name}
-          className={style.imgBreak}
-        />
-        <p>{product.name} </p>
-        <div className={style.addContainer}>
-          <p>
-            <span>S/.</span>
-            {product.price}
-          </p>
-          <button
-            className={style.addButton}
-            onClick={addProducts}
-            data-value={`${product.name}, ${product.price}`}
-          >
-            {" "}
-            <img className={style.add} src={add} title="add"></img>
-          </button>
-        </div>
-      </div>
-    ));
+  //console.log(total)
 
-    return filteredCards;
-  };
+  // Carpeta por componente donde combine su hoja de estilos y estructura
+  const filteredProducts = products.filter((product) => product.type === type);
 
   return (
     <>
@@ -61,7 +60,6 @@ export default function Waiter() {
       <div className={style.container}>
         <ul className={style.buttonContainer}>
           <li className={style.buttonMenu} onClick={() => setType("Breakfast")}>
-            {" "}
             Desayuno
           </li>
           <li className={style.buttonMenu} onClick={() => setType("Lunch")}>
@@ -74,8 +72,12 @@ export default function Waiter() {
             Acompañamiento
           </li>
         </ul>
-        <div className={style.menuContainer}>{createCards(type)}</div>
-        <OrderSheet items={order} />
+        <div className={style.menuContainer}>
+          {filteredProducts.map((product) => (
+            <Card product={product} onAddButtonClick={addProducts}/>
+          ))}
+        </div>
+        <OrderSheet items={order} total={total}/>
       </div>
     </>
   );
