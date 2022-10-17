@@ -11,10 +11,11 @@ export const WaiterView = () => {
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
 
     const [products, setProducts] = useState([]);
+    console.log(products, 'productos')
     const [arrayOfOrder, setArrayOfOrder] = useState([])
 
     useEffect(() => {
-        getProducts(setProducts) 
+        getProducts(setProducts);
     }, [])
 
 
@@ -34,8 +35,8 @@ export const WaiterView = () => {
             })
             return cards;
     }
-
  
+    
     // Función para añadir productos a la orden
     const addProduct = (type) => {
         const newOrder = {
