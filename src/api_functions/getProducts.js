@@ -10,10 +10,11 @@ const getProducts = async (newState) => {
             "Authorization": `Bearer ${token}`
         }
     });
-    console.log(res, 'res');
+    /* console.log(res, 'respuesta de la petición'); */
     
     const dataProducts = await res.json();
-    console.log(dataProducts, 'prods');
+    /* console.log(dataProducts, 'data products'); */
+
     return newState(dataProducts);
 }
 
