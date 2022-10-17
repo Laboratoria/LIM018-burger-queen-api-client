@@ -26,9 +26,9 @@
 <div class="hide-mobile">
   <div class="content">
     <div class="menu--options">
-      <button >Desayuno</button>
+      <button  (click)=" mostrarOcultar()">Desayuno</button>
     </div>
-    <div class="menu--grid--desayuno">
+    <div *ngIf="mostrar" class="menu--grid--desayuno">
       <app-product [product]='product'
       *ngFor="let product of product"></app-product>
     </div>
