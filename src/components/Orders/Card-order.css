@@ -1,0 +1,12 @@
+.order{
+    background-color: white;
+    width: 20rem;
+    height: 16rem;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.btn-entregar{
+    display: flex;
+
+}

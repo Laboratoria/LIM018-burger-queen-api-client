@@ -36,7 +36,7 @@ export const Login = () => {
             fetch(`${API_URL}${authPath}`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(data)
+                body: JSON.stringify(data) // convierte js a json
             })
             .then((res) => {
                 /* console.log(res.status); */

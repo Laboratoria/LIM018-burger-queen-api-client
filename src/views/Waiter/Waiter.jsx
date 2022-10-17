@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { MenuButton } from "../../components/Buttons/Button";
 import { CardMenu } from "../../components/Card/Card";
+import { useNavigate } from 'react-router-dom';
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import getProducts from "../../api_functions/getProducts";
@@ -8,7 +9,12 @@ import trashCan from "../../Images/delete.png"
 import logOut from "../../Images/logout.png"
 
 export const WaiterView = () => {
-   
+
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        navigate("/orders")
+    }
+
     const [menu, setMenu] = useState("breakfast");
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
 
@@ -56,13 +62,17 @@ export const WaiterView = () => {
     //     // console.log(arrayOfOrder, 'array orden')
     // }
 
-   // productos unicos según id (no repetidos)
-  const uniqueProduct = (id) => {
+    // productos unicos según id (no repetidos)
+    const uniqueProduct = (id) => {
     const unique = arrayOfOrder.find((obj) => obj.id === id);
+    /* console.log(arrayOfOrder, 'array de ordenes') */
+    /* console.log(unique, 'unico') */
     return unique;
-  };
-  // función del boton +
-  const addProduct = (type) => {
+    };
+
+    // función del boton +
+    const addProduct = (type) => {
+        /* console.log(type , 'tipo') */
       if (uniqueProduct(type.id)) {
         const addQtyPrice = arrayOfOrder.map((order) => {
             if (order.id === type.id) {
@@ -74,8 +84,9 @@ export const WaiterView = () => {
           })
         setArrayOfOrder(addQtyPrice);
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
-  };
-  console.log(arrayOfOrder, 'arrayorder');
+    };
+
+    /* console.log(arrayOfOrder, 'arrayorder'); */
     let total = 0    
     arrayOfOrder.map((item) => {
         total += item.price
@@ -84,14 +95,13 @@ export const WaiterView = () => {
 
 
     return (
-        
         <section className="waiter">
-            <header className="header">
+            {/* <header className="header">
                 <h1 className="burger">BURGER QUEEN</h1>
                 <button className="btn-header active">Menú</button>
-                <button className="btn-header">Ver pedidos</button>
+                <button className="btn-header" onClick={handleSubmit}>Ver pedidos</button>
                 <img src={logOut} alt="logOut" className="log-out" />
-            </header>
+            </header> */}
 
             <div className="content-waiter">
                 <div className="container-menu">
@@ -169,8 +179,7 @@ export const WaiterView = () => {
                     </div>  
                 </div>
             </div>    
-            <div className="back-blur">    
-            </div>
+            <div className="back-blur"></div>
         </section>
     );
 }
