@@ -2,7 +2,7 @@ p{
   margin: 0;
 }
 button {
-  background: rgba(1, 149, 125, 1);
+  background: #01957D;
   border-radius: 6px;
   padding: 5px 30px;
   text-align: center;
@@ -22,7 +22,7 @@ button {
 
  .card:hover {
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.623);
-  background-color: #4bb8ff;
+  background-color: #cc9328;
  }
 
  .card .blob {
@@ -30,7 +30,7 @@ button {
   width: 75%;
   border-radius: 0 0 30px 30px;
   margin: 0 auto;
-  background-color: #4bb8ff;
+  background-color: #01957D;
   visibility: visible;
   transition: all 0.3s;
  }
@@ -38,18 +38,21 @@ button {
  .card:hover .blob {
   height: 0;
  }
-
  .card .img {
   display: flex;
   margin: 30px auto 10px auto;
   width: 70px;
   height: 70px;
-  background-color: #4bb8ff;
+  background-color: #01957D;
   border-radius: 50%;
   font-size: 11px;
   justify-content: center;
   align-items: center;
   transition: all 0.5s;
+ }
+ .imgBox{
+  width: 100%;
+  border-radius: 50%;
  }
 
  .card:hover .img {
@@ -95,4 +98,12 @@ button {
   left: 35px;
   opacity: 1;
   transition: all 0.1s;
+ }
+
+
+
+
+
+ .icon{
+  background-color: #000000;
  }

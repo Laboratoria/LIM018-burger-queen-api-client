@@ -1,14 +1,21 @@
 
 <app-cabecera> </app-cabecera>
-
+<p>la cantidad de elementos seleccionados {{myorder.length}}</p>
+<p>
+  total: ${{total}}
+</p>
 <div class="show-mobile">
   <div class="content">
     <div class="menu--options">
-      <button>Desayuno</button>
+      <button (click)=" mostrarOcultar()">Desayuno</button>
       <button>Almuerzo</button>
     </div>
-    <div class="menu--grid">
-      <app-product [product]='product' *ngFor="let product of product"></app-product>
+    <div *ngIf="mostrar" class="menu--grid">
+      <app-product
+      [product]='product'
+       *ngFor="let product of product"
+      (addPRoduct)="onAddToOrder($event)"
+      ></app-product>
     </div>
   </div>
   <div class="footer">
@@ -19,10 +26,11 @@
 <div class="hide-mobile">
   <div class="content">
     <div class="menu--options">
-      <button>Desayuno</button>
+      <button >Desayuno</button>
     </div>
     <div class="menu--grid--desayuno">
-      <app-product [product]='product' *ngFor="let product of product"></app-product>
+      <app-product [product]='product'
+      *ngFor="let product of product"></app-product>
     </div>
     <div class="menu--options">
       <button>Almuerzo y cenas</button>
