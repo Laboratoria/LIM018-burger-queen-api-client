@@ -1,23 +1,24 @@
 .btn-menu{
     width: 11rem;
     height: 2.2rem;
-    background-color: var(--beige);
-    color: var(--black);
+    background-color: var(--black);
+    color: var(--white);
     font-size: 15px;
     font-weight: 600;
     border-radius: 5px;
     border-style: none;
+    cursor: pointer;
 }
 
-.btn-menu:active{
+/* .btn-menu:active{
     background-color: var(--orange);
-}
+} */
 
 .bg-orange{
     background-color: var(--orange);
 }
 
-.bg-lightBeige{
-    background-color: rgba(232, 177, 105, 1);
+.bg-brown{
+    background-color: var(--brown);
     width: 9rem;
 }

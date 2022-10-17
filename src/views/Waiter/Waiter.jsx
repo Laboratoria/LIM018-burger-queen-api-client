@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import { MenuButton } from "../../components/Buttons/Button";
 import { CardMenu } from "../../components/Card/Card";
-import './Waiter.css';
-import '../../components/Buttons/Button.css';
+import Header from "../../components/Header/Header";
 import getProducts from "../../api_functions/getProducts";
 import trashCan from "../../Images/delete.png"
-import logOut from "../../Images/logout.png"
+import './Waiter.css';
+import '../../components/Buttons/Button.css';
 
 export const WaiterView = () => {
    
@@ -86,18 +86,13 @@ export const WaiterView = () => {
     return (
         
         <section className="waiter">
-            <header className="header">
-                <h1 className="burger">BURGER QUEEN</h1>
-                <button className="btn-header active">Menú</button>
-                <button className="btn-header">Ver pedidos</button>
-                <img src={logOut} alt="logOut" className="log-out" />
-            </header>
-
+            <Header activeMenu = "active" />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
                         <MenuButton 
-                        title='Desayuno' 
+                        title='Desayuno'
+                        bg= "bg-orange" 
                         changeType = {()=>setMenu("breakfast")}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
@@ -107,15 +102,15 @@ export const WaiterView = () => {
                         <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
-                            bg = "bg-lightBeige" 
+                            bg = "bg-orange" 
                             changeType= {()=>setMenu("dinner")}/>  {/* función onClick */}
                             <MenuButton 
                             title='Extras' 
-                            bg = "bg-lightBeige" 
+                            bg = "bg-brown" 
                             changeType = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
-                            bg = "bg-lightBeige" 
+                            bg = "bg-brown" 
                             changeType = {()=>setMenu("drinks")} />
                         </nav>
                         {filteredProducts(menu)}
@@ -164,13 +159,12 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange"/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" />
                         </div>
                     </div>  
                 </div>
             </div>    
-            <div className="back-blur">    
-            </div>
+            <div className="back-blur"></div>
         </section>
     );
 }

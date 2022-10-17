@@ -92,6 +92,7 @@ label{
     border: none;
     background-color: var(--beige);
     margin: 10px;
+    font-size: 0.9rem;
 }
 
 .buttonIniciar{
