@@ -1,30 +1,34 @@
 
 <app-cabecera> </app-cabecera>
-<p>la cantidad de elementos seleccionados {{myorder.length}}</p>
-<p>
-  total: ${{total}}
-</p>
-<div class="show-mobile">
-  <div class="content">
-    <div class="menu--options">
-      <button (click)=" mostrarOcultar()">Desayuno</button>
-      <button>Almuerzo</button>
-    </div>
-    <div *ngIf="mostrar" class="menu--grid">
-      <app-product
-      [product]='product'
-       *ngFor="let product of product"
-      (addPRoduct)="onAddToOrder($event)"
-      ></app-product>
+<section>
+  <p>la cantidad de elementos seleccionados {{myorder.length}}</p>
+  <p>
+    total: ${{total}}
+  </p>
+  <div class="show-mobile">
+    <main class="content">
+      <div class="menu--options">
+        <button (click)=" mostrarOcultar()">Desayuno</button>
+        <button>Almuerzo</button>
+      </div>
+      <div *ngIf="mostrar" class="menu--grid">
+        <app-product
+        [product]='product'
+        *ngFor="let product of product"
+        (addPRoduct)="onAddToOrder($event)"
+        ></app-product>
+      </div>
+    </main>
+    <div class="footer">
+      <p> Desarrollado por ##### 2022</p>
     </div>
   </div>
-  <div class="footer">
-    <p> Desarrollado por ##### 2022</p>
-  </div>
-</div>
+</section>
+
 
 <div class="hide-mobile">
   <div class="content">
+
     <div class="menu--options">
       <button  (click)=" mostrarOcultar()">Desayuno</button>
     </div>
@@ -32,13 +36,15 @@
       <app-product [product]='product'
       *ngFor="let product of product"></app-product>
     </div>
+
     <div class="menu--options">
-      <button>Almuerzo y cenas</button>
+      <button (click)=" mostrarOcultar()">Almuerzo y cenas</button>
     </div>
-    <div class="menu--grid--almuerzo">
+    <div *ngIf="mostrar" class="menu--grid--almuerzo">
       <app-product [product]='product' *ngFor="let product of product"></app-product>
     </div>
   </div>
+
   <div class="footer">
     <p> Desarrollado por ##### 2022</p>
   </div>
