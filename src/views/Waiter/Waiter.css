@@ -175,7 +175,11 @@ tr{
     align-items: center;
 }
 
+/* Orders */
 
-
-
-
+.content-order{
+    background-color: rgba(224, 192, 151, 0.7);
+    height: 40rem;
+    display: flex;
+    border-radius: 10px;
+}

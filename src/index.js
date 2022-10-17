@@ -3,6 +3,7 @@ import ReactDOM  from "react-dom/client";
 import { Login } from "./views/Login/Login";
 import { WaiterView } from "./views/Waiter/Waiter";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import Orders from "./views/Waiter/Orders";
 
 
 const rootElement = document.getElementById('root');
@@ -14,6 +15,7 @@ root.render(
         <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/menu" element={<WaiterView />} />
+            <Route path="/orders" element={<Orders />} />
         </Routes>
     </BrowserRouter>
 
