@@ -90,7 +90,7 @@
       },
       {
         "id": "012",
-        "name": "Bebida/gaseosa 500ml",
+        "name": "Gaseosa 500ml",
         "price": 7,
         "image": "https://user-images.githubusercontent.com/105660480/194973855-2c03401b-4965-4bdc-9532-8768fd5f2330.png",
         "type": "Acompañamiento",
@@ -112,7 +112,7 @@
         "client": "Gabriela",
         "products": [
           {
-            "qyt": 1,
+            "quantity": 1,
             "product": "Café americano"
           }
         ],
@@ -126,11 +126,11 @@
         "client": "Carolina",
         "products": [
           {
-            "qyt": 1,
+            "quantity": 1,
             "product": "Botella de agua"
           },
           {
-            "qyt": 2,
+            "quantity": 2,
             "product": "Hamburguesa doble"
           }
         ],

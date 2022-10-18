@@ -3,7 +3,7 @@ import add from "../img/add.png";
 
 function Card({ product, onAddButtonClick }) {
   return (
-    <div key={product.id} className={style.productCard}>
+    <div className={style.productCard}>
       <img src={product.image} alt={product.name} className={style.imgBreak} />
       <p>{product.name} </p>
       <div className={style.addContainer}>
