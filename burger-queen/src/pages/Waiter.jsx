@@ -10,42 +10,57 @@ export default function Waiter() {
   const [products, setProducts] = useState([]);
   const [type, setType] = useState("Breakfast");
   const [order, setOrder] = useState([]);
-  //const [counter, setCounter] = useState(1)
 
   useEffect(() => {
     peticionHTTP(setProducts);
   }, []);
 
-  // Carpeta por componente donde combine su hoja de estilos y estructura
   const filteredProducts = products.filter((product) => product.type === type);
-
-  const addProducts = (product) => {
-    const uniqueProduct = (id) => {
+  
+  const uniqueProduct = (id) => {
       const unique = order.find((obj) => obj.id === id);
       return unique;
     };
 
+  const addProducts = (product) => {
+
     if (uniqueProduct(product.id)) {
-      const addQtyPrice = order.map((order) => {
-        if (order.id === product.id) {
-          const newOrder = order;
-          newOrder.qty += 1;
-          newOrder.price = product.price * newOrder.qty;
+      const addQtyPrice = order.map((item) => {
+        if (item.id === product.id) {
+          const newOrder = item;
+          newOrder.quantity += 1;
+          newOrder.price = product.price * newOrder.quantity;
         }
-        return order;
-      })
+        return item;
+      });
       setOrder(addQtyPrice);
-    } else setOrder([...order, { ...product, qty: 1 }]);
-
-    console.log(order, 'arrayorder');
-
+    } else setOrder([...order, { ...product, quantity: 1 }]);
+    //console.log(order, "arrayorder");
   };
 
-  let total = 0
+  const deleteItem = (product) => {
+    if(uniqueProduct(product.id)){
+      const deleteProd= order.map(obj => {
+        if(obj.id === product.id){
+          const item = obj;
+          if(item.quantity > 1) {
+            item.quantity--;
+            item.price -= product.price
+          } if (item.quantity === 1) {
+            order.filter(elem => elem.id !==item.id)
+          }
+        } 
+        return obj
+      })
+      setOrder(deleteProd)
+    } else setOrder([...order, { ...product, quantity: 1 }]);
+   };
+
+  let total = 0;
   order.map((item) => {
-    total += item.price
+    total += item.price;
     return total;
-  })
+  });
 
   return (
     <>
@@ -67,10 +82,14 @@ export default function Waiter() {
         </ul>
         <div className={style.menuContainer}>
           {filteredProducts.map((product) => (
-            <Card product={product} onAddButtonClick={addProducts} />
+            <Card
+              product={product}
+              key={product.id}
+              onAddButtonClick={addProducts}
+            />
           ))}
         </div>
-        <OrderSheet items={order} total={total} />
+        <OrderSheet items={order} total={total} onDeleteItem={deleteItem} />
       </div>
     </>
   );

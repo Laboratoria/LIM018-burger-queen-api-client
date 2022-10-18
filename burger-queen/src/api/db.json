@@ -112,7 +112,7 @@
         "client": "Gabriela",
         "products": [
           {
-            "qyt": 1,
+            "quantity": 1,
             "product": "Café americano"
           }
         ],
@@ -126,11 +126,11 @@
         "client": "Carolina",
         "products": [
           {
-            "qyt": 1,
+            "quantity": 1,
             "product": "Botella de agua"
           },
           {
-            "qyt": 2,
+            "quantity": 2,
             "product": "Hamburguesa doble"
           }
         ],
