@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,8 @@ export class LoginComponent {
   @Output() loaded = new EventEmitter<string>();
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   login() {
@@ -24,6 +27,7 @@ export class LoginComponent {
       this.token = rta.token;
       console.log('load hijo');
       this.loaded.emit(this.token);
+      this.router.navigate(['/home'])
     });
   }
 
