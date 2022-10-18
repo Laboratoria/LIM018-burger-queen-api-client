@@ -26,13 +26,13 @@ export default function Waiter() {
     };
 
     if (uniqueProduct(product.id)) {
-      const addQtyPrice = order.map((order) => {
-        if (order.id === product.id) {
-          const newOrder = order;
+      const addQtyPrice = order.map((item) => {
+        if (item.id === product.id) {
+          const newOrder = item;
           newOrder.qty += 1;
           newOrder.price = product.price * newOrder.qty;
         }
-        return order;
+        return item;
       })
       setOrder(addQtyPrice);
     } else setOrder([...order, { ...product, qty: 1 }]);
