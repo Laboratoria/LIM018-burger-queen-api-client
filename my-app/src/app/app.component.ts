@@ -1,7 +1,5 @@
 import { NgIfContext } from '@angular/common';
-import { Component } from '@angular/core';
-
-import { AuthService } from './services/auth.service';
+import { Component} from '@angular/core';
 import { UsersService } from './services/users.service';
 
 @Component({
@@ -11,17 +9,22 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent {
   title = 'my-app';
+  token = '';
 
   constructor(
-    private authService: AuthService,
     private usersService: UsersService
   ) {
 
   }
 
+  onLoaded(token: string) {
+    console.log('loadPadre', token);
+    this.token = token;
+  }
+
   createUser() {
-    this.usersService.create({
-      name: 'Sebas',
+    this.usersService.create(this.token,{
+      name: 'Stefani',
       email: 'iam@fakel.lol',
       password: 'apasswordtochange'
     })
@@ -30,48 +33,4 @@ export class AppComponent {
     });
   }
 
-  login() {
-    this.authService.login("iam@fakel.lol", "apasswordtochange")
-    .subscribe(rta => {
-      console.log(rta.token);
-    });
-  }
-
-
-
-
-
-  // product : Product = {
-  //   id:'1',
-  //   name: "cafe con leche",
-
-  //   price: 10,
-  //   img: './assets/icons/icon.png'
-  // }
-
-  // {
-  //   id:'2',
-  //   name: "cafe americano",
-  //   price: 20,
-  //   img: 'https://www.splenda.com/wp-content/themes/bistrotheme/assets/recipe-images/cafe-con-leche.jpg'
-  // }
-
-  // newName = '';
-  // toggleButton(){
-  //   this.btndisable = !this.btndisable;
-  // }
-  // ageChange(){
-  //   this.person.age += 1
-  // }
-  // // changeName(event:Event){
-  // //   const elemet = event.target as HTMLInputElement;
-  // //   this.person.name = elemet.value;
-  // // }
-  // deleteName(index: number){
-  //   this.names.splice(index,1)
-  // }
-  // addName(){
-  //   this.names.push(this.newName);
-  //   this.newName = '';
-  // }
 }
