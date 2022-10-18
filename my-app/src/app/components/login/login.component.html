@@ -3,10 +3,10 @@
     <img class="logoKrusty" src="../assets/imagenes/krostys-logo.png" alt="logoKrusty">
   </div>
   <div class="inputComponent">
-    <input type="text" placeholder="example@gmail.com">
+    <input type="text" [(ngModel)]="email">
     <br>
-    <input type="text" placeholder=".................">
+    <input type="text" [(ngModel)]="password">
     <br>
-    <button > logeando </button>
+    <button (click) = "login()"> logeando </button>
   </div>
 </section>

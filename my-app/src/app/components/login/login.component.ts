@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  token = ''
+  email = 'iam@fakel.lol'
+  password = 'apasswordtochange'
 
-  constructor() { }
+  @Output() loaded = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  constructor(
+    private authService: AuthService
+  ) { }
+
+  login() {
+    this.authService.login(this.email, this.password)
+    .subscribe(rta => {
+      console.log(rta.token);
+      this.token = rta.token;
+      console.log('load hijo');
+      this.loaded.emit(this.token);
+    });
   }
 
 }
+
