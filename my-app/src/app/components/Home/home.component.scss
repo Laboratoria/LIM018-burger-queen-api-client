@@ -6,11 +6,19 @@ section{
   display: block;
   .takeOrder{
     // display: flex;
-    width: 90%;
+    // width: 100%;
     height: auto;
     border-radius: 10px;
     background-color: #01957D;
-    padding: 5px;
+    margin: 10px 0;
+    .inputName{
+      padding: 2px 0;
+      font-size: 20px;
+      margin: 0;
+      p{
+        margin: 10px;
+      }
+    }
     .orders{
       display: flex;
       flex-direction: row;
