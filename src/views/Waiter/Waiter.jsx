@@ -66,8 +66,20 @@ export const WaiterView = () => {
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
     };
 
-    const subsProduct = () => {
-        
+    const subsProduct = (type) => {
+        if(uniqueProduct(type.id)){
+          const susQtyPrice = arrayOfOrder.map((order) => {
+            if(order.id === type.id){ // order existe , type viene cuando doy click (-)
+                const newOrder = order;
+                if(newOrder.qty > 1){
+                    newOrder.qty -= 1;
+                    newOrder.price = type.price * newOrder.qty;
+                }
+            }
+            return order;
+        })
+        setArrayOfOrder(susQtyPrice);
+        }
     }
     /* console.log(arrayOfOrder, 'arrayorder'); */
     let total = 0    
@@ -75,6 +87,12 @@ export const WaiterView = () => {
         total += item.price
         return total; 
     })
+
+    const removeProduct = (obj)=> {
+        const arrayWhithoutProduct = arrayOfOrder.filter((item)=> item.id !== obj.id )
+        setArrayOfOrder(arrayWhithoutProduct)
+    }
+    console.log(arrayOfOrder, 'array inicial');
 
 
     return (
@@ -112,9 +130,15 @@ export const WaiterView = () => {
 
                 <div className="container-menu">
                     <div className="nav-menu">
-                        <label>Cliente
+                        <div>
+                            <label>Cliente</label>
                             <input type="text"/>
-                        </label>
+                        </div>
+                        <div>
+                            <label>Mesa</label>
+                            <input type="text"/>
+                        </div>
+                       
                     </div>
                     <div className="container-orders mg-top">
                             <table>
@@ -139,7 +163,7 @@ export const WaiterView = () => {
                                             <td>{order.qty}</td>
                                             <td>{`S/. ${order.price}`}</td>
                                             <td>
-                                                <button className="btn-delete">
+                                                <button className="btn-delete"  onClick={()=>removeProduct(order)}>
                                                 <img className="img-trash" src={trashCan} alt="trash can" />
                                                 </button>
                                             </td>
