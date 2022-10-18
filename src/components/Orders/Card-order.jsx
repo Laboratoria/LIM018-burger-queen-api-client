@@ -9,7 +9,7 @@ export const CardOrder = (props) => {
     return (
         <>
             
-                <div className="order" key={props.dataId}>
+                <div className="order">
                     <div className="date-zone">
                         <h4>Fecha: 10/10/22</h4>
                         <h4>Cliente: {props.client}</h4>
@@ -29,13 +29,13 @@ export const CardOrder = (props) => {
 
                         <table>
                             <tbody>
-                            {props.products.map((product, index) => {
-                                const totalProduct = product.qty*product.product.price
+                            {props.products.map((prod, index) => {
+                                const totalProduct = prod.qty*prod.product.price
                                 total+=totalProduct
                                 return (
                                         <tr key={index}>
-                                            <th>{product.qty}</th>
-                                            <th>{product.product.name}</th>
+                                            <th>{prod.qty}</th>
+                                            <th>{prod.product.name}</th>
                                             <th>{totalProduct}</th>
                                         </tr>
                                 )

@@ -17,7 +17,7 @@ export default function Orders() {
             <Header path="/menu" orderActive="active"/>
             <div className="content-order">
                 {orders.map((order, i) => {
-                    return (<CardOrder dataId={i} client={order.client} products={order.products} />)
+                    return (<CardOrder key={i} client={order.client} products={order.products} />)
                   })  
                 }
             </div>
