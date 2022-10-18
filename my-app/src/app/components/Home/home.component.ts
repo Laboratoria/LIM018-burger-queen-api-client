@@ -9,32 +9,32 @@ import { ProductsService } from '../../services/products.service'
 })
 export class homeComponent implements OnInit {
 
-  product: Product[] =[
-    {
-      "id": "1",
-      "name": "Café americano",
-      "price": 5,
-      "image": "",
-      "type": "breakfast",
-      "dateEntry": ""
-    },
-    {
-      "id": "2",
-      "name": "Café con leche",
-      "price": 7,
-      "image": "",
-      "type": "breakfast",
-      "dateEntry": ""
+  myorder: Product[] = []; // se pone privado para proteger la accecibilidad
+  total = 0;
+  product: Product[] =[]
+  //
+
+  mostrar : Boolean = false;
+  mostrarOcultar(){
+    if(this.mostrar){
+      this.mostrar= false;
+    }else {
+      this.mostrar= true;
     }
-  ]
-
-  constructor( private ProductsService : ProductsService) { }
-
+  }
+  constructor( private productsService : ProductsService) {
+    this.myorder = this.productsService.getmyOrder();
+  }
+//pata manejar peticiones asincronas
   ngOnInit(): void {
-    this.ProductsService.getAllProducts()
+    this.productsService.getAllProducts()
     .subscribe(data=>{
-      console.log( data)
+      this.product=  data
     })
   }
 
+  onAddToOrder(product: Product){
+    this.productsService.addProduct(product);
+    this.total = this.productsService.getTotal();
+  }
 }
