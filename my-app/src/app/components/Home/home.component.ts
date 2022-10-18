@@ -38,12 +38,12 @@ export class homeComponent implements OnInit {
       this.product=  data
     })
   }
-
+//para agregar los productos y contabilizarlos y calcular el totoal del precio
   onAddToOrder(product: Product){
     this.productsService.addProduct(product);
     this.total = this.productsService.getTotal();
   }
-
+// para poder cambiar el nombreee
   changeName(event:Event){
     console.log(event)
     const element = event.target as HTMLInputElement
