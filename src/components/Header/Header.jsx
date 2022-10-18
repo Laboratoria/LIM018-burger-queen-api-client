@@ -1,24 +1,27 @@
-import logOut from "../../Images/logout.png";
+import logOut from "../../Images/logout.png"
+import { useNavigate } from 'react-router-dom';
 import "./Header.css";
 
-const Header = (prop) => {
-    const activeM = prop.activeMenu;
-    const activeO = prop.activeOrder;
+const Header = (props) => {
+    const path = props.path;
+    const activeM = props.menuActive;
+    const activeO = props.orderActive;
 
+    const navigate = useNavigate();
+    const handleClick = (e) => navigate(path);
     
-    return (
-        <header className="header">
-            <h1 className="burger">BURGER QUEEN</h1>
-          
-            <a href="/menu" className={`btn-header ${activeM}`}>Menú</a>
-            <a href="/orders" className={`btn-header ${activeO}`}>Ver pedidos</a>
-            <a href="/"><img src={logOut} alt="logOut" className="log-out"/></a>
+    const toLogin = () => navigate("/");
 
-        
-            {/* <button className="btn-header active" >Menú</button>
-            <button className="btn-header" >Ver pedidos</button> */}
-            
-        </header>
+
+    return (
+        <>
+            <header className="header">
+                <h1 className="burger">BURGER QUEEN</h1>
+                <button className={`btn-header ${activeM}`} onClick={handleClick}>Menú</button>
+                <button className={`btn-header ${activeO}`}  onClick={handleClick}>Ver pedidos</button>
+                <img src={logOut} alt="logOut" className="log-out" onClick={toLogin}/>
+            </header>
+        </>
     )
 }
 

@@ -10,9 +10,9 @@
     cursor: pointer;
 }
 
-/* .btn-menu:active{
+.active{
     background-color: var(--orange);
-} */
+}
 
 .bg-orange{
     background-color: var(--orange);

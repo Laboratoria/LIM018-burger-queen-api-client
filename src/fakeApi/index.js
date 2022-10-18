@@ -3,6 +3,7 @@ const server = jsonServer.create()
 const router = jsonServer.router('./db.json')
 const middlewares = jsonServer.defaults()
 
+
 const secret = "EsUnSecreto"
 
 server.use(jsonServer.bodyParser)
@@ -31,6 +32,35 @@ server.post('/auth', (req, res) => {
         res.status(400).send('Bad Request')
     }    
 })
+
+server.post('/orders', async (req, res) => {
+  try {
+    const today = new Date();
+    const now = today.toLocaleString();
+    const order = {
+      userId: req.body.userId,
+      client: req.body.client,
+      products: req.body.products,
+      status: 'pending',
+      dateEntry: now,
+    };
+
+    const orders = router.db.get('orders');
+    console.log(orders);
+
+    // console.log(orders.__wrapped__.orders.length);
+    
+    // order.id = orders.__wrapped__.orders.length + 1;
+    const result = await orders.push(order).write();
+    console.log("result", result);
+    res.status(200).jsonp(order);
+
+  } catch(err){
+    res.status(400).send("No se indica Id, o se intenta crear una orden sin productos");
+    res.status(401).send("No hay cabecera de autenticación");
+  }
+});
+
 
 // Para probar sí esta corriendo el servidor
 server.use(router)

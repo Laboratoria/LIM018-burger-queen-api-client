@@ -8,7 +8,9 @@ import './Waiter.css';
 import '../../components/Buttons/Button.css';
 
 export const WaiterView = () => {
-   
+
+    // const navigate = useNavigate();
+    
     const [menu, setMenu] = useState("breakfast");
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
 
@@ -56,13 +58,17 @@ export const WaiterView = () => {
     //     // console.log(arrayOfOrder, 'array orden')
     // }
 
-   // productos unicos según id (no repetidos)
-  const uniqueProduct = (id) => {
+    // productos unicos según id (no repetidos)
+    const uniqueProduct = (id) => {
     const unique = arrayOfOrder.find((obj) => obj.id === id);
+    /* console.log(arrayOfOrder, 'array de ordenes') */
+    /* console.log(unique, 'unico') */
     return unique;
-  };
-  // función del boton +
-  const addProduct = (type) => {
+    };
+
+    // función del boton +
+    const addProduct = (type) => {
+        /* console.log(type , 'tipo') */
       if (uniqueProduct(type.id)) {
         const addQtyPrice = arrayOfOrder.map((order) => {
             if (order.id === type.id) {
@@ -74,8 +80,9 @@ export const WaiterView = () => {
           })
         setArrayOfOrder(addQtyPrice);
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
-  };
-  console.log(arrayOfOrder, 'arrayorder');
+    };
+
+    /* console.log(arrayOfOrder, 'arrayorder'); */
     let total = 0    
     arrayOfOrder.map((item) => {
         total += item.price
@@ -84,9 +91,8 @@ export const WaiterView = () => {
 
 
     return (
-        
         <section className="waiter">
-            <Header activeMenu = "active" />
+            <Header path="/orders" menuActive="active"/>
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">

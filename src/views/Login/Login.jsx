@@ -36,7 +36,7 @@ export const Login = () => {
             fetch(`${API_URL}${authPath}`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(data)
+                body: JSON.stringify(data) // convierte js a json
             })
             .then((res) => {
                 /* console.log(res.status); */
@@ -65,12 +65,12 @@ return (
         <div className="content-login">
             <div className="brand">
                 <h1>BURGER QUEEN</h1>
-                <img src= { imgBackground } className= "img-background"/>
+                <img src= {imgBackground} className= "img-background"/>
             </div>
 
             <form className="content-form" onSubmit={handleSubmit}>
                 <picture>
-                    <img src = { logo } className = "logo"/>
+                    <img src = {logo} className = "logo"/>
                 </picture>
 
                 <div className="bienvenido">¡BIENVENIDO(A)!</div>
