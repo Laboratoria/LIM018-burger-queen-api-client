@@ -35,29 +35,13 @@ export const WaiterView = () => {
                     key = {type.id} 
                     id = {type.id}
                     price = {`S/. ${type.price}`} 
-                    adding = {() => {addProduct(type)}}  
+                    adding = {() => addProduct(type)}
+                    substracting = {() => subsProduct(type)}  
                     />)
             })
             return cards;
     }
-
  
-    // Función para añadir productos a la orden
-    // const addProduct = (type) => {
-    //     console.log(arrayOfOrder);
-    //     const newOrder = {
-    //         id: type.id ,
-    //         name: type.name,
-    //         price: type.price,
-    //         qty: 1
-    //     }
-    //     // console.log(type);
-    //     arrayOfOrder.push(newOrder)
-        
-    //     setArrayOfOrder([...arrayOfOrder])
-    //     // console.log(arrayOfOrder, 'array orden')
-    // }
-
     // productos unicos según id (no repetidos)
     const uniqueProduct = (id) => {
     const unique = arrayOfOrder.find((obj) => obj.id === id);
@@ -82,6 +66,9 @@ export const WaiterView = () => {
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
     };
 
+    const subsProduct = () => {
+        
+    }
     /* console.log(arrayOfOrder, 'arrayorder'); */
     let total = 0    
     arrayOfOrder.map((item) => {
