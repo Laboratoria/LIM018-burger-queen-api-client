@@ -1,10 +1,10 @@
 
 <app-cabecera> </app-cabecera>
 <section>
-  <p>la cantidad de elementos seleccionados {{myorder.length}}</p>
-  <p>
-    total: ${{total}}
-  </p>
+  <p>la cantidad de elementos seleccionados {{myorder.length}} </p>
+
+  <p>Ingrese el nombre del cliente:<input type="text" [value]="name"  (keyup)="changeName($event)"></p>
+
   <div class="show-mobile">
     <main class="content">
       <div class="menu--options">
@@ -19,6 +19,24 @@
         ></app-product>
       </div>
     </main>
+
+    <section class="takeOrder">
+      <div class="inputName">
+        <p> El nombre del cliente es: <strong>{{name}}</strong></p>
+        <p>la cantidad de elementos seleccionados {{myorder.length}} </p>
+      </div>
+      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
+      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
+      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
+      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
+
+      <div class="totalOrder">
+        <strong class="totalPrice">total: ${{total}}</strong>
+        <button class="cocinaButton">Enviar a cocina</button>
+      </div>
+
+    </section>
+
     <div class="footer">
       <p> Desarrollado por ##### 2022</p>
     </div>

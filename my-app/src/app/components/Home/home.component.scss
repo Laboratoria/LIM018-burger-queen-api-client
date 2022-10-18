@@ -4,6 +4,45 @@ section{
 }
 .show-mobile{
   display: block;
+  .takeOrder{
+    // display: flex;
+    // width: 100%;
+    height: auto;
+    border-radius: 10px;
+    background-color: #01957D;
+    margin: 10px 0;
+    .inputName{
+      padding: 2px 0;
+      font-size: 20px;
+      margin: 0;
+      p{
+        margin: 10px;
+      }
+    }
+    .orders{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background-color: rgba(184, 217, 138, 1);
+      margin: 5px 4px;
+      border-radius: 5px;
+    }
+    .totalOrder{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      .totalPrice{
+        font-size: 40px;
+        margin: 10px;
+      }
+      .cocinaButton{
+        background-color: #EF5F2B;
+        height: 45px;
+        border-radius: 10px;
+      }
+    }
+  }
   .content{
     padding: 1em;
     height: 50%;
@@ -21,6 +60,7 @@ section{
       grid-gap: 15px;
       padding-bottom: 1em;
     }
+
   }
   .footer{
     background: rgba(184, 217, 138, 1);

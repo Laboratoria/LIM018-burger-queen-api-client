@@ -7,7 +7,7 @@ import {Product} from '../../models/products.model';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-
+  //los productos que estoy llamando
   @Input() product: Product = {
     id: '',
     price: 0,
@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // añadiendo los productos al contador de productos
   onAddToCart(){
     this.addPRoduct.emit(this.product)
   }

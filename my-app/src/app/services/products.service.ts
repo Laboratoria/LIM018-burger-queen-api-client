@@ -13,7 +13,7 @@ export class ProductsService {
    }
 
    //obteniendo los productos
-  addProduct(product:Product){
+  addProduct(product: Product){
     this.myorder.push(product)
   }
   // poniendo en privado my order por seguridad, y con esta funcion la llamammos
