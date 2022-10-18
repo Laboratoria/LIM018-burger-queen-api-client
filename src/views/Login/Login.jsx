@@ -65,12 +65,12 @@ return (
         <div className="content-login">
             <div className="brand">
                 <h1>BURGER QUEEN</h1>
-                <img src= { imgBackground } className= "img-background"/>
+                <img src= {imgBackground} className= "img-background"/>
             </div>
 
             <form className="content-form" onSubmit={handleSubmit}>
                 <picture>
-                    <img src = { logo } className = "logo"/>
+                    <img src = {logo} className = "logo"/>
                 </picture>
 
                 <div className="bienvenido">¡BIENVENIDO(A)!</div>

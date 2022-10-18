@@ -1,9 +1,9 @@
-const API_URL = "http://localhost:3001";
+const BASE_URL = "http://localhost:3001";
 const productPath = '/products';
 const token = localStorage.getItem("token");
 
 const getProducts = async (newState) => {
-    const res = await fetch(`${API_URL}${productPath}`, {
+    const res = await fetch(`${BASE_URL}${productPath}`, {
         method: "GET",
         headers: {
             "Content-type": "application/json;charset=UTF-8",

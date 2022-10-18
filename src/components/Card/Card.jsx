@@ -17,7 +17,7 @@ export const CardMenu = (props) => {
                 </div>
                 <div className="item-controller">
                     <button data-id= {dataId} className="counter" onClick={addProduct}>+</button>
-                    <p>{price}</p>
+                    <p className="money">{price}</p>
                     <button className="counter" onClick={removeProduct}>-</button>
                 </div>
             </div>

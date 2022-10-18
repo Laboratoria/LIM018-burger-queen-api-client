@@ -1,12 +1,23 @@
 .order{
     background-color: white;
     width: 20rem;
-    height: 16rem;
+    height: 20rem;
     margin: 10px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .btn-entregar{
     display: flex;
-
+    justify-content: center;
 }
+
+p{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+

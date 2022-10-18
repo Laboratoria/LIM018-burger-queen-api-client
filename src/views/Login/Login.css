@@ -92,14 +92,16 @@ label{
     border: none;
     background-color: var(--beige);
     margin: 10px;
+    font-size: 0.9rem;
 }
 
 .buttonIniciar{
+    background-color: #B85C38;
+    color: var(--white);
     height: 3rem;
     width: 18rem;
     border-radius: 0.5rem;
     border: none;
-    background-color: #B85C38;
     margin: 10px;
     font-size: 1.2rem;
 }

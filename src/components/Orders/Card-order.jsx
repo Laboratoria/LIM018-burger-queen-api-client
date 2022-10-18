@@ -2,57 +2,58 @@ import "./Card-order.css"
 import { MenuButton } from "../../components/Buttons/Button";
 
 
-export const CardOrder = () => {
+export const CardOrder = (props) => {
+
+    let total = 0
 
     return (
         <>
-            <div className="content-order">
-                <div className="order">
+            
+                <div className="order" key={props.dataId}>
                     <div className="date-zone">
                         <h4>Fecha: 10/10/22</h4>
-                        <h4>Cliente: Caro</h4>
+                        <h4>Cliente: {props.client}</h4>
                         <h4>Hora: 5:00 pm</h4>
                     </div>
 
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Cant</th>
-                                <th>Descripción</th>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Cant</th>
+                                    <th>Descripción</th>
+                                    <th>Precio S/.</th>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>3</th>
-                                <th>Café con leche</th>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <th>Hambuguesa de pollo</th>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <th>Jugo de frutas</th>
-                            </tr>
-                            ____________________________________
-
-                            <tr>
-                                <th></th>
-                                <th>TOTAL S/ 25</th>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                        <table>
+                            <tbody>
+                            {props.products.map((product, index) => {
+                                const totalProduct = product.qty*product.product.price
+                                total+=totalProduct
+                                return (
+                                        <tr key={index}>
+                                            <th>{product.qty}</th>
+                                            <th>{product.product.name}</th>
+                                            <th>{totalProduct}</th>
+                                        </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    ____________________________________
+                       <p>TOTAL S/. {total}</p>     
+                    </div>
                     <div className="btn-entregar">
                         <MenuButton
                         title = "Entregar" bg="bg-orange"
                         />
                     </div>
                 </div>
-            </div>
+           
         </>
     )
 }

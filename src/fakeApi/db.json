@@ -97,6 +97,87 @@
       "dateEntry":"",
       "menu": "dinner"
     }
-    
+  ],
+  "orders": [
+    {
+      "userId": "123",
+      "client": "Caro",
+      "products": [
+        {
+          "qty": 3,
+          "product": {
+            "id": 2,
+            "name": "Café con leche",
+            "price": 7,
+            "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+            "type": "breakfast",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 2,
+          "product": {
+            "id": 10,
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
+            "type": "dinner",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 3,
+            "name": "Jugo Natural",
+            "price": 7,
+            "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
+            "type": "breakfast",
+            "dateEntry": ""
+          }
+        }
+      ],
+      "order.status": "pending"
+    },
+    {
+      "userId": "1234",
+      "client": "Caro",
+      "products": [
+        {
+          "qty": 3,
+          "product": {
+            "id": 2,
+            "name": "Café con leche",
+            "price": 7,
+            "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+            "type": "breakfast",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 2,
+          "product": {
+            "id": 10,
+            "name": "Hamburguesa doble",
+            "price": 15,
+            "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
+            "type": "dinner",
+            "dateEntry": ""
+          }
+        },
+        {
+          "qty": 1,
+          "product": {
+            "id": 3,
+            "name": "Jugo Natural",
+            "price": 7,
+            "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
+            "type": "breakfast",
+            "dateEntry": ""
+          }
+        }
+      ],
+      "order.status": "pending"
+    }
   ]
 }

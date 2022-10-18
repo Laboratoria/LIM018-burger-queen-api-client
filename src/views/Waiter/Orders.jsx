@@ -1,32 +1,25 @@
 import React, {useState, useEffect} from "react";
 import { CardOrder } from "../../components/Orders/Card-order";
-import './Waiter.css';
 import '../../components/Buttons/Button.css';
-
-
+import Header from "../../components/Header/Header";
+import getOrders from "../../api_functions/getOrders";
 
 export default function Orders() {
-
-    const navigate = useNavigate();
-    const handleClick = (e) => {
-        navigate("/menu")
-    }
-
   
+    const [orders, setOrders] = useState([]);
+
+    useEffect(() => {
+        getOrders(setOrders)
+    }, [])
+   
     return (
         <section className="waiter">
-            {/* <header className="header">
-                <h1 className="burger">BURGER QUEEN</h1>
-                <button className="btn-header" onClick={handleSubmit}>Menú</button>
-                <button className="btn-header active" >Ver pedidos</button>
-                <img src={logOut} alt="logOut" className="log-out" />
-            </header> */}
-
+            <Header path="/menu" orderActive="active"/>
             <div className="content-order">
-               <CardOrder/>
-               <CardOrder/>
-               <CardOrder/>
-
+                {orders.map((order, i) => {
+                    return (<CardOrder dataId={i} client={order.client} products={order.products} />)
+                  })  
+                }
             </div>
             <div className="back-blur"></div>
         </section>  
