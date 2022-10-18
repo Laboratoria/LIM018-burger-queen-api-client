@@ -2,7 +2,6 @@ import { Component, Output, EventEmitter} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +14,8 @@ export class LoginComponent {
 
   @Output() loaded = new EventEmitter<string>();
 
+
+// tenemos que injectar en el contructor el servicio router
   constructor(
     private authService: AuthService,
     private router: Router
@@ -30,6 +31,4 @@ export class LoginComponent {
       this.router.navigate(['/home'])
     });
   }
-
 }
-

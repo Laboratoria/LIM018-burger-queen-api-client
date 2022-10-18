@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ExpressionType } from '@angular/compiler';
+import { Component, OnInit, Type } from '@angular/core';
 import {Product} from '../../models/products.model'
 import { ProductsService } from '../../services/products.service'
 
@@ -7,14 +8,19 @@ import { ProductsService } from '../../services/products.service'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class homeComponent implements OnInit {
 
+// export class homeComponent{
+//   name : "Stefani";
+// }
+export class homeComponent implements OnInit {
+  name = "Stefani";
   myorder: Product[] = []; // se pone privado para proteger la accecibilidad
   total = 0;
   product: Product[] =[]
   //
   token = '';
 
+ // para mostrar y ocultar con el boton
   mostrar : Boolean = false;
   mostrarOcultar(){
     if(this.mostrar){
@@ -32,15 +38,24 @@ export class homeComponent implements OnInit {
     this.token = token;
   }
 
+//para manejar peticiones asincronas
   ngOnInit(): void {
     this.productsService.getAllProducts(this.token)
     .subscribe(data=>{
+      console.log(data[0].type)
       this.product=  data
     })
   }
-
+//para agregar los productos y contabilizarlos y calcular el totoal del precio
   onAddToOrder(product: Product){
     this.productsService.addProduct(product);
     this.total = this.productsService.getTotal();
   }
+// para poder cambiar el nombreee
+  changeName(event:Event){
+    console.log(event)
+    const element = event.target as HTMLInputElement
+    this.name = element.value
+  }
+
 }
