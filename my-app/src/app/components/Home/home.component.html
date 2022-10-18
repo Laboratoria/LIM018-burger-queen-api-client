@@ -1,5 +1,5 @@
 
-<app-cabecera></app-cabecera>
+<app-cabecera> </app-cabecera>
 
 <div class="show-mobile">
   <div class="content">
@@ -8,7 +8,7 @@
       <button>Almuerzo</button>
     </div>
     <div class="menu--grid">
-      <app-menu [menu]='menu' *ngFor="let menu of menu"></app-menu>
+      <app-product [product]='product' *ngFor="let product of product"></app-product>
     </div>
   </div>
   <div class="footer">
@@ -22,13 +22,13 @@
       <button>Desayuno</button>
     </div>
     <div class="menu--grid--desayuno">
-      <app-menu [menu]='menu' *ngFor="let menu of menu"></app-menu>
+      <app-product [product]='product' *ngFor="let product of product"></app-product>
     </div>
     <div class="menu--options">
       <button>Almuerzo y cenas</button>
     </div>
     <div class="menu--grid--almuerzo">
-      <app-menu [menu]='menu' *ngFor="let menu of menu"></app-menu>
+      <app-product [product]='product' *ngFor="let product of product"></app-product>
     </div>
   </div>
   <div class="footer">
