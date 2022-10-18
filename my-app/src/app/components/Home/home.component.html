@@ -12,7 +12,9 @@
         <button>Almuerzo</button>
       </div>
       <div *ngIf="mostrar" class="menu--grid">
+
         <app-product
+       
         [product]='product'
         *ngFor="let product of product"
         (addPRoduct)="onAddToOrder($event)"

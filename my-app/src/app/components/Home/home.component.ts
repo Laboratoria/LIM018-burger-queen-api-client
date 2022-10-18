@@ -13,6 +13,7 @@ export class homeComponent implements OnInit {
   total = 0;
   product: Product[] =[]
   //
+  token = '';
 
   mostrar : Boolean = false;
   mostrarOcultar(){
@@ -26,8 +27,13 @@ export class homeComponent implements OnInit {
     this.myorder = this.productsService.getmyOrder();
   }
 //pata manejar peticiones asincronas
+  onLoaded(token: string) {
+    console.log('loadPadre', token);
+    this.token = token;
+  }
+
   ngOnInit(): void {
-    this.productsService.getAllProducts()
+    this.productsService.getAllProducts(this.token)
     .subscribe(data=>{
       this.product=  data
     })

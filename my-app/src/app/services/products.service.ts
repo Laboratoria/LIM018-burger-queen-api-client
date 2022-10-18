@@ -25,8 +25,12 @@ export class ProductsService {
     return this.myorder.reduce((sum, item) => sum + item.price, 0)
   }
   //conección con la API
-  getAllProducts(){
-    return this.http.get<Product[]>('http://localhost:3000/products');
+  getAllProducts(token:string){
+    return this.http.get<Product[]>('http://localhost:3000/products',{
+      headers:{
+        Authorization : `Bearer ${token}`,
+    }
+  });
     //<Product[]>: le decimos a la api que queremos que nos traiga el contenigo como []
   }
 }
