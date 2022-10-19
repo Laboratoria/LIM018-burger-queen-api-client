@@ -4,12 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import imgBackground from "../../Images/img-login.jpeg";
 import './Login.css';
+import postUser from "../../api_functions/postUser";
 
 export const Login = () => {
     const navigate = useNavigate();
-    const API_URL= "http://localhost:3001";
-    const authPath = "/auth"; 
-
+   
     // Valor inicial de los inputs ""
     const [data, setData] = useState({
         email : "",
@@ -32,21 +31,12 @@ export const Login = () => {
         if (inputEmail === "" || inputPassword === ""){
             alert('Complete todos los campos');
         } else {
-            /* console.log(data) */
-            fetch(`${API_URL}${authPath}`, {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(data) // convierte js a json
-            })
-            .then((res) => {
-                /* console.log(res.status); */
-                if (res.status === 200) {
+            postUser(data).then((resp) => {
+                // console.log(resp);
+                if (resp) {
                     navigate("/menu");
                 }
-                return res.json() 
-            })
-            .then((resp) => {
-                /* console.log(resp, 'token'); */
+                // console.log(resp, 'token');
                 localStorage.setItem("token", resp.token)
             })
             .catch(err => {
@@ -55,7 +45,7 @@ export const Login = () => {
                 setTimeout(()=>{
                     setErrorMessage('');
                 }, 4000);
-            });               
+            });                           
         }
     }
 

@@ -6,7 +6,6 @@
       "password": "123456"
     }
   ],
-  
   "products": [
     {
       "id": 1,
@@ -14,7 +13,7 @@
       "price": 5,
       "image": "https://cdn-icons-png.flaticon.com/512/590/590749.png",
       "type": "breakfast",
-      "dateEntry":""
+      "dateEntry": ""
     },
     {
       "id": 2,
@@ -22,7 +21,7 @@
       "price": 7,
       "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
       "type": "breakfast",
-      "dateEntry":""
+      "dateEntry": ""
     },
     {
       "id": 3,
@@ -94,91 +93,116 @@
       "price": 5,
       "image": "https://cdn-icons-png.flaticon.com/512/1046/1046786.png",
       "type": "other",
-      "dateEntry":"",
+      "dateEntry": "",
       "menu": "dinner"
     }
   ],
-  
   "orders": [
     {
       "userId": "123",
       "client": "Caro",
+      "dateEntry": "19/10/2022 11:35:19",
       "products": [
         {
           "qty": 3,
-          "product": {
-            "id": 2,
-            "name": "Café con leche",
-            "price": 7,
-            "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
-            "type": "breakfast",
-            "dateEntry": ""
-          }
+          "id": 2,
+          "name": "Café con leche",
+          "price": 7,
+          "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+          "type": "breakfast",
+          "dateEntry": ""
         },
         {
           "qty": 2,
-          "product": {
-            "id": 10,
-            "name": "Hamburguesa doble",
-            "price": 15,
-            "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
-            "type": "dinner",
-            "dateEntry": ""
-          }
+          "id": 10,
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
+          "type": "dinner",
+          "dateEntry": ""
         },
         {
           "qty": 1,
-          "product": {
-            "id": 3,
-            "name": "Jugo Natural",
-            "price": 7,
-            "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
-            "type": "breakfast",
-            "dateEntry": ""
-          }
+          "id": 3,
+          "name": "Jugo Natural",
+          "price": 7,
+          "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
+          "type": "breakfast",
+          "dateEntry": ""
         }
       ],
       "order.status": "pending"
     },
     {
-      "userId": "1234",
+      "userId": "123",
       "client": "Caro",
+      "dateEntry": "19/10/2022 11:35:19",
       "products": [
         {
           "qty": 3,
-          "product": {
-            "id": 2,
-            "name": "Café con leche",
-            "price": 7,
-            "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
-            "type": "breakfast",
-            "dateEntry": ""
-          }
+          "id": 2,
+          "name": "Café con leche",
+          "price": 7,
+          "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+          "type": "breakfast",
+          "dateEntry": ""
         },
         {
           "qty": 2,
-          "product": {
-            "id": 10,
-            "name": "Hamburguesa doble",
-            "price": 15,
-            "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
-            "type": "dinner",
-            "dateEntry": ""
-          }
+          "id": 10,
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
+          "type": "dinner",
+          "dateEntry": ""
         },
         {
           "qty": 1,
-          "product": {
-            "id": 3,
-            "name": "Jugo Natural",
-            "price": 7,
-            "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
-            "type": "breakfast",
-            "dateEntry": ""
-          }
+          "id": 3,
+          "name": "Jugo Natural",
+          "price": 7,
+          "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
+          "type": "breakfast",
+          "dateEntry": ""
         }
       ],
       "order.status": "pending"
+    },
+    {
+      "userId": "",
+      "client": "",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "19/10/2022 11:35:19"
+    },
+    {
+      "userId": "",
+      "client": "",
+      "products": [
+        {
+          "name": "Jugo Natural",
+          "price": 14,
+          "qty": 2
+        },
+        {
+          "name": "Hamburguesa Doble",
+          "price": 30,
+          "qty": 2
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "19/10/2022 12:00:10"
     }
   ]
 }
