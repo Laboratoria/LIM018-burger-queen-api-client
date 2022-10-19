@@ -52,7 +52,7 @@ export const WaiterView = () => {
 
     // función del boton +
     const addProduct = (type) => {
-        /* console.log(type , 'tipo') */
+        console.log(type , 'tipo')
       if (uniqueProduct(type.id)) {
         const addQtyPrice = arrayOfOrder.map((order) => {
             if (order.id === type.id) {

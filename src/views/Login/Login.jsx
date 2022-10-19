@@ -60,46 +60,46 @@ export const Login = () => {
     }
 
     
-return (
-    <section className="login">
-        <div className="content-login">
-            <div className="brand">
-                <h1>BURGER QUEEN</h1>
-                <img src= {imgBackground} className= "img-background"/>
-            </div>
-
-            <form className="content-form" onSubmit={handleSubmit}>
-                <picture>
-                    <img src = {logo} className = "logo"/>
-                </picture>
-
-                <div className="bienvenido">¡BIENVENIDO(A)!</div>
-                <div className="form1">
-                    <label> Usuario </label>
-                        <input type = "email"
-                            className="dataInput"
-                            /* ref={emailRef} // hook para limpiar input */
-                            id="email"
-                            onChange = {(e) => setData({...data, email: e.target.value})}
-                        />
-                  
-                    <label> Contraseña </label>
-                        <input  type = "password"
-                            className="dataInput"
-                            /* ref={passwordRef} // hook para limpiar input */
-                            id="password"
-                            onChange = {(e) => setData({...data, password: e.target.value})}
-                        />
-                  
-                    <p className="input-error">{errorMessage}</p>
-                    <button className="buttonIniciar" type ='submit'>Iniciar sesión</button>
+    return (
+        <section className="login">
+            <div className="content-login">
+                <div className="brand">
+                    <h1>BURGER QUEEN</h1>
+                    <img src= {imgBackground} className= "img-background"/>
                 </div>
-            </form>
-        </div>
-        <div className="back-blur"></div>
 
-    </section>
-)
+                <form className="content-form" onSubmit={handleSubmit}>
+                    <picture>
+                        <img src = {logo} className = "logo"/>
+                    </picture>
+
+                    <div className="bienvenido">¡BIENVENIDO(A)!</div>
+                    <div className="form1">
+                        <label> Usuario </label>
+                            <input type = "email"
+                                className="dataInput"
+                                /* ref={emailRef} // hook para limpiar input */
+                                id="email"
+                                onChange = {(e) => setData({...data, email: e.target.value})}
+                            />
+                    
+                        <label> Contraseña </label>
+                            <input  type = "password"
+                                className="dataInput"
+                                /* ref={passwordRef} // hook para limpiar input */
+                                id="password"
+                                onChange = {(e) => setData({...data, password: e.target.value})}
+                            />
+                    
+                        <p className="input-error">{errorMessage}</p>
+                        <button className="buttonIniciar" type ='submit'>Iniciar sesión</button>
+                    </div>
+                </form>
+            </div>
+            <div className="back-blur"></div>
+
+        </section>
+    )
 }
 
 
