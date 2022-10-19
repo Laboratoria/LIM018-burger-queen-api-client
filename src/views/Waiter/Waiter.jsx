@@ -6,6 +6,7 @@ import getProducts from "../../api_functions/getProducts";
 import trashCan from "../../Images/delete.png"
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
+import postOrders from "../../api_functions/postOrders";
 
 export const WaiterView = () => {
 
@@ -16,12 +17,10 @@ export const WaiterView = () => {
 
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
-    // const [total, setTotal] = useState([])
 
     useEffect(() => {
         getProducts(setProducts) 
     }, [])
-
 
     const filteredProducts = (typeMenu) => {  // typeMenu es un string xej 'dinner'
         const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
@@ -94,7 +93,7 @@ export const WaiterView = () => {
     }
     console.log(arrayOfOrder, 'array inicial');
 
-
+  
     return (
         <section className="waiter">
             <Header path="/orders" menuActive="active"/>
@@ -103,31 +102,30 @@ export const WaiterView = () => {
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno'
-                        bg= "bg-orange" 
-                        changeType = {()=>setMenu("breakfast")}/>
+                        bg= "active" 
+                        whenClick = {()=>setMenu("breakfast")}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
-                        changeType = {()=>setMenu("dinner")} />
+                        whenClick = {()=>setMenu("dinner")} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
                         <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
                             bg = "bg-orange" 
-                            changeType= {()=>setMenu("dinner")}/>  {/* función onClick */}
+                            whenClick= {()=>setMenu("dinner")}/>  {/* función onClick */}
                             <MenuButton 
                             title='Extras' 
                             bg = "bg-brown" 
-                            changeType = {()=>setMenu("other")} />
+                            whenClick = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
                             bg = "bg-brown" 
-                            changeType = {()=>setMenu("drinks")} />
+                            whenClick = {()=>setMenu("drinks")} />
                         </nav>
                         {filteredProducts(menu)}
                     </div>
                 </div>
-
                 <div className="container-menu">
                     <div className="nav-menu">
                         <div>
@@ -138,7 +136,6 @@ export const WaiterView = () => {
                             <label>Mesa</label>
                             <input type="text"/>
                         </div>
-                       
                     </div>
                     <div className="container-orders mg-top">
                             <table>
@@ -176,7 +173,7 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" />
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(arrayOfOrder)}/>
                         </div>
                     </div>  
                 </div>

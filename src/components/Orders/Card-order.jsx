@@ -9,50 +9,49 @@ export const CardOrder = (props) => {
     return (
         <>
             
-                <div className="order">
-                    <div className="date-zone">
-                        <h4>Fecha: 10/10/22</h4>
-                        <h4>Cliente: {props.client}</h4>
-                        <h4>Hora: 5:00 pm</h4>
-                    </div>
-
-                    <div>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Cant</th>
-                                    <th>Descripción</th>
-                                    <th>Precio S/.</th>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table>
-                            <tbody>
-                            {props.products.map((prod, index) => {
-                                const totalProduct = prod.qty*prod.product.price
-                                total+=totalProduct
-                                return (
-                                        <tr key={index}>
-                                            <th>{prod.qty}</th>
-                                            <th>{prod.product.name}</th>
-                                            <th>{totalProduct}</th>
-                                        </tr>
-                                )
-                            })}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    ____________________________________
-                       <p>TOTAL S/. {total}</p>     
-                    </div>
-                    <div className="btn-entregar">
-                        <MenuButton
-                        title = "Entregar" bg="bg-orange"
-                        />
-                    </div>
+            <div className="order">
+                <div className="date-zone">
+                    <h4>Fecha: {props.dateEntry}</h4>
+                    <h4>Cliente: {props.client}</h4>
                 </div>
+
+                <div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Cant</th>
+                                <th>Descripción</th>
+                                <th>S/.</th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table>
+                        <tbody>
+                        {props.products.map((prod, index) => {
+                            const totalProduct = prod.qty*prod.price
+                            total+=totalProduct
+                            return (
+                                    <tr key={index}>
+                                        <th>{prod.qty}</th>
+                                        <th>{prod.name}</th>
+                                        <th>{totalProduct}</th>
+                                    </tr>
+                            )
+                        })}
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                ____________________________________
+                    <p>TOTAL S/. {total}</p>     
+                </div>
+                <div className="btn-entregar">
+                    <MenuButton
+                    title = "Entregar" bg="bg-orange"
+                    />
+                </div>
+            </div>
            
         </>
     )
