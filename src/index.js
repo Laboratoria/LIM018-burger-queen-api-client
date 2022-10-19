@@ -8,7 +8,7 @@ import Orders from "./views/Waiter/Orders";
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
-console.log(root, 'root index')
+// console.log(root, 'root index')
 
 root.render(
     <BrowserRouter>
