@@ -18,6 +18,8 @@ export class homeComponent implements OnInit {
   total = 0;
   product: Product[] =[]
   //
+  token = '';
+
  // para mostrar y ocultar con el boton
   mostrar : Boolean = false;
   mostrarOcultar(){
@@ -30,9 +32,15 @@ export class homeComponent implements OnInit {
   constructor( private productsService : ProductsService) {
     this.myorder = this.productsService.getmyOrder();
   }
+//pata manejar peticiones asincronas
+  onLoaded(token: string) {
+    console.log('loadPadre', token);
+    this.token = token;
+  }
+
 //para manejar peticiones asincronas
   ngOnInit(): void {
-    this.productsService.getAllProducts()
+    this.productsService.getAllProducts(this.token)
     .subscribe(data=>{
       console.log(data[0].type)
       this.product=  data

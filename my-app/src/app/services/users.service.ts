@@ -25,8 +25,12 @@ export class UsersService {
     private http: HttpClient
   ) { }
 
-  create(dto: CreateUserDTO) {
-    return this.http.post<User>(this.apiUrl, dto);
+  create(token:string, dto:CreateUserDTO) {
+    return this.http.post<User>(this.apiUrl,dto,{
+      headers:{
+        Authorization : `Bearer ${token}`,
+      }
+    });
   }
 
   getAll() {

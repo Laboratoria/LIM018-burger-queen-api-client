@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,15 +7,28 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  token = ''
+  email = 'iam@fakel.lol'
+  password = 'apasswordtochange'
+
+  @Output() loaded = new EventEmitter<string>();
+
+
 // tenemos que injectar en el contructor el servicio router
-  constructor(private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
-  }
-
-  goHome(){
-    
-  this.router.navigate(['/home'])
+  login() {
+    this.authService.login(this.email, this.password)
+    .subscribe(rta => {
+      console.log(rta.token);
+      this.token = rta.token;
+      console.log('load hijo');
+      this.loaded.emit(this.token);
+      this.router.navigate(['/home'])
+    });
   }
 }
