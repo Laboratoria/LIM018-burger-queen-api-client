@@ -1,62 +1,8 @@
-<button (click) = "createUser()">Create user</button>
-<button (click) = "login()">Login</button>
+<!-- <button (click) = "createUser()">Create user</button> -->
+<!-- <app-login (loaded)="onLoaded($event)"></app-login> -->
 <router-outlet></router-outlet>
 
 
-
-<!-- <header></header>
-<main></main>
-<input type="text" require #nameInput=>
-<p *ngIf="1==1">Content</p> // con esto condicionamos el contenido
-
-<br>
-<h1>pruebas de nfor objetos</h1>
-<div *ngFor="let product of products">cd
-  <img width='250' [src]="product.imge" alt="imagen de prueba">
-  <h3>{{product.price}}</h3>
-  <h3>{{product.name}}</h3>
-</div>
-<br>
-
-<H1>*NGFOR con un array </H1>
-<li *ngIf="names.length ===0">No hay nombre</li>
-<input type="text" required [(ngModel)]="newName">
-<button (click)="addName()">Add name</button>
-<ul>
-  <li *ngFor="let cualquiernombre of names; index as i">  //*con name es una variable temporal que creamos y NAMES es una variable que debe estar en componets */ -->
-    <!-- {{i}} {{cualquiernombre}}
-    <button (click)="deleteName(i)">Delete</button>
-  </li>
-</ul>
-
-<br>
-<h2> EJEMPLOS ngModel</h2>
-<p >nombre {{person.name}}</p>
-<input type="text" required #otro="ngModel" [(ngModel)]="person.name"/>
-<p>VAlid: {{ otro.valid}}</p>
-<h3>otro ejemplo</h3>
-<p >nombre {{person.name}}</p>
-<input type="number" required #ageInput="ngModel" [(ngModel)]="person.age"/>
-<p>VAlid: {{ ageInput.valid }}</p> -->
-
-<!-- <br>
-<h2>propiety blinidng []</h2>
-<p >nombre {{person.name}}</p>
-<input type="text" [value]="person.name" (keyup)="changeName($event)"/> -->
-
-<!-- <br>
-<h1>propiedades binding</h1>
-<button [disabled]="btndisable">Enviar</button>
-
-<button (click)="toggleButton()">toglle buton</button>
-
-<p >edad {{person.age}}</p>
-<button (click)="ageChange()"> sumaredad</button>
-<br/>
-<h1> Hola Mundo  me llamo {{name}}</h1>
-
-<button [disabled]="btndisable">Hola</button>
-<img src="{{img}}" alt="foto"> -->
 
 
 
