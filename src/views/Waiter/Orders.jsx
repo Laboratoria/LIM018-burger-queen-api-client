@@ -14,7 +14,7 @@ export default function Orders() {
    
     return (
         <section className="waiter">
-            <Header path="/menu" orderActive="active"/>
+            <Header path="/menu" orderActive="active" opcion1 = "Menú" opcion2 = "Ver pedidos"/>
             <div className="content-order">
                 {orders.map((order, i) => {
                     return (<CardOrder key={i} dateEntry={order.dateEntry} client={order.client} products={order.products} />)

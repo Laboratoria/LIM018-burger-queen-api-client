@@ -36,6 +36,7 @@ server.post('/auth', (req, res) => {
 server.post('/orders', async (req, res) => {
   try {
     const today = new Date();
+    console.log(today, 'hoy');
     const now = today.toLocaleString();
     const order = {
       userId: req.body.userId,

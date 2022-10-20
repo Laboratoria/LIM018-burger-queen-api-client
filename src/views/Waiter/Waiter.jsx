@@ -17,6 +17,8 @@ export const WaiterView = () => {
 
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
+    /* const [bg1, setBg1] = useState("")  */
+    const [bg2, setBg2] = useState("")  
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -96,31 +98,38 @@ export const WaiterView = () => {
   
     return (
         <section className="waiter">
-            <Header path="/orders" menuActive="active"/>
+            <Header path="/orders" menuActive="active" opcion1 = "Menú" opcion2 = "Ver pedidos"/>
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno'
-                        bg= "active" 
-                        whenClick = {()=>setMenu("breakfast")}/>
+                        /* bg= {bg1} */
+                        whenClick = {()=>{
+                            setMenu("breakfast")
+                            /* setBg1("active")  */
+                            }}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
-                        whenClick = {()=>setMenu("dinner")} />
+                        bg= {bg2}
+                        whenClick = {()=>{
+                            setMenu("dinner")
+                            setBg2("active")
+                            }} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
                         <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
-                            bg = "bg-orange" 
+                            
                             whenClick= {()=>setMenu("dinner")}/>  {/* función onClick */}
                             <MenuButton 
                             title='Extras' 
-                            bg = "bg-brown" 
+                            
                             whenClick = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
-                            bg = "bg-brown" 
+                            
                             whenClick = {()=>setMenu("drinks")} />
                         </nav>
                         {filteredProducts(menu)}

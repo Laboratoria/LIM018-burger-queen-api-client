@@ -7,6 +7,9 @@ const Header = (props) => {
     const activeM = props.menuActive;
     const activeO = props.orderActive;
 
+    const opcion1 = props.opcion1;
+    const opcion2 = props.opcion2;
+
     const navigate = useNavigate();
     const handleClick = (e) => navigate(path);
     
@@ -17,8 +20,8 @@ const Header = (props) => {
         <>
             <header className="header">
                 <h1 className="burger">BURGER QUEEN</h1>
-                <button className={`btn-header ${activeM}`} onClick={handleClick}>Menú</button>
-                <button className={`btn-header ${activeO}`}  onClick={handleClick}>Ver pedidos</button>
+                <button className={`btn-header ${activeM}`} onClick={handleClick}>{opcion1}</button>
+                <button className={`btn-header ${activeO}`}  onClick={handleClick}>{opcion2}</button>
                 <img src={logOut} alt="logOut" className="log-out" onClick={toLogin}/>
             </header>
         </>
