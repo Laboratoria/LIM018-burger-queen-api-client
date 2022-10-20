@@ -7,6 +7,7 @@ import trashCan from "../../Images/delete.png"
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import postOrders from "../../api_functions/postOrders";
+import waiterImg from "../../Images/camarero.png"
 
 export const WaiterView = () => {
 
@@ -17,6 +18,8 @@ export const WaiterView = () => {
 
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState("");
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -92,11 +95,12 @@ export const WaiterView = () => {
         setArrayOfOrder(arrayWhithoutProduct)
     }
     console.log(arrayOfOrder, 'array inicial');
-
+    console.log(client);
+    console.log(table);
   
     return (
         <section className="waiter">
-            <Header path="/orders" menuActive="active"/>
+            <Header path="/orders" menuActive="active" first="Menú" second="Ver pedidos" log={waiterImg} />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
@@ -130,11 +134,11 @@ export const WaiterView = () => {
                     <div className="nav-menu">
                         <div>
                             <label>Cliente</label>
-                            <input type="text"/>
+                            <input type="text" className="client" onChange={(e)=>setClient(e.target.value)}/>
                         </div>
                         <div>
                             <label>Mesa</label>
-                            <input type="text"/>
+                            <input type="text" className="client" onChange={(e)=>setTable(e.target.value)}/>
                         </div>
                     </div>
                     <div className="container-orders mg-top">
@@ -173,7 +177,7 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(arrayOfOrder)}/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(arrayOfOrder, client, table)}/>
                         </div>
                     </div>  
                 </div>

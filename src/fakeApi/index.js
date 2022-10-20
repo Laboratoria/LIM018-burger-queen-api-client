@@ -20,10 +20,9 @@ server.use((req, res, next) => {
   }
 })
 
-
 server.post('/auth', (req, res) => {
-    // res.jsonp(req.query);
-    if (req.body.email === 'mesero1@gmail.com' &&
+    
+    if (req.body.email === 'mesero@burger.queen' &&
         req.body.password === '123456') {
             res.jsonp({
             token: secret
@@ -32,6 +31,9 @@ server.post('/auth', (req, res) => {
         res.status(400).send('Bad Request')
     }    
 })
+
+
+
 
 server.post('/orders', async (req, res) => {
   try {

@@ -2,11 +2,12 @@ const BASE_URL = "http://localhost:3001";
 const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
-const postOrders = async(arrayProds) => {
+const postOrders = async(arrayProds, name, tab) => {
 
     const clientOrder = {
         userId: '',
-        client: '',
+        client: name,
+        table: tab,
         products: arrayProds.map(prod => {
             const product = {
                 name: prod.name,
