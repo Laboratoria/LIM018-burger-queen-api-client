@@ -11,7 +11,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Auth } from './../models/auth.model';
-// import { User } from './../models/user.model';
+import { TokenService } from './token.service';
+import { tap } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -21,32 +22,14 @@ export class AuthService {
   private apiUrl = `http://localhost:3000`;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private tokenService: TokenService
   ) { }
 
   login(email: string, password: string) {
-    return this.http.post<Auth>(`${this.apiUrl}/auth`, {email:email, password:password});
+    return this.http.post<Auth>(`${this.apiUrl}/auth`, {email:email, password:password})
+    .pipe(
+      tap(response => this.tokenService.saveToken(response.token))
+    );
   }
-
-
-
-
-
-  // getProfile(token: string) {
-  //   // const headers = new HttpHeaders();
-  //   // headers.set('Authorization',  `Bearer ${token}`);
-  //   return this.http.get<User>(`${this.apiUrl}/users`, {
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //       // 'Content-type': 'application/json'
-  //     }
-  //   });
-  // }
-
-  // loginAndGet(email: string, password: string) {
-  //   return this.login(email, password)
-  //   .pipe(
-  //     switchMap(rta => this.getProfile(rta.access_token)),
-  //   )
-  // }
 }
