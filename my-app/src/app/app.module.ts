@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -14,6 +14,7 @@ import { ContadorComponent } from './components/contador/contador.component';
 import { PedidoComponent } from './components/pedido/pedido.component';
 import { LoginComponent } from './components/login/login.component';
 import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mesero.component';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 const appRoutes:Routes =[
@@ -44,7 +45,9 @@ const appRoutes:Routes =[
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

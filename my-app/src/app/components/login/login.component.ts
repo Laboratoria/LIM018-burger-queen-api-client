@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
@@ -12,9 +12,6 @@ export class LoginComponent {
   email = 'iam@fakel.lol'
   password = 'apasswordtochange'
 
-  @Output() loaded = new EventEmitter<string>();
-
-
 // tenemos que injectar en el contructor el servicio router
   constructor(
     private authService: AuthService,
@@ -27,8 +24,9 @@ export class LoginComponent {
       console.log(rta.token);
       this.token = rta.token;
       // localStorage.setItem("token", rta.token)
-      console.log('load hijo');
-      this.loaded.emit(this.token);
+      // console.log('load hijo');
+      // this.loaded.emit(this.token);
+
       this.router.navigate(['/home'])
     });
   }

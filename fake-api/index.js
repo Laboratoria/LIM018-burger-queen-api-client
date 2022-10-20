@@ -27,7 +27,8 @@ server.post('/auth', (req, res) => {
     res.jsonp({
       token: secret
     })
-  } else res.status(400).send('Bad Request')
+  } else 
+    res.status(400).send('Bad Request')
 })
 
 server.use(router)
