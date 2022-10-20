@@ -12,13 +12,13 @@ const Header = (props) => {
     
     const toLogin = () => navigate("/");
 
-
     return (
         <>
             <header className="header">
                 <h1 className="burger">BURGER QUEEN</h1>
-                <button className={`btn-header ${activeM}`} onClick={handleClick}>Menú</button>
-                <button className={`btn-header ${activeO}`}  onClick={handleClick}>Ver pedidos</button>
+                <img src={props.log} alt="imag" className="rol" />
+                <button className={`btn-header ${activeM}`} onClick={handleClick}>{props.first}</button>
+                <button className={`btn-header ${activeO}`}  onClick={handleClick}>{props.second}</button>
                 <img src={logOut} alt="logOut" className="log-out" onClick={toLogin}/>
             </header>
         </>
