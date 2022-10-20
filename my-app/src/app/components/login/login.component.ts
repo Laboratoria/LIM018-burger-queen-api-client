@@ -26,6 +26,7 @@ export class LoginComponent {
     .subscribe(rta => {
       console.log(rta.token);
       this.token = rta.token;
+      // localStorage.setItem("token", rta.token)
       console.log('load hijo');
       this.loaded.emit(this.token);
       this.router.navigate(['/home'])

@@ -8,7 +8,6 @@ import {Product} from '../models/products.model'
 })
 export class ProductsService {
   private myorder: Product[] = [];
-
    constructor(private http: HttpClient) {
    }
 
@@ -28,7 +27,7 @@ export class ProductsService {
   getAllProducts(token:string){
     return this.http.get<Product[]>('http://localhost:3000/products',{
       headers:{
-        Authorization : `Bearer ${token}`,
+        Authorization : "Bearer EsUnSecreto",
     }
   });
     //<Product[]>: le decimos a la api que queremos que nos traiga el contenigo como []
