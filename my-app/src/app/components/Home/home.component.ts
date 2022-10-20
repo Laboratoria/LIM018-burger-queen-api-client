@@ -1,7 +1,8 @@
 import { ExpressionType } from '@angular/compiler';
 import { Component, OnInit, Type } from '@angular/core';
-import {Product} from '../../models/products.model'
-import { ProductsService } from '../../services/products.service'
+import {Product} from '../../models/products.model';
+import { ProductsService } from '../../services/products.service';
+
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,7 @@ export class homeComponent implements OnInit {
 
  // para mostrar y ocultar con el boton
   mostrar : Boolean = false;
+
   mostrarOcultar(){
     if(this.mostrar){
       this.mostrar= false;
@@ -29,18 +31,17 @@ export class homeComponent implements OnInit {
       this.mostrar= true;
     }
   }
-  constructor( private productsService : ProductsService) {
+
+  constructor(
+    private productsService : ProductsService,
+    ) {
     this.myorder = this.productsService.getmyOrder();
-  }
-//pata manejar peticiones asincronas
-  onLoaded(token: string) {
-    console.log('loadPadre', token);
-    this.token = token;
   }
 
 //para manejar peticiones asincronas
   ngOnInit(): void {
-    this.productsService.getAllProducts(this.token)
+
+    this.productsService.getAllProducts()
     .subscribe(data=>{
       console.log(data[0].type)
       this.product=  data
