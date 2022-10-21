@@ -17,7 +17,8 @@ export class homeComponent implements OnInit {
   name = "Stefani";
   myorder: Product[] = []; // se pone privado para proteger la accecibilidad
   total = 0;
-  product: Product[] =[]
+  product: Product[] =[];
+  filterProduct: Product[] =[]
   //
   token = '';
 
@@ -41,12 +42,25 @@ export class homeComponent implements OnInit {
 //para manejar peticiones asincronas
   ngOnInit(): void {
 
-    this.productsService.getAllProducts()
-    .subscribe(data=>{
-      console.log(data[0].type)
-      this.product=  data
-    })
+    // this.productsService.getAllProducts()
+    // .subscribe(data=>{
+    //   console.log(data[0].type)
+    //   this.product=  data
+    // })
   }
+// para filtrar por type breakfast
+  viewBreakfast = () =>{
+    this.productsService.getAllProducts()
+    .subscribe(data => {
+      console.log(data)
+      this.filterProduct= data.filter( e =>{
+        console.log(e)
+        const breakfast = e.type === "breakfast"
+        console.log(breakfast)
+      });
+    });
+  }
+
 //para agregar los productos y contabilizarlos y calcular el totoal del precio
   onAddToOrder(product: Product){
     this.productsService.addProduct(product);
