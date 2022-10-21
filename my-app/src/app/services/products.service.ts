@@ -13,7 +13,7 @@ export class ProductsService {
     // private token
    }
 
-   //obteniendo los productos
+   //obteniendo los productos. presionando boton 
   addProduct(product: Product){
     this.myorder.push(product)
   }
