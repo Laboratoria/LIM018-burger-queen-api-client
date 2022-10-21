@@ -42,11 +42,11 @@ export class homeComponent implements OnInit {
 //para manejar peticiones asincronas
   ngOnInit(): void {
 
-    this.productsService.getAllProducts()
-    .subscribe(data=>{
-      console.log(data[0].type)
-      this.product=  data
-    })
+  //   this.productsService.getAllProducts()
+  //   .subscribe(data=>{
+  //     console.log(data[0].type)
+  //     this.product=  data
+  //   })
   }
 // para filtrar por type breakfast
   viewBreakfast = () =>{
