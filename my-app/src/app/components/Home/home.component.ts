@@ -60,6 +60,15 @@ export class homeComponent implements OnInit {
       });
     });
   }
+// para ver por cena
+viewLunch = () => {
+  this.productsService.getAllProducts()
+  .subscribe(data =>{
+    this.filterProduct = data.filter( e =>{
+      console.log(e.type == "lunch");
+    })
+  })
+}
 
 //para agregar los productos y contabilizarlos y calcular el totoal del precio
   onAddToOrder(product: Product){
