@@ -17,7 +17,8 @@ export class homeComponent implements OnInit {
   name = "Stefani";
   myorder: Product[] = []; // se pone privado para proteger la accecibilidad
   total = 0;
-  product: Product[] =[]
+  product: Product[] =[];
+  filterProduct: Product[] =[]
   //
   token = '';
 
@@ -47,6 +48,28 @@ export class homeComponent implements OnInit {
       this.product=  data
     })
   }
+// para filtrar por type breakfast
+  viewBreakfast = () =>{
+    this.productsService.getAllProducts()
+    .subscribe(data => {
+      console.log(data)
+      this.filterProduct= data.filter( e =>{
+        console.log(e)
+        const breakfast = e.type === "breakfast"
+        console.log(breakfast)
+      });
+    });
+  }
+// para ver por cena
+viewLunch = () => {
+  this.productsService.getAllProducts()
+  .subscribe(data =>{
+    this.filterProduct = data.filter( e =>{
+      const prueba = e.type == "lunch";
+    })
+  })
+}
+
 //para agregar los productos y contabilizarlos y calcular el totoal del precio
   onAddToOrder(product: Product){
     this.productsService.addProduct(product);

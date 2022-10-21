@@ -2,19 +2,22 @@
 <app-cabecera> </app-cabecera>
 <section>
   <p>la cantidad de elementos seleccionados {{myorder.length}} </p>
+  <div>{{myorder.name}</div>
 
   <p>Ingrese el nombre del cliente:<input type="text" [value]="name"  (keyup)="changeName($event)"></p>
 
   <div class="show-mobile">
     <main class="content">
       <div class="menu--options">
-        <button (click)=" mostrarOcultar()">Desayuno</button>
-        <button>Almuerzo</button>
+        <button
+        (click)=" mostrarOcultar()" // comentar esto
+        (click)="viewBreakfast()"
+        >Desayuno</button>
+        <button (click)="viewLunch()">Almuerzo</button>
       </div>
       <div *ngIf="mostrar" class="menu--grid">
 
         <app-product
-
         [product]='product'
         *ngFor="let product of product"
         (addPRoduct)="onAddToOrder($event)"
