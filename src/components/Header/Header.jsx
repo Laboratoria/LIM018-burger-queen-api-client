@@ -4,24 +4,19 @@ import "./Header.css";
 
 const Header = (props) => {
     const path = props.path;
-    const activeM = props.menuActive;
-    const activeO = props.orderActive;
-
-    const opcion1 = props.opcion1;
-    const opcion2 = props.opcion2;
 
     const navigate = useNavigate();
     const handleClick = (e) => navigate(path);
     
     const toLogin = () => navigate("/");
 
-
     return (
         <>
             <header className="header">
                 <h1 className="burger">BURGER QUEEN</h1>
-                <button className={`btn-header ${activeM}`} onClick={handleClick}>{opcion1}</button>
-                <button className={`btn-header ${activeO}`}  onClick={handleClick}>{opcion2}</button>
+                <img src={props.log} alt="imag" className="rol" />
+                <button className={`btn-header ${props.active1}`} onClick={handleClick}>{props.first}</button>
+                <button className={`btn-header ${props.active2}`}  onClick={handleClick}>{props.second}</button>
                 <img src={logOut} alt="logOut" className="log-out" onClick={toLogin}/>
             </header>
         </>

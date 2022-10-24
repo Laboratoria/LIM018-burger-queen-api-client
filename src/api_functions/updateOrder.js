@@ -2,20 +2,19 @@ const BASE_URL = "http://localhost:3001";
 const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
-const postOrders = async(order) => {
+const updateOrder = async() => {
 
     const res = await fetch(`${BASE_URL}${orderPath}`, {
-        method: "POST",
+        method: "PUT",
         headers: {
-            "Content-Type": "application/json",
+            "Content-type": "application/json;charset=UTF-8",
             "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify(order)
-    })
+        body: JSON.stringify()
+    });
 
     const result = await res.json();
-    console.log(result);
-    return result
+    return result;
 }
 
-export default postOrders;
+export default updateOrder;

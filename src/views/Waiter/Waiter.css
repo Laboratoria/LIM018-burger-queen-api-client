@@ -184,3 +184,12 @@ tr{
 
 
 
+.client{
+    width: 7.5rem;
+    height: 1.7rem;
+    margin-left: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+

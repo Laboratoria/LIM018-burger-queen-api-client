@@ -20,10 +20,9 @@ server.use((req, res, next) => {
   }
 })
 
-
 server.post('/auth', (req, res) => {
-    // res.jsonp(req.query);
-    if (req.body.email === 'mesero1@gmail.com' &&
+    
+    if (req.body.email === 'mesero@burger.queen' &&
         req.body.password === '123456') {
             res.jsonp({
             token: secret
@@ -33,12 +32,15 @@ server.post('/auth', (req, res) => {
     }    
 })
 
+
+
 server.post('/orders', async (req, res) => {
   try {
     const today = new Date();
     console.log(today, 'hoy');
-    const now = today.toLocaleString();
+    const now = today.toLocaleString('en-US');
     const order = {
+      id: req.body.id,
       userId: req.body.userId,
       client: req.body.client,
       products: req.body.products,

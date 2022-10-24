@@ -33,11 +33,10 @@ export const Login = () => {
         } else {
             postUser(data).then((resp) => {
                 // console.log(resp);
+                localStorage.setItem("token", resp.token)
                 if (resp) {
                     navigate("/menu");
                 }
-                // console.log(resp, 'token');
-                localStorage.setItem("token", resp.token)
             })
             .catch(err => {
                 // alert('usuario no registrado');

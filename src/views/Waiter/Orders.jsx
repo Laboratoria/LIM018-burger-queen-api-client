@@ -3,20 +3,24 @@ import { CardOrder } from "../../components/Orders/Card-order";
 import '../../components/Buttons/Button.css';
 import Header from "../../components/Header/Header";
 import getOrders from "../../api_functions/getOrders";
+import waiterImg from "../../Images/camarero.png"
 
-export default function Orders() {
+export function Orders() {
   
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
         getOrders(setOrders)
     }, [])
+
+    const filteredByStatus = orders.filter((item) => item.status === "delivering")
+    console.log(filteredByStatus);
    
     return (
         <section className="waiter">
-            <Header path="/menu" orderActive="active" opcion1 = "Menú" opcion2 = "Ver pedidos"/>
+            <Header path="/menu" active2="active" first="Menú" second="Ver pedidos" log={waiterImg} />
             <div className="content-order">
-                {orders.map((order, i) => {
+                {filteredByStatus.map((order, i) => {
                     return (<CardOrder key={i} dateEntry={order.dateEntry} client={order.client} products={order.products} />)
                   })  
                 }

@@ -7,6 +7,7 @@ import trashCan from "../../Images/delete.png"
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import postOrders from "../../api_functions/postOrders";
+import waiterImg from "../../Images/camarero.png"
 
 export const WaiterView = () => {
 
@@ -19,6 +20,8 @@ export const WaiterView = () => {
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
     /* const [bg1, setBg1] = useState("")  */
     const [bg2, setBg2] = useState("")  
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState("");
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -26,28 +29,29 @@ export const WaiterView = () => {
 
     const filteredProducts = (typeMenu) => {  // typeMenu es un string xej 'dinner'
         const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
-            return prod.type === typeMenu })
+            return prod.type === typeMenu 
+        })
             
-            const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
-                //typeProducts es el array de obj
-                return (<CardMenu 
-                    name = {type.name} // type es el prod
-                    image = {type.image} 
-                    key = {type.id} 
-                    id = {type.id}
-                    price = {`S/. ${type.price}`} 
-                    adding = {() => addProduct(type)}
-                    substracting = {() => subsProduct(type)}  
-                    />)
-            })
-            return cards;
+        const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
+        //typeProducts es el array de obj
+            return (<CardMenu 
+                name = {type.name} // type es el prod
+                image = {type.image} 
+                key = {type.id} 
+                id = {type.id}
+                price = {`S/. ${type.price}`} 
+                adding = {() => addProduct(type)}
+                substracting = {() => subsProduct(type)}  
+            />)
+        })
+        return cards;
+    
     }
  
     // productos unicos según id (no repetidos)
     const uniqueProduct = (id) => {
-    const unique = arrayOfOrder.find((obj) => obj.id === id);
-    /* console.log(arrayOfOrder, 'array de ordenes') */
-    /* console.log(unique, 'unico') */
+        const unique = arrayOfOrder.find((obj) => obj.id === id);
+        /* console.log(unique, 'unico') */
     return unique;
     };
 
@@ -67,6 +71,7 @@ export const WaiterView = () => {
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
     };
 
+    // función del boton -
     const subsProduct = (type) => {
         if(uniqueProduct(type.id)){
           const susQtyPrice = arrayOfOrder.map((order) => {
@@ -83,6 +88,7 @@ export const WaiterView = () => {
         }
     }
     /* console.log(arrayOfOrder, 'arrayorder'); */
+
     let total = 0    
     arrayOfOrder.map((item) => {
         total += item.price
@@ -93,12 +99,29 @@ export const WaiterView = () => {
         const arrayWhithoutProduct = arrayOfOrder.filter((item)=> item.id !== obj.id )
         setArrayOfOrder(arrayWhithoutProduct)
     }
-    console.log(arrayOfOrder, 'array inicial');
+    /* console.log(arrayOfOrder, 'array inicial');
+    console.log(client);
+    console.log(table);
+   */
 
-  
+    const clientOrder = {
+        _id: '',
+        userId: '',
+        client: client,
+        table: table,
+        products: arrayOfOrder.map(prod => {
+            const product = {
+                name: prod.name,
+                price: prod.price,
+                qty: prod.qty
+            }
+            return product;
+        })
+    };
+
     return (
         <section className="waiter">
-            <Header path="/orders" menuActive="active" opcion1 = "Menú" opcion2 = "Ver pedidos"/>
+            <Header path="/orders" active1="active" first="Menú" second="Ver pedidos" log={waiterImg} />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
@@ -139,11 +162,11 @@ export const WaiterView = () => {
                     <div className="nav-menu">
                         <div>
                             <label>Cliente</label>
-                            <input type="text"/>
+                            <input type="text" className="client" onChange={(e)=>setClient(e.target.value)}/>
                         </div>
                         <div>
                             <label>Mesa</label>
-                            <input type="text"/>
+                            <input type="text" className="client" onChange={(e)=>setTable(e.target.value)}/>
                         </div>
                     </div>
                     <div className="container-orders mg-top">
@@ -182,7 +205,7 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(arrayOfOrder)}/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(clientOrder)}/>
                         </div>
                     </div>  
                 </div>
