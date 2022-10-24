@@ -25,6 +25,7 @@ server.post('/auth', (req, res) => {
     if (req.body.email === 'mesero@burger.queen' &&
         req.body.password === '123456') {
             res.jsonp({
+            id: 1,  
             token: secret
             })
     } else {
