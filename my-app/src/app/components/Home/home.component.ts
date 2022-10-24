@@ -51,7 +51,6 @@ export class homeComponent implements OnInit {
         return element.type === 'breakfast';
         //console.log(breakfast);
       });
-
       console.log('filterProduct', this.filteredProducts);
     });
   };
