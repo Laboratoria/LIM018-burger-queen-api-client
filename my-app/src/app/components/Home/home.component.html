@@ -1,80 +1,95 @@
-
 <app-cabecera> </app-cabecera>
 <section>
-  <p>la cantidad de elementos seleccionados {{myorder.length}} </p>
+  <p>la cantidad de elementos seleccionados {{ myOrder.length }}</p>
   <div>{{myorder.name}</div>
 
-  <p>Ingrese el nombre del cliente:<input type="text" [value]="name"  (keyup)="changeName($event)"></p>
+  <p>
+    Ingrese el nombre del cliente:<input
+      type="text"
+      [value]="name"
+      (keyup)="changeName($event)"
+    />
+  </p>
 
   <div class="show-mobile">
     <main class="content">
       <div class="menu--options">
-        <button
-        (click)="viewBreakfast()"
-        >Desayuno</button>
+        <button (click)="viewBreakfast()">Desayuno</button>
         <button (click)="viewLunch()">Almuerzo</button>
       </div>
       <div *ngIf="mostrar" class="menu--grid">
-
         <app-product
-        [product]='product'
-        *ngFor="let product of product"
-        (addPRoduct)="onAddToOrder($event)"
+          [product]="product"
+          *ngFor="let product of products"
+          (addPRoduct)="onAddToOrder($event)"
         ></app-product>
       </div>
     </main>
 
     <section class="takeOrder">
       <div class="inputName">
-        <p> El nombre del cliente es: <strong>{{name}}</strong></p>
-        <p>la cantidad de elementos seleccionados {{myorder.length}} </p>
+        <p>
+          El nombre del cliente es: <strong>{{ name }}</strong>
+        </p>
+        <p>la cantidad de elementos seleccionados {{ myOrder.length }}</p>
       </div>
-      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
-      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
-      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
-      <li class="orders"> <p>Aqui iran las ordenes</p> <p>cantidad</p> <p>$ precio</p> </li>
+      <li class="orders">
+        <p>Aqui iran las ordenes</p>
+        <p>cantidad</p>
+        <p>$ precio</p>
+      </li>
+      <li class="orders">
+        <p>Aqui iran las ordenes</p>
+        <p>cantidad</p>
+        <p>$ precio</p>
+      </li>
+      <li class="orders">
+        <p>Aqui iran las ordenes</p>
+        <p>cantidad</p>
+        <p>$ precio</p>
+      </li>
+      <li class="orders">
+        <p>Aqui iran las ordenes</p>
+        <p>cantidad</p>
+        <p>$ precio</p>
+      </li>
 
       <div class="totalOrder">
-        <strong class="totalPrice">total: ${{total}}</strong>
+        <strong class="totalPrice">total: ${{ total }}</strong>
         <button class="cocinaButton">Enviar a cocina</button>
       </div>
-
     </section>
 
     <div class="footer">
-      <p> Desarrollado por ##### 2022</p>
+      <p>Desarrollado por ##### 2022</p>
     </div>
   </div>
 </section>
 
-
 <div class="hide-mobile">
   <div class="content">
-
     <div class="menu--options">
-      <button  (click)=" mostrarOcultar()">Desayuno</button>
+      <button >Desayuno</button>
     </div>
     <div *ngIf="mostrar" class="menu--grid--desayuno">
-      <app-product [product]='product'
-      *ngFor="let product of product"></app-product>
+      <app-product
+        [product]="product"
+        *ngFor="let product of products"
+      ></app-product>
     </div>
 
     <div class="menu--options">
-      <button (click)=" mostrarOcultar()">Almuerzo y cenas</button>
+      <button >Almuerzo y cenas</button>
     </div>
     <div *ngIf="mostrar" class="menu--grid--almuerzo">
-      <app-product [product]='product' *ngFor="let product of product"></app-product>
+      <app-product
+        [product]="product"
+        *ngFor="let product of products"
+      ></app-product>
     </div>
   </div>
 
   <div class="footer">
-    <p> Desarrollado por ##### 2022</p>
+    <p>Desarrollado por ##### 2022</p>
   </div>
 </div>
-
-
-
-
-
-
-
