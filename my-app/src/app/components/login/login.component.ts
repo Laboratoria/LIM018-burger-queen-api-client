@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   token = ''
   email = 'iam@fakel.lol'
-  password = ''
+  password = 'apasswordtochange'
 
 // tenemos que injectar en el contructor el servicio router
   constructor(

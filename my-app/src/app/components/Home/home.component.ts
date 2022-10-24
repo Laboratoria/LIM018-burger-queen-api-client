@@ -23,13 +23,7 @@ export class homeComponent implements OnInit {
   // para mostrar y ocultar con el boton
   mostrar: Boolean = false;
 
-  mostrarOcultar() {
-    if (this.mostrar) {
-      this.mostrar = false;
-    } else {
-      this.mostrar = true;
-    }
-  }
+
 
   constructor(private productsService: ProductsService) {
     this.myOrder = this.productsService.getmyOrder();
@@ -37,31 +31,39 @@ export class homeComponent implements OnInit {
 
   //para manejar peticiones asincronas
   ngOnInit(): void {
-    this.productsService.getAllProducts().subscribe((data) => {
-      console.log(data[0].type);
-      this.products = data;
-    });
+    // this.productsService.getAllProducts().subscribe((data) => {
+    //   console.log(data[0].type);
+    //   this.products = data;
+    // });
   }
 
   // para filtrar por type breakfast
   viewBreakfast = () => {
-    this.productsService.getAllProducts().subscribe((data) => {
-      console.log(data);
+    if (this.mostrar) {
+      this.mostrar = false;
+    } else {
+      this.productsService.getAllProducts().subscribe((data) => {
       this.filteredProducts = data.filter((element) => {
-        return element.type === 'breakfast';
-        //console.log(breakfast);
+         return element.type === 'breakfast';
       });
-
-      console.log('filterProduct', this.filteredProducts);
+      this.products = this.filteredProducts;
     });
+     this.mostrar = true;
+    }
   };
   // para ver por cena
   viewLunch = () => {
+    if (this.mostrar) {
+      this.mostrar = false;
+    } else {
     this.productsService.getAllProducts().subscribe((data) => {
       this.filteredProducts = data.filter((e) => {
-        const prueba = e.type == 'lunch';
+        return e.type === 'lunch';
       });
+      this.products = this.filteredProducts;
     });
+    this.mostrar = true;
+    }
   };
 
   //para agregar los productos y contabilizarlos y calcular el totoal del precio
