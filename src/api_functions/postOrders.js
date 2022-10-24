@@ -2,21 +2,7 @@ const BASE_URL = "http://localhost:3001";
 const orderPath = '/orders';
 const token = localStorage.getItem("token");
 
-const postOrders = async(arrayProds, name, tab) => {
-
-    const clientOrder = {
-        userId: '',
-        client: name,
-        table: tab,
-        products: arrayProds.map(prod => {
-            const product = {
-                name: prod.name,
-                price: prod.price,
-                qty: prod.qty
-            }
-            return product;
-        })
-    };
+const postOrders = async(order) => {
 
     const res = await fetch(`${BASE_URL}${orderPath}`, {
         method: "POST",
@@ -24,7 +10,7 @@ const postOrders = async(arrayProds, name, tab) => {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify(clientOrder)
+        body: JSON.stringify(order)
     })
 
     const result = await res.json();

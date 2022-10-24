@@ -34,12 +34,13 @@ server.post('/auth', (req, res) => {
 
 
 
-
 server.post('/orders', async (req, res) => {
   try {
     const today = new Date();
-    const now = today.toLocaleString();
+    console.log(today, 'hoy');
+    const now = today.toLocaleString('en-US');
     const order = {
+      id: req.body.id,
       userId: req.body.userId,
       client: req.body.client,
       products: req.body.products,

@@ -1,13 +1,18 @@
 .btn-menu{
-    width: 11rem;
+    width: 9rem;
     height: 2.2rem;
-    background-color: var(--black);
+    background-color: transparent;
     color: var(--white);
     font-size: 15px;
     font-weight: 600;
     border-radius: 5px;
     border-style: none;
     cursor: pointer;
+
+}
+
+.btn-menu:focus {
+    background: var(--orange);
 }
 
 .active{
@@ -18,7 +23,3 @@
     background-color: var(--orange);
 }
 
-.bg-brown{
-    background-color: var(--brown);
-    width: 9rem;
-}

@@ -18,6 +18,8 @@ export const WaiterView = () => {
 
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
+    /* const [bg1, setBg1] = useState("")  */
+    const [bg2, setBg2] = useState("")  
     const [client, setClient] = useState("");
     const [table, setTable] = useState("");
 
@@ -27,34 +29,35 @@ export const WaiterView = () => {
 
     const filteredProducts = (typeMenu) => {  // typeMenu es un string xej 'dinner'
         const typeProducts = products.filter((prod) => { //product es el [{},{},...] de productos de la data
-            return prod.type === typeMenu })
+            return prod.type === typeMenu 
+        })
             
-            const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
-                //typeProducts es el array de obj
-                return (<CardMenu 
-                    name = {type.name} // type es el prod
-                    image = {type.image} 
-                    key = {type.id} 
-                    id = {type.id}
-                    price = {`S/. ${type.price}`} 
-                    adding = {() => addProduct(type)}
-                    substracting = {() => subsProduct(type)}  
-                    />)
-            })
-            return cards;
+        const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
+        //typeProducts es el array de obj
+            return (<CardMenu 
+                name = {type.name} // type es el prod
+                image = {type.image} 
+                key = {type.id} 
+                id = {type.id}
+                price = {`S/. ${type.price}`} 
+                adding = {() => addProduct(type)}
+                substracting = {() => subsProduct(type)}  
+            />)
+        })
+        return cards;
+    
     }
  
     // productos unicos según id (no repetidos)
     const uniqueProduct = (id) => {
-    const unique = arrayOfOrder.find((obj) => obj.id === id);
-    /* console.log(arrayOfOrder, 'array de ordenes') */
-    /* console.log(unique, 'unico') */
+        const unique = arrayOfOrder.find((obj) => obj.id === id);
+        /* console.log(unique, 'unico') */
     return unique;
     };
 
     // función del boton +
     const addProduct = (type) => {
-        /* console.log(type , 'tipo') */
+        console.log(type , 'tipo')
       if (uniqueProduct(type.id)) {
         const addQtyPrice = arrayOfOrder.map((order) => {
             if (order.id === type.id) {
@@ -68,6 +71,7 @@ export const WaiterView = () => {
     } else setArrayOfOrder([...arrayOfOrder, { ...type, qty: 1 }]);
     };
 
+    // función del boton -
     const subsProduct = (type) => {
         if(uniqueProduct(type.id)){
           const susQtyPrice = arrayOfOrder.map((order) => {
@@ -84,6 +88,7 @@ export const WaiterView = () => {
         }
     }
     /* console.log(arrayOfOrder, 'arrayorder'); */
+
     let total = 0    
     arrayOfOrder.map((item) => {
         total += item.price
@@ -94,37 +99,60 @@ export const WaiterView = () => {
         const arrayWhithoutProduct = arrayOfOrder.filter((item)=> item.id !== obj.id )
         setArrayOfOrder(arrayWhithoutProduct)
     }
-    console.log(arrayOfOrder, 'array inicial');
+    /* console.log(arrayOfOrder, 'array inicial');
     console.log(client);
     console.log(table);
-  
+   */
+
+    const clientOrder = {
+        _id: '',
+        userId: '',
+        client: client,
+        table: table,
+        products: arrayOfOrder.map(prod => {
+            const product = {
+                name: prod.name,
+                price: prod.price,
+                qty: prod.qty
+            }
+            return product;
+        })
+    };
+
     return (
         <section className="waiter">
-            <Header path="/orders" menuActive="active" first="Menú" second="Ver pedidos" log={waiterImg} />
+            <Header path="/orders" active1="active" first="Menú" second="Ver pedidos" log={waiterImg} />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno'
-                        bg= "active" 
-                        whenClick = {()=>setMenu("breakfast")}/>
+                        /* bg= {bg1} */
+                        whenClick = {()=>{
+                            setMenu("breakfast")
+                            /* setBg1("active")  */
+                            }}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
-                        whenClick = {()=>setMenu("dinner")} />
+                        bg= {bg2}
+                        whenClick = {()=>{
+                            setMenu("dinner")
+                            setBg2("active")
+                            }} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
                         <nav className="nav-option-menu">
                             <MenuButton 
                             title='Hamburguesa' 
-                            bg = "bg-orange" 
+                            
                             whenClick= {()=>setMenu("dinner")}/>  {/* función onClick */}
                             <MenuButton 
                             title='Extras' 
-                            bg = "bg-brown" 
+                            
                             whenClick = {()=>setMenu("other")} />
                             <MenuButton 
                             title='Bebidas' 
-                            bg = "bg-brown" 
+                            
                             whenClick = {()=>setMenu("drinks")} />
                         </nav>
                         {filteredProducts(menu)}
@@ -177,7 +205,7 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(arrayOfOrder, client, table)}/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(clientOrder)}/>
                         </div>
                     </div>  
                 </div>
