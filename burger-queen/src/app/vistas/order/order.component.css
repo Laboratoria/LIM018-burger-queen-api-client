@@ -1,0 +1,59 @@
+td button {
+    background-color: transparent;
+    border: 0px;
+}
+
+table {
+    font-size: 120%;
+    margin: 30px;
+    width: 100%;
+    max-width: 89em;
+    min-width: 31em;
+    border-collapse: collapse;
+    border-radius: 8px;
+}
+
+th {
+    font-size: 130%;
+    font-weight: lighter;
+    padding: 5px;
+    background: #f85e11c2;
+    border-bottom: 3px solid #fff;
+    color: rgb(242, 244, 247);
+    text-align: center;
+}
+
+td {
+    padding: 8px;
+    background: beige;
+    border-bottom: 1px solid #fff;
+    color: #c65314;
+    border-top: 1px solid transparent;
+    text-align: center;
+    
+}
+
+tr:hover td {
+    background: #f89a4d;
+    color: #fffefe;
+
+
+}
+
+#btnOrder {
+    background: #f85e11c2;
+    padding: 4%;
+    color: white;
+    font-size: 130%;
+    font-weight: lighter;
+    margin-left: 50%;
+    border-radius: 20px;
+    border: 0;
+}
+
+#btnOrder:hover {
+    font-size: 130%;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}

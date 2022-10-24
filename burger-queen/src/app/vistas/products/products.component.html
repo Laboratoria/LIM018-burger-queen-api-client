@@ -1,0 +1,29 @@
+
+
+<div id="divProducts"  *ngIf="product.type =='Desayuno'">
+   
+
+
+    <button (click)="onAddtoCart()">
+        
+        <h2>${{product.price}} </h2>
+        <img [src]="product.image" alt="">
+        <p>{{product.name}} </p>
+    </button>
+
+
+</div>
+
+<div id="divProducts" *ngIf="product.type =='Almuerzo y cena'">
+    
+
+    <button (click)="onAddtoCart()">
+        
+        
+        <h2>${{product.price}} </h2>
+        <img [src]="product.image" alt="">
+        <p>{{product.name}} </p>
+    </button>
+
+
+</div>

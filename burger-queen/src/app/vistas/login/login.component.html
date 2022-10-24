@@ -1,0 +1,18 @@
+<body>
+<div class="containerLogin">
+
+    
+    
+       
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)" class="formLogin" >
+            <img src="../../../assets/images/logo.png" alt="">
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email" formControlName = "email">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName ="password">
+            
+            <button class="btnLogin" type="submit">Iniciar Sesión</button>
+            
+        </form>
+        
+   
+</div>
+</body>

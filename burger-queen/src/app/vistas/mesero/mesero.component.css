@@ -1,0 +1,153 @@
+
+#carta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+   
+     
+}
+#carta::after{
+    content: "";
+    background-image: url(https://img.freepik.com/foto-gratis/concepto-comida-rapida-restaurante-frito-grasiento-sacado-como-aros-cebolla-hamburguesas-pollo-frito-papas-fritas-como-simbolo-tentacion-dietetica-que-resulta-nutricion-poco-saludable_639032-2410.jpg?w=2000);
+    background-size:cover;
+    filter: blur(8px)  contrast(70%)     ;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+   
+}
+@media screen and (max-width: 39em){
+    #carta{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+#divProductos {
+    margin-top: 20px;
+
+    width: 700px;
+    height: 860px;
+    padding: 5px;
+}
+.bttn-type{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5.5%;
+}
+.bttn-type button{
+    font-size: 130%;
+    border-radius:10px;
+    padding: 3%;
+    font-family: 'Galindo', cursive;
+    font-weight: lighter;
+    background-color: #d43316;
+    color: white;
+    border: none;
+}
+.bttn-type button:hover{
+    background-color: #d43316;
+    filter: brightness(1.5);
+    font-size: 140%;
+    
+}
+
+#divProductos form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#inputNameUsuario,
+#numMesa {
+    border: none;
+    width: 400px;
+    height: 40px;
+    margin-left: 8%;
+    border-radius: 8px;
+    font-size: 120%;
+    padding: 1%;
+    background-color: rgb(255, 255, 255, 0.7);
+    outline: none;
+}
+#inputNameUsuario:hover,
+#numMesa:hover {
+    outline: none;
+    box-shadow: 0.2rem 0.8rem 1.6rem black;
+}
+
+#contProducts {
+    box-sizing: content-box;
+    width: 100%;
+}
+
+#cards {
+    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+#cardProducts {
+    background-color: #5A5B29;
+    opacity: 83%;
+    border: 0;
+    border-radius: 10px;
+    margin-right: 8px;
+    text-align: center;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-bottom: 5px;
+}
+
+#cardProducts:hover {
+    background-color: #7d7e3d;
+}
+
+#cardProducts img {
+    width: 90px;
+    height: 90px;
+    margin-top: -10px;
+}
+
+#cardProducts h5 {
+    margin-top: auto;
+}
+
+
+.products--grid {
+    display: flex;
+    flex-direction: column;
+
+}
+
+@media screen and (max-width: 39em) {
+    .products--grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+    .products--grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .products--grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+    }
+
+}
