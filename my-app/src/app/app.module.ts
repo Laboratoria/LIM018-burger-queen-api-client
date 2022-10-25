@@ -21,6 +21,7 @@ const appRoutes:Routes =[
   {path:'', component:LoginComponent},
   {path:'home', component:homeComponent}
 ];
+
 @NgModule({
   declarations: [
     AppComponent,

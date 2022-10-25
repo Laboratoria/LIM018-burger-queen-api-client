@@ -21,7 +21,10 @@ export class homeComponent implements OnInit {
   token: String = '';
 
   // para mostrar y ocultar con el boton
-  mostrar: Boolean = false;
+  show = {
+    showBreakfast: false,
+    showLunch:  false
+  };
 
 
 
@@ -39,8 +42,8 @@ export class homeComponent implements OnInit {
 
   // para filtrar por type breakfast
   viewBreakfast = () => {
-    if (this.mostrar) {
-      this.mostrar = false;
+    if (this.show.showBreakfast) {
+      this.show.showBreakfast = false;
     } else {
       this.productsService.getAllProducts().subscribe((data) => {
       this.filteredProducts = data.filter((element) => {
@@ -48,13 +51,14 @@ export class homeComponent implements OnInit {
       });
       this.products = this.filteredProducts;
     });
-     this.mostrar = true;
+     this.show.showBreakfast = true;
+     this.show.showLunch= false;
     }
   };
   // para ver por cena
   viewLunch = () => {
-    if (this.mostrar) {
-      this.mostrar = false;
+    if (this.show.showLunch) {
+      this.show.showLunch = false;
     } else {
     this.productsService.getAllProducts().subscribe((data) => {
       this.filteredProducts = data.filter((e) => {
@@ -62,7 +66,8 @@ export class homeComponent implements OnInit {
       });
       this.products = this.filteredProducts;
     });
-    this.mostrar = true;
+    this.show.showLunch = true;
+    this.show.showBreakfast = false;
     }
   };
 

@@ -12,9 +12,12 @@ button {
 /* From uiverse.io by @alexruix */
 
 .card {
-  width: 80%;
-  height: 254px;
+  // width: 80%;
+  min-width: 80px;
+  max-width: 120px;
+  height: 210px;
   padding: .8em;
+  padding-bottom: 0%;
   background: #f5f5f5;
   position: relative;
   overflow: visible;
@@ -35,8 +38,9 @@ button {
   border-radius: 5%;
   }
  .card-info {
-  padding-top: 10%;
-  height: 30%;
+  padding-top: 8%;
+  height: 25%;
+  text-align: center;
  }
 
  svg {
@@ -47,10 +51,13 @@ button {
  .card-footer {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;;
   align-items: center;
   padding-top: 10px;
   border-top: 1px solid #ddd;
+  position:absolute;
+  bottom: 5px;
+  left: 3px;
  }
 
  /*Text*/

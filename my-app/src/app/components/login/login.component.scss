@@ -1,9 +1,13 @@
-
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 /*------------------------------MOVIL---------------------------*/
 .show-mobile{
   width: 100%;
   height: 900px;
-  background-color: #1a2926;
+  background-color: #01957D;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,7 +106,7 @@
  .show-tablet{
   display: flex;
   flex-direction: row;
-  background-color: #3a3a3f;
+  background-color: #01957D;
   height: 1024px;
     .imgContainer{
       justify-content: center;
@@ -144,15 +148,27 @@
  /*------------------------------DESKTOP---------------------------*/
  .show-desktop{
   display: flex;
-  background-color: #dd5a5a;
+  padding: 0;
+  width: 100%;
+
+  margin: 0;
+  background-color: #01957D;
   align-items: center;
   align-content: center;
   justify-content: center;
-
+  margin-top: 2%;
     .imgContainer{
       display: flex;
       align-items: center;
-      width: 30%;
+      width: 40%;
+      margin-top: 10%;
+      margin-left: 0;
+
+    }
+    .form{
+      min-width: 350px;
+      max-width: 450px;
+      margin-left: 25%;
     }
     .form_heading{
       font-size: 40px;
