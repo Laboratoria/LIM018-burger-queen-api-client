@@ -4,6 +4,7 @@ section{
 }
 .show-mobile{
   display: block;
+  font-family: 'Share', cursive;
   .takeOrder{
     // display: flex;
     // width: 100%;
@@ -46,8 +47,9 @@ section{
   .content{
     padding: 1em;
     height: 50%;
-    background-color: #FDFCC6;
+    background-color: #dfdfdf;
     justify-content: center;
+    border-radius: 5px;
     .menu--options{
       display: flex;
       justify-content: space-around;
@@ -69,34 +71,59 @@ section{
   }
 }
 
-.hide-mobile{
+.show-tablet{
   display: none;
   .content{
+    background-color: #dfdfdf;
     padding: 1em;
-    height: 750px;
-    background: rgb(255, 255, 255);
-    border: 2px solid rgb(184, 217, 138, 1);
-    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    min-width: 400px;
+    max-width: 600px;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .menu--options{
       display: flex;
       justify-content:left;
       align-items: center;
       padding-bottom: 1em;
-      width: 50%;
+      // width: 50%;
+      justify-content: space-around;
+      .buttonBreakfast{
+        position: relative;
+        display: inline-block;
+        margin: 5px;
+        padding: 5px 10px;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #000000;
+        background: transparent;
+        cursor: pointer;
+        transition: ease-out 0.5s;
+        border: 4px solid #01957D;
+        border-radius: 10px;
+        box-shadow: inset 0 0 0 0 #01957D;
+      }
+      .buttonBreakfast:hover{
+        // background-color: #EB0D26;
+        color: white;
+        box-shadow: inset 0 -100px 0 0 #EB0D26;
+        border: 4px solid #EB0D26;
+      }
+      .buttonBreakfast:active {
+        transform: scale(0.9);
+      }
     }
-    .menu--grid--desayuno{
+
+    .menu--grid{
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(4,1fr);
       grid-gap: 15px;
       padding-bottom: 1em;
-      width: 50%;
-    }
-    .menu--grid--almuerzo{
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      grid-gap: 15px;
-      padding-bottom: 1em;
-      width: 50%;
     }
   }
   .footer{
@@ -107,14 +134,36 @@ section{
 }
 
 
+@media screen and (max-width:39em){
+  // .show-mobile {
+  //   display: block;
+  // }
+  .show-tablet {
+    display: none;
+  }
+  .show-desktop{
+    display: none;
+  }
+}
+/* TABLET */
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .show-mobile {
+    display: none;
+  }
+  .show-tablet {
+    display: block;
+  }
+  .show-desktop{
+    display: none;
+  }
+}
 
-/* desktop */
+/* DESKTOP */
 @media screen and (min-width: 64em) {
   .show-mobile {
     display: none;
   }
-  .hide-mobile {
-    display: block;
+  .show-tablet {
+    display: none;
   }
 }
-
