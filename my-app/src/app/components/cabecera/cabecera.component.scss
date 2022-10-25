@@ -1,16 +1,31 @@
 
 .show-mobile{
-  display: block;
-  >div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #01957D ;
+  align-items: center;
+  .logoName{
     padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 20%;
     img{
-      width: 70%;
+      width: 40px;
       height: auto;
     }
+    .title{
+      font-family: 'Fuzzy Bubbles', cursive;
+    }
+    .logo1{
+      color: #FFC100
+    }
+    .logo2{
+      color: #000;
+    }
     .account{
+      font-family: 'Share', cursive;
       color:rgba(239, 95, 43, 1);
       margin-right: .5em;
       font-size: 14px;
@@ -18,31 +33,41 @@
   }
 }
 
-.hide-mobile{
-  display: none;
-  >div{
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img{
-      width: 50%;
-      height: auto;
-    }
-    .account{
-      color:rgba(239, 95, 43, 1);
-      margin-right: .5em;
-      font-size: 16px;
-    }
-  }
-}
+// .hide-mobile{
+//   background-color: #01957D ;
+//   display: none;
+//   .logoName{
+//     padding: 1em;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     img{
+//       width: 40%;
+//       height: auto;
+//     }
+//     .title{
+//       font-family: 'Fuzzy Bubbles', cursive;
+//     }
+//     .logo1{
+//       color: #FFC100
+//     }
+//     .logo2{
+//       color: #000;
+//     }
+//     .account{
+//       color:rgba(239, 95, 43, 1);
+//       margin-right: .5em;
+//       font-size: 16px;
+//     }
+//   }
+// }
 
-/* desktop */
-@media screen and (min-width: 64em) {
-  .show-mobile {
-    display: none;
-  }
-  .hide-mobile {
-    display: block;
-  }
-}
+// /* desktop */
+// @media screen and (min-width: 64em) {
+//   .show-mobile {
+//     display: none;
+//   }
+//   .hide-mobile {
+//     display: block;
+//   }
+// }

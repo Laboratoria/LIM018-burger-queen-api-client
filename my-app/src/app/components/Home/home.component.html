@@ -1,7 +1,7 @@
 <app-cabecera> </app-cabecera>
 <section>
   <p>la cantidad de elementos seleccionados {{ myOrder.length }}</p>
-  <div>{{myorder.name}</div>
+  <div>{{myOrder.name  }</div>
 
   <p>
     Ingrese el nombre del cliente:<input
@@ -14,10 +14,10 @@
   <div class="show-mobile">
     <main class="content">
       <div class="menu--options">
-        <button (click)="viewBreakfast()">Desayuno</button>
-        <button (click)="viewLunch()">Almuerzo</button>
+        <button class="buttonBreakfast" (click)="viewBreakfast()">Desayuno</button>
+        <button class="buttonBreakfast" (click)="viewLunch()">Almuerzo</button>
       </div>
-      <div *ngIf="mostrar" class="menu--grid">
+      <div *ngIf="show"   class="menu--grid">
         <app-product
           [product]="product"
           *ngFor="let product of products"
@@ -66,7 +66,171 @@
   </div>
 </section>
 
-<div class="hide-mobile">
+ <!-- PARA VISTA tablet  -->
+
+ <div class="show-tablet">
+  <main class="content">
+    <div class="menu--options">
+      <button class="buttonBreakfast" (click)="viewBreakfast()"><strong>BREAKFAST</strong></button>
+      <button class="buttonBreakfast" (click)="viewLunch()"><strong>LUNCH</strong></button>
+    </div>
+    <div *ngIf="show"   class="menu--grid">
+      <app-product
+        [product]="product"
+        *ngFor="let product of products"
+        (addPRoduct)="onAddToOrder($event)"
+      ></app-product>
+    </div>
+  </main>
+
+  <section class="takeOrder">
+    <div class="inputName">
+      <p>
+        El nombre del cliente es: <strong>{{ name }}</strong>
+      </p>
+      <p>la cantidad de elementos seleccionados {{ myOrder.length }}</p>
+    </div>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+
+    <div class="totalOrder">
+      <strong class="totalPrice">total: ${{ total }}</strong>
+      <button class="cocinaButton">Enviar a cocina</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Desarrollado por ##### 2022</p>
+  </div>
+</div>
+
+<!-- PARA VISTA DESKTOP  -->
+
+ <div class="show-desktop">
+  <main class="content">
+    <div class="menu--options">
+      <button class="buttonBreakfast" (click)="viewBreakfast()"><strong>BREAKFAST</strong></button>
+      <button class="buttonBreakfast" (click)="viewLunch()"><strong>LUNCH</strong></button>
+    </div>
+    <div *ngIf="show"   class="menu--grid">
+      <app-product
+        [product]="product"
+        *ngFor="let product of products"
+        (addPRoduct)="onAddToOrder($event)"
+      ></app-product>
+    </div>
+  </main>
+
+  <section class="takeOrder">
+    <div class="inputName">
+      <p>
+        El nombre del cliente es: <strong>{{ name }}</strong>
+      </p>
+      <p>la cantidad de elementos seleccionados {{ myOrder.length }}</p>
+    </div>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+    <li class="orders">
+      <p>Aqui iran las ordenes</p>
+      <p>cantidad</p>
+      <p>$ precio</p>
+    </li>
+
+    <div class="totalOrder">
+      <strong class="totalPrice">total: ${{ total }}</strong>
+      <button class="cocinaButton">Enviar a cocina</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Desarrollado por ##### 2022</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="hide-mobile">
   <div class="content">
     <div class="menu--options">
       <button >Desayuno</button>
@@ -92,4 +256,4 @@
   <div class="footer">
     <p>Desarrollado por ##### 2022</p>
   </div>
-</div>
+</div> -->
