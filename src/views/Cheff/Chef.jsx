@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import chefImg from "../../Images/sombrero-de-cocinero.png";
 import CardChef from "../../components/Orders/CardChefOrder";
 import getOrders from "../../api_functions/getOrders";
-import { putOrders } from "../../api_functions/putOrders";
+import putOrders from "../../api_functions/putOrders";
 
 export const ChefView = () => {
 

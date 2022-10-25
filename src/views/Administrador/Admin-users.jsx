@@ -7,9 +7,8 @@ import deleteImg from "../../Images/delete.png"
 import './Administrador.css'
 
 
-export const AdminView = () => {
+export const AdminViewUsers = () => {
   
-   
     return (
         <section className="waiter">
             <Header log={managerImg} path="/admin-users" active1= "active" first = "Ver usuarios" second = "Ver pedidos"/>
@@ -22,15 +21,25 @@ export const AdminView = () => {
                                 <th>Nombre y Apellido</th>
                                 <th>Usuario</th>
                                 <th>Función</th>
-                                <th><img className='img' src={editImg} alt="edit"/></th>
-                                <th><img className='img' src={deleteImg} alt="delete"/></th>
+                                <th></th>
+                                <th></th>
+                            
                             </tr>
-                            <tr>
+                            <tr className='content'>
                                 <th>Pamela Rojas</th>
                                 <th>pamela@burgeer.queen</th>
                                 <th>Mesero</th>
-                                <th></th>
-                                <th></th>
+                                <th><img className='img' src={editImg} alt="edit"/></th>
+                                <th><img className='img' src={deleteImg} alt="delete"/></th>
+                                
+                            </tr>
+                            <tr className='content'>
+                                <th>Linda Lopez Li</th>
+                                <th>linda@burgeer.queen</th>
+                                <th>Cheff</th>
+                                <th><img className='img' src={editImg} alt="edit"/></th>
+                                <th><img className='img' src={deleteImg} alt="delete"/></th>
+                                
                             </tr>
                         </tbody>
                     </table>
