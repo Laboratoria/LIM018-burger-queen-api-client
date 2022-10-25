@@ -28,7 +28,7 @@ const CardChef = (props) => {
                 })}
                 </tbody>
             </table>
-            <div className="btn-entregar">
+            <div className="entregar">
                 <button onClick={props.update} className="btn-menu bg-orange">Listo</button>
             </div>
         </div>
