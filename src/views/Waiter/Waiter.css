@@ -64,9 +64,10 @@
 }
 
 .total-sell{
+    background-color: var(--white);
     width: 80%;
     height: 2.2rem;
-    background-color: var(--white);
+    border-radius: 2.5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -88,6 +89,10 @@
 
 .nav-option-menu{
     gap: 1rem;
+    display: none;
+}
+
+.show{
     display: flex;
 }
 
@@ -168,6 +173,21 @@ tr{
 ::-webkit-scrollbar-thumb:hover {
     background: var(--black); 
 }
+
+/* Admin */
+
+.content-names{
+    background: linear-gradient(180deg, rgba(224, 192, 151, 0.7) 2.61%, rgba(224, 192, 151, 0.8) 81.77%, #E0C097 100%);
+    width: 90%;
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+
 
 .client{
     width: 7.5rem;
