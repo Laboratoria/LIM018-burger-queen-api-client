@@ -1,10 +1,11 @@
 const BASE_URL= "http://localhost:3001";
 const path = "/orders/"; 
 
+
 const token = localStorage.getItem("token");
 console.log(token , 'token');
 
-export const putOrders= async (order, id) => {
+const putOrders= async (order, id) => {
     console.log(id , 'que id');
     let changeStatusOrder = order;
     changeStatusOrder.status = "delivering"
@@ -22,6 +23,8 @@ export const putOrders= async (order, id) => {
     return result;
     
 }
+
+export default putOrders;
 
 
 

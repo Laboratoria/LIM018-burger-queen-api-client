@@ -1,3 +1,4 @@
+/* Admin users */
 .btn-create-user{
     justify-content: space-around;
     align-items: center;
@@ -23,8 +24,19 @@
 
 .etiquetas{
     font-size: 1.2rem;
+    /* justify-content: space-around; */
+}
+
+.content{
+    justify-content: space-around;
 }
 
 .img{
     height: 2rem;
+}
+
+/* Admin orders */
+
+.btn-entregar{
+    display: none;
 }

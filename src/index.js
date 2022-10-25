@@ -5,7 +5,8 @@ import { WaiterView } from "./views/Waiter/Waiter";
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import { Orders } from "./views/Waiter/Orders"
 /* import Orders from "./views/Waiter/Orders"; */
-import { AdminView } from "./views/Administrador/Admin-users";
+import { AdminViewUsers } from "./views/Administrador/Admin-users";
+import { AdminViewOrders } from "./views/Administrador/Admin-orders";
 import { ChefView} from "./views/Cheff/Chef"
 
 
@@ -19,7 +20,8 @@ root.render(
             <Route path="/" element={<Login />} />
             <Route path="/menu" element={<WaiterView />} />
             <Route path="/orders" element={<Orders />} />
-            <Route path="/admin-users" element={<AdminView />} />
+            <Route path="/admin-users" element={<AdminViewUsers />} />
+            <Route path="/admin-orders" element={<AdminViewOrders />} />
             <Route path="/chef" element={<ChefView />} />
         </Routes>
     </BrowserRouter>

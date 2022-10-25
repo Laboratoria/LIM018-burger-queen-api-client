@@ -108,7 +108,7 @@
   ],
   "orders": [
     {
-      "_id": "01",
+      "_id": "1",
       "userId": "1",
       "client": "",
       "products": [
@@ -132,7 +132,7 @@
       "dateEntry": "24/10/2022 10:47:50"
     },
     {
-      "_id": "02",
+      "_id": "2",
       "userId": "1",
       "client": "Caro",
       "products": [
@@ -154,6 +154,30 @@
       ],
       "status": "delivering",
       "dateEntry": "24/10/2022 10:48:31"
+    },
+    {
+      "_id": "3",
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/25/2022, 7:07:37 AM"
     }
   ]
 }
