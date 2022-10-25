@@ -18,8 +18,12 @@ export const WaiterView = () => {
 
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
-    /* const [bg1, setBg1] = useState("")  */
-    const [bg2, setBg2] = useState("")  
+    const [bg1, setBg1] = useState("active");  
+    const [bg2, setBg2] = useState("");
+    const [bg3, setBg3] = useState("active");
+    const [bg4, setBg4] = useState("");
+    const [bg5, setBg5] = useState("");
+    const [show, setShow] = useState("")       
     const [client, setClient] = useState("");
     const [table, setTable] = useState("");
 
@@ -127,10 +131,11 @@ export const WaiterView = () => {
                     <nav className="nav-menu">
                         <MenuButton 
                         title='Desayuno'
-                        /* bg= {bg1} */
+                        bg= {bg1}
                         whenClick = {()=>{
                             setMenu("breakfast")
-                            /* setBg1("active")  */
+                            setBg1("active")
+                            setBg2("") 
                             }}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
@@ -138,22 +143,39 @@ export const WaiterView = () => {
                         whenClick = {()=>{
                             setMenu("dinner")
                             setBg2("active")
+                            setBg1("")
+                            setShow("show")
                             }} />
                     </nav>
                     <div id= "containerMenu" className="container-card-menu mg-top">
-                        <nav className="nav-option-menu">
+                        <nav className={`nav-option-menu ${show}`}>
                             <MenuButton 
-                            title='Hamburguesa' 
-                            
-                            whenClick= {()=>setMenu("dinner")}/>  {/* función onClick */}
+                            title='Hamburguesa'
+                            bg= {bg3} 
+                            whenClick= {()=>{
+                                setMenu("dinner")
+                                setBg3("active")
+                                setBg4("")
+                                setBg5("")
+                                }}/>  {/* función onClick */}
                             <MenuButton 
-                            title='Extras' 
-                            
-                            whenClick = {()=>setMenu("other")} />
+                            title='Extras'
+                            bg= {bg4} 
+                            whenClick = {()=>{
+                                setMenu("other")
+                                setBg3("")
+                                setBg4("active")
+                                setBg5("")
+                            }} />
                             <MenuButton 
-                            title='Bebidas' 
-                            
-                            whenClick = {()=>setMenu("drinks")} />
+                            title='Bebidas'
+                            bg= {bg5} 
+                            whenClick = {()=>{
+                                setMenu("drinks")
+                                setBg3("")
+                                setBg4("")
+                                setBg5("active")
+                                }} />
                         </nav>
                         {filteredProducts(menu)}
                     </div>

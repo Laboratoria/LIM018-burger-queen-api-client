@@ -46,7 +46,7 @@ export const CardOrder = (props) => {
                 ____________________________________
                     <p>TOTAL S/. {total}</p>     
                 </div>
-                <div className="btn-entregar">
+                <div className="entregar">
                     <MenuButton
                     title = "Entregar" bg="bg-orange"
                     />

@@ -8,9 +8,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: -1px -1px 23px 6px rgb(190, 164, 128);
 }
 
-.btn-entregar{
+.entregar{
     display: flex;
     justify-content: center;
 }

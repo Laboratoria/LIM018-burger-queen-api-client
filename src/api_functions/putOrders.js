@@ -1,5 +1,5 @@
 const BASE_URL= "http://localhost:3001";
-const authPath = "/orders/"; 
+const path = "/orders/"; 
 
 
 const token = localStorage.getItem("token");
@@ -10,10 +10,11 @@ const putOrders= async (order, id) => {
     let changeStatusOrder = order;
     changeStatusOrder.status = "delivering"
     console.log(changeStatusOrder, 'cambio')
-    const res = await fetch(`${BASE_URL}${authPath}${id}`,{
+
+    const res = await fetch(`${BASE_URL}${path}${id}`,{
         method: "PUT",
         headers: {
-            "Content-Type": "application/json ; charset=UTF-8",
+            "Content-Type": "application/json;charset=UTF-8",
             "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(changeStatusOrder) // convierte js a json
