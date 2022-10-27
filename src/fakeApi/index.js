@@ -48,12 +48,14 @@ server.post('/orders', async (req, res) => {
       dateEntry: now,
     };
 
+    // para añadir el id
     const orders = router.db.get('orders');
-    console.log(orders);
+    /* console.log('esta orders',orders);
+    console.log('este wrapped',orders._wrapped_)
+    console.log('largo',orders.__wrapped__.orders.length); */
+    order.id = orders.__wrapped__.orders.length + 1;
 
-    // console.log(orders.__wrapped__.orders.length);
-    
-    // order.id = orders.__wrapped__.orders.length + 1;
+
     const result = await orders.push(order).write();
     console.log("result", result);
     res.status(200).jsonp(order);

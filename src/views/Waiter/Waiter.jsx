@@ -8,6 +8,7 @@ import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import postOrders from "../../api_functions/postOrders";
 import waiterImg from "../../Images/camarero.png"
+import {Modal} from "../../components/Modal/Modal"
 
 export const WaiterView = () => {
 
@@ -200,12 +201,16 @@ export const WaiterView = () => {
                                 </tbody> 
                             </table>
                         </div>
+                        <Modal/>
                         <div className="container-total-sell">
                             <div className="total-sell">
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(clientOrder)}/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> {
+                                postOrders(clientOrder)
+                                setArrayOfOrder([])
+                            }}/>
                         </div>
                     </div>  
                 </div>
