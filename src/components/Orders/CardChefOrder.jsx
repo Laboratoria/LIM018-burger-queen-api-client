@@ -4,7 +4,7 @@ const CardChef = (props) => {
 
     return(
         <div className="order">
-            <div>
+            <div className="status">
                 <h3>{props.theStatus}</h3>
                 <p>25:00</p>
             </div>

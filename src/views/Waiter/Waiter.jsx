@@ -7,17 +7,20 @@ import trashCan from "../../Images/delete.png"
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import postOrders from "../../api_functions/postOrders";
-import waiterImg from "../../Images/camarero.png"
+import waiterImg from "../../Images/camarero.png";
+import { Modal, ErrorModal } from "../../components/Modal/Modal";
+import check from "../../Images/cheque.png";
+import ekis from "../../Images/borrar.png"
 
 export const WaiterView = () => {
-
+    const uId = localStorage.getItem("userId");
     // const navigate = useNavigate();
     
     const [menu, setMenu] = useState("breakfast");
     // menu primero vale breakfast y setMenu se actualiza al dar click xej: drinks
-
     const [products, setProducts] = useState([]);
     const [arrayOfOrder, setArrayOfOrder] = useState([]);
+
     const [bg1, setBg1] = useState("active");  
     const [bg2, setBg2] = useState("");
     const [bg3, setBg3] = useState("active");
@@ -26,6 +29,9 @@ export const WaiterView = () => {
     const [show, setShow] = useState("")       
     const [client, setClient] = useState("");
     const [table, setTable] = useState("");
+
+    const [rightModal, setRightModal] = useState(false);
+    const [errorModal, setErrorModal] = useState(false);
 
     useEffect(() => {
         getProducts(setProducts) 
@@ -109,8 +115,8 @@ export const WaiterView = () => {
    */
 
     const clientOrder = {
-        _id: '',
-        userId: '',
+        id: "",
+        userId: uId,
         client: client,
         table: table,
         products: arrayOfOrder.map(prod => {
@@ -135,15 +141,19 @@ export const WaiterView = () => {
                         whenClick = {()=>{
                             setMenu("breakfast")
                             setBg1("active")
-                            setBg2("") 
+                            setBg2("")
+                            setShow("") 
                             }}/>
                         <MenuButton 
                         title='Almuerzo y Cena' 
                         bg= {bg2}
                         whenClick = {()=>{
                             setMenu("dinner")
-                            setBg2("active")
                             setBg1("")
+                            setBg2("active")
+                            setBg3("active")
+                            setBg4("")
+                            setBg5("")
                             setShow("show")
                             }} />
                     </nav>
@@ -183,12 +193,12 @@ export const WaiterView = () => {
                 <div className="container-menu">
                     <div className="nav-menu">
                         <div>
-                            <label>Cliente</label>
-                            <input type="text" className="client" onChange={(e)=>setClient(e.target.value)}/>
+                            <label htmlFor="client">Cliente</label>
+                            <input type="text" value={client} className="client" onChange={(e)=>setClient(e.target.value)}/>
                         </div>
                         <div>
-                            <label>Mesa</label>
-                            <input type="text" className="client" onChange={(e)=>setTable(e.target.value)}/>
+                            <label htmlFor="table">Mesa</label>
+                            <input type="text" value={table} className="client" onChange={(e)=>setTable(e.target.value)}/>
                         </div>
                     </div>
                     <div className="container-orders mg-top">
@@ -227,12 +237,23 @@ export const WaiterView = () => {
                                 <h3>TOTAL:</h3>
                                 <p>{`S/. ${total}`}</p>
                             </div>
-                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> postOrders(clientOrder)}/>
+                            <MenuButton title='Enviar orden' bg="bg-orange" whenClick={()=> {
+                                client !== "" && arrayOfOrder.length > 0 ? 
+                                postOrders(clientOrder) && setRightModal(true)
+                                : setErrorModal(true)
+                            }}/>
                         </div>
-                    </div>  
+                    </div>
                 </div>
             </div>    
             <div className="back-blur"></div>
+            <Modal imgModal={check} open={rightModal} onClose={() => {
+                setRightModal(false);
+                setArrayOfOrder([]);
+                setClient("")
+                }} 
+                message="Pedido enviado correctamente" />
+            <ErrorModal imgModal={ekis} error={errorModal} onClose={() => setErrorModal(false)} message="Por favor, complete todos los campos" />         
         </section>
     );
 }

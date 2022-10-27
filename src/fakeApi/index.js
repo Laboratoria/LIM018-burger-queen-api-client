@@ -4,7 +4,7 @@ const router = jsonServer.router('./db.json')
 const middlewares = jsonServer.defaults()
 
 
-const secret = "EsUnSecreto"
+const secret = "EsUnsecreto"
 
 server.use(jsonServer.bodyParser)
 server.use(middlewares)
@@ -50,11 +50,14 @@ server.post('/orders', async (req, res) => {
     };
 
     const orders = router.db.get('orders');
-    console.log(orders);
+    console.log("orders ->", orders);
 
-    // console.log(orders.__wrapped__.orders.length);
+    console.log("largo de orden", orders.__wrapped__.orders.length);
     
-    // order.id = orders.__wrapped__.orders.length + 1;
+    console.log("wrapped", orders.__wrapped__);
+    
+    order.id = orders.__wrapped__.orders.length + 1;
+
     const result = await orders.push(order).write();
     console.log("result", result);
     res.status(200).jsonp(order);
