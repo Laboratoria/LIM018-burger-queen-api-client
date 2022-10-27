@@ -1,18 +1,29 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "mesero@burger.queen",
+      "id": "001",
+      "email": "a.mesero@burger.queen",
       "password": "123456",
-      "rol": "waiter",
-      "admin": false
+      "roles": {
+        "waiter": true
+      }
+    
     },
     {
-      "id": 2,
-      "email": "cocinero@burger.queen",
+      "id": "002",
+      "email": "a.cocinero@burger.queen",
       "password": "123456",
-      "rol": "chef",
-      "admin": false
+      "roles": {
+        "chef": true
+      }
+    },
+    {
+      "id": "003",
+      "email": "a.admin@burger.queen",
+      "password": "123456",
+      "roles": {
+        "admin": true
+      }
     }
   ],
   "products": [
@@ -152,7 +163,7 @@
           "qty": 2
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "10/25/2022, 5:00:42 PM"
     },
     {
@@ -219,7 +230,7 @@
           "qty": 1
         }
       ],
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "10/26/2022, 5:24:04 PM"
     },
     {
@@ -352,6 +363,58 @@
       ],
       "status": "pending",
       "dateEntry": "10/26/2022, 7:13:10 PM"
+    },
+    {
+      "id": 14,
+      "userId": null,
+      "client": "Romy",
+      "products": [
+        {
+          "name": "Hamburguesa Clasica",
+          "price": 10,
+          "qty": 1
+        },
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 11:41:58 PM"
+    },
+    {
+      "id": 15,
+      "userId": null,
+      "client": "Mariel",
+      "products": [
+        {
+          "name": "Hamburguesa Clasica",
+          "price": 10,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 11:58:54 PM"
+    },
+    {
+      "id": 16,
+      "userId": null,
+      "client": "Kamicita",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/27/2022, 9:38:32 AM"
     }
   ]
 }

@@ -3,7 +3,7 @@ import { CardOrder } from "../../components/Orders/Card-order";
 import '../../components/Buttons/Button.css';
 import Header from "../../components/Header/Header";
 import getOrders from "../../api_functions/getOrders";
-import waiterImg from "../../Images/camarero.png";
+import waiterImage from "../../Images/waiter.png";
 import { updateOrder } from "../../api_functions/updateOrder";
 
 export function Orders() {
@@ -27,7 +27,7 @@ export function Orders() {
    
     return (
         <section className="waiter">
-            <Header path="/menu" active2="active" first="Menú" second="Ver pedidos" log={waiterImg} />
+            <Header path="/menu" active2="active" first="Menú" second="Ver pedidos" log={waiterImage} />
             <div className="content-order">
                 {filteredByStatus.map((order, i) => {
                     return (<CardOrder 
