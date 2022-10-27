@@ -147,7 +147,7 @@ tr{
     height: 40rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-radius: 10px;
     overflow-y: scroll;
 }
