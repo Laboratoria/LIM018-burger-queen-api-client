@@ -1,13 +1,44 @@
+import React from "react";
 import "./Modal.css"
 
-export const Modal = ({children}) => {
-    return (
-        <article className="modal-is-open">
-            <div className="modal-container">
-                <h3>Modal</h3>
-                <button className="modal-close">X</button>
-                {children}
+export const Modal = (props) => {
+    if(!props.open){
+        return null
+    }
+    return(
+        <div className="modal-container">
+            <div className="modal">
+                <div>
+                    <picture>
+                        <img src={props.imgModal} alt="respuesta" className="img-modal" />
+                    </picture>
+                    <p>{props.message}</p>
+                </div>
+            <div>
+                <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
             </div>
-        </article>
+            </div>
+        </div>
+    )
+}
+
+export const ErrorModal = (props) => {
+    if(!props.error){
+        return null
+    }
+    return(
+        <div className="modal-container">
+            <div className="modal">
+                <div>
+                    <picture>
+                        <img src={props.imgModal} alt="respuesta" className="img-modal" />
+                    </picture>
+                    <p>{props.message}</p>
+                </div>
+            <div>
+                <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
+            </div>
+            </div>
+        </div>
     )
 }

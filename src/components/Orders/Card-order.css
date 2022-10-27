@@ -8,11 +8,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: -1px -1px 23px 6px rgb(178, 154, 117);
 }
 
-.btn-entregar{
+.entregar{
     display: flex;
     justify-content: center;
+}
+
+.hidden{
+    display: none;
 }
 
 p{
@@ -21,3 +26,7 @@ p{
     font-weight: 600;
 }
 
+.status{
+    display: flex;
+    justify-content: space-between;
+}

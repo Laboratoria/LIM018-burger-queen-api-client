@@ -7,6 +7,7 @@ import './Login.css';
 import postUser from "../../api_functions/postUser";
 
 export const Login = () => {
+   
     const navigate = useNavigate();
    
     // Valor inicial de los inputs ""
@@ -19,27 +20,37 @@ export const Login = () => {
     // Para capturar el error
     const [errorMessage, setErrorMessage] = useState('');
 
-    /* const emailRef = useRef(null);
-    const passwordRef = useRef(null); */
-
     const handleSubmit = (e) => {
         e.preventDefault();
         localStorage.clear();
         const inputEmail = document.getElementById("email").value;
         const inputPassword = document.getElementById("password").value;
+        // function parseJwt (token) {
+        //     var base64Url = token.split('.')[1];
+        //     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        //     var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        //         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        //     }).join(''));
+        
+        //     return JSON.parse(jsonPayload);
+        // }
 
         if (inputEmail === "" || inputPassword === ""){
             alert('Complete todos los campos');
         } else {
             postUser(data).then((resp) => {
-                // console.log(resp);
-                localStorage.setItem("token", resp.token)
+                console.log(resp, "la respuesta");
+                localStorage.setItem("token", resp.token);
+                // const jwtObject = parseJwt(resp.token)
+                // console.log(jwtObject.payload)
+                
                 if (resp) {
                     navigate("/menu");
                 }
             })
             .catch(err => {
                 // alert('usuario no registrado');
+                console.log(err)
                 setErrorMessage('Usuario no registrado, revise su correo o contraseña');
                 setTimeout(()=>{
                     setErrorMessage('');

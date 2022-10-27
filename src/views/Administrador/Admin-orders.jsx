@@ -21,10 +21,15 @@ export const AdminViewOrders = () => {
    
     return (
         <section className="waiter">
-            <Header log={managerImg} path="/admin-orders" active2= "active" first = "Ver usuarios" second = "Ver pedidos"/>
+            <Header log={managerImg} 
+            path="/admin-users" 
+            active2= "active" 
+            first= "Ver usuarios" 
+            second = "Ver pedidos"
+            />
             <div className="content-order">
                 {filteredByStatus.map((order, i) => {
-                    return (<CardOrder key={i} dateEntry={order.dateEntry} client={order.client} products={order.products} />)
+                    return (<CardOrder key={i} dateEntry={order.dateEntry} client={order.client} products={order.products} hidd="hidden" />)
                   })  
                 }
             </div>

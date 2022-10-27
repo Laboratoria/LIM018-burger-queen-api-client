@@ -4,7 +4,7 @@ const router = jsonServer.router('./db.json')
 const middlewares = jsonServer.defaults()
 
 
-const secret = "EsUnSecreto"
+const secret = "EsUnsecreto"
 
 server.use(jsonServer.bodyParser)
 server.use(middlewares)
@@ -25,6 +25,7 @@ server.post('/auth', (req, res) => {
     if (req.body.email === 'mesero@burger.queen' &&
         req.body.password === '123456') {
             res.jsonp({
+            id: 1,  
             token: secret
             })
     } else {
@@ -50,11 +51,13 @@ server.post('/orders', async (req, res) => {
 
     // para añadir el id
     const orders = router.db.get('orders');
-    /* console.log('esta orders',orders);
-    console.log('este wrapped',orders._wrapped_)
-    console.log('largo',orders.__wrapped__.orders.length); */
-    order.id = orders.__wrapped__.orders.length + 1;
+    console.log("orders ->", orders);
 
+    console.log("largo de orden", orders.__wrapped__.orders.length);
+    
+    console.log("wrapped", orders.__wrapped__);
+    
+    order.id = orders.__wrapped__.orders.length + 1;
 
     const result = await orders.push(order).write();
     console.log("result", result);

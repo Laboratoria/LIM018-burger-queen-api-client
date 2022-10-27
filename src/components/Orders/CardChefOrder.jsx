@@ -4,7 +4,7 @@ const CardChef = (props) => {
 
     return(
         <div className="order">
-            <div>
+            <div className="status">
                 <h3>{props.theStatus}</h3>
                 <p>25:00</p>
             </div>
@@ -28,7 +28,7 @@ const CardChef = (props) => {
                 })}
                 </tbody>
             </table>
-            <div className="btn-entregar">
+            <div className="entregar">
                 <button onClick={props.update} className="btn-menu bg-orange">Listo</button>
             </div>
         </div>
