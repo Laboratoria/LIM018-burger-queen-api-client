@@ -33,8 +33,6 @@ server.post('/auth', (req, res) => {
     }    
 })
 
-
-
 server.post('/orders', async (req, res) => {
   try {
     const today = new Date();
@@ -52,9 +50,7 @@ server.post('/orders', async (req, res) => {
     // para añadir el id
     const orders = router.db.get('orders');
     console.log("orders ->", orders);
-
     console.log("largo de orden", orders.__wrapped__.orders.length);
-    
     console.log("wrapped", orders.__wrapped__);
     
     order.id = orders.__wrapped__.orders.length + 1;

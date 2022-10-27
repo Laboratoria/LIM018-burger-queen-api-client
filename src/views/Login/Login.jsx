@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import imgBackground from "../../Images/img-login.jpeg";
 import './Login.css';
-import postUser from "../../api_functions/postUser";
+import postUser from "../../api_functions/postUser"; // este
 
 export const Login = () => {
-   
+
     const navigate = useNavigate();
    
     // Valor inicial de los inputs ""
@@ -25,6 +25,9 @@ export const Login = () => {
         localStorage.clear();
         const inputEmail = document.getElementById("email").value;
         const inputPassword = document.getElementById("password").value;
+
+        // Función JWT
+        
         // function parseJwt (token) {
         //     var base64Url = token.split('.')[1];
         //     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');

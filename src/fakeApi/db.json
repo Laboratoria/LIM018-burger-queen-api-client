@@ -176,7 +176,7 @@
           "qty": 2
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "10/25/2022, 5:50:42 PM"
     },
     {
@@ -352,6 +352,44 @@
       ],
       "status": "pending",
       "dateEntry": "10/26/2022, 7:13:10 PM"
+    },
+    {
+      "id": 14,
+      "userId": null,
+      "client": "Dianita",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 8:15:03 PM"
+    },
+    {
+      "id": 15,
+      "userId": null,
+      "client": "Didi",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 35,
+          "qty": 7
+        },
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 10:27:40 PM"
     }
   ]
 }
