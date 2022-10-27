@@ -13,11 +13,11 @@
 }
 
 .modal{
-    max-width: 30rem;
-    max-height: 40rem;
+    background: var(--white);
+    max-width: 22rem;
+    max-height: 22rem;
     overflow: hidden;
     position: relative;
-    background: var(--white);
     border-radius: 10px;
     border: 3px solid var(--beige);
     box-shadow: 4px 4px 8px rgb(10 10 10 / 63%);
@@ -28,20 +28,18 @@
 .btn-modal{
     background: var(--black);
     color: var(--white);
-    width: 9rem;
-    height: 2.2rem;
+    text-align: center;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    padding-inline: 2.8rem;
+    padding-inline: 2.4rem;
     padding-block: 0.5rem;
-    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.393);
-    margin-top: 15px ;
+    margin-top: 25px ;
 }
 
 .btn-modal:hover{
+    cursor: pointer;
     background: var(--brown);
 }
 
@@ -56,4 +54,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.text-modal{
+    font-size: 13px;
 }

@@ -1,5 +1,8 @@
 import React from "react";
-import "./Modal.css"
+import "./Modal.css";
+import check from "../../Images/cheque.png";
+import ekis from "../../Images/borrar.png";
+
 
 export const Modal = (props) => {
     if(!props.open){
@@ -9,7 +12,7 @@ export const Modal = (props) => {
         <div className="modal-container">
             <div className="modal">
                 <div className="center">
-                    <img src={props.imgModal} alt="respuesta" className="img-modal" />
+                    <img src={check} alt="respuesta" className="img-modal" />
                     <p>{props.message}</p>
                 </div>
                 <div className="center">
@@ -28,8 +31,8 @@ export const ErrorModal = (props) => {
         <div className="modal-container">
             <div className="modal">
                 <div className="center">
-                    <img src={props.imgModal} alt="respuesta" className="img-modal" />
-                    <p>{props.message}</p>
+                    <img src={ekis} alt="respuesta" className="img-modal" />
+                    <p className="text-modal">{props.message}</p>
                 </div>
                 <div className="center">
                     <button className="btn-modal" onClick={props.onClose}>Aceptar</button>

@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import imgBackground from "../../Images/img-login.jpeg";
 import './Login.css';
-import postUser from "../../api_functions/postUser";
+import {postUser} from "../../api_functions/postUser";
+import { ErrorModal } from "../../components/Modal/Modal";
 
 export const Login = () => {
    
     const navigate = useNavigate();
     const getToken = localStorage.getItem("token");
-
+    
     useEffect(() => {
         if(getToken){
             navigate("/menu");
@@ -25,33 +26,41 @@ export const Login = () => {
 
     // Para capturar el error
     const [errorMessage, setErrorMessage] = useState('');
+    const [errorModal, setErrorModal] = useState(false);
+
+    function parseJwt (token) {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(window.atob(base64).split('')
+        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join(''));
+    
+        return JSON.parse(jsonPayload);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        localStorage.clear();
+        // localStorage.clear();
         const inputEmail = document.getElementById("email").value;
         const inputPassword = document.getElementById("password").value;
-        // function parseJwt (token) {
-        //     var base64Url = token.split('.')[1];
-        //     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        //     var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        //         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        //     }).join(''));
         
-        //     return JSON.parse(jsonPayload);
-        // }
-
         if (inputEmail === "" || inputPassword === ""){
-            alert('Complete todos los campos');
+            setErrorModal(true)
+          
         } else {
             postUser(data).then((resp) => {
-                console.log(resp, "la respuesta");
+                const jwtObject = parseJwt(resp.token);
+               
                 localStorage.setItem("token", resp.token);
-                // const jwtObject = parseJwt(resp.token)
-                // console.log(jwtObject.payload)
-                
-                if (resp) {
-                    navigate("/menu");
+                localStorage.setItem("userId", jwtObject.payload.id);
+
+                if (resp){
+                    if (jwtObject.payload.roles.waiter ===  true) {
+                        navigate("/menu");
+                    } else if (jwtObject.payload.roles.chef ===  true){
+                        navigate("/chef")
+                    } else {
+                        navigate("/admin-users")
+                    }
                 }
             })
             .catch(err => {
@@ -101,6 +110,11 @@ export const Login = () => {
                 </form>
             </div>
             <div className="back-blur"></div>
+            <ErrorModal
+            error= {errorModal} 
+            message= "Por favor, complete todos los campos"
+            onClose={() => setErrorModal(false)}
+            />
 
         </section>
     )

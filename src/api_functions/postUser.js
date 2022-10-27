@@ -1,7 +1,8 @@
 const BASE_URL= "http://localhost:3001";
-const authPath = "/auth"; 
+const authPath = "/auth";
+const userPath = "/users" 
 
-const postUser = async(data) => {
+export const postUser = async(data) => {
     const res = await fetch(`${BASE_URL}${authPath}`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -12,4 +13,12 @@ const postUser = async(data) => {
     return result;
 }
 
-export default postUser;
+export const createUser = async(data) => {
+    const res = await fetch (`${BASE_URL}${userPath}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    return result;
+}
