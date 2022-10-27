@@ -247,13 +247,16 @@ export const WaiterView = () => {
                 </div>
             </div>    
             <div className="back-blur"></div>
-            <Modal imgModal={check} open={rightModal} onClose={() => {
+            <Modal imgModal={check} open={rightModal} 
+            onClose={() => {
                 setRightModal(false);
                 setArrayOfOrder([]);
                 setClient("")
-                }} 
-                message="Pedido enviado correctamente" />
-            <ErrorModal imgModal={ekis} error={errorModal} onClose={() => setErrorModal(false)} message="Por favor, complete todos los campos" />         
+            }} 
+            message="Pedido enviado a cocina correctamente" />
+            <ErrorModal imgModal={ekis} error={errorModal} 
+            onClose={() => setErrorModal(false)} 
+            message="Por favor, complete todos los campos" />         
         </section>
     );
 }

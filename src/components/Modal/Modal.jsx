@@ -8,15 +8,13 @@ export const Modal = (props) => {
     return(
         <div className="modal-container">
             <div className="modal">
-                <div>
-                    <picture>
-                        <img src={props.imgModal} alt="respuesta" className="img-modal" />
-                    </picture>
+                <div className="center">
+                    <img src={props.imgModal} alt="respuesta" className="img-modal" />
                     <p>{props.message}</p>
                 </div>
-            <div>
-                <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
-            </div>
+                <div className="center">
+                    <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
+                </div>
             </div>
         </div>
     )
@@ -29,15 +27,13 @@ export const ErrorModal = (props) => {
     return(
         <div className="modal-container">
             <div className="modal">
-                <div>
-                    <picture>
-                        <img src={props.imgModal} alt="respuesta" className="img-modal" />
-                    </picture>
+                <div className="center">
+                    <img src={props.imgModal} alt="respuesta" className="img-modal" />
                     <p>{props.message}</p>
                 </div>
-            <div>
-                <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
-            </div>
+                <div className="center">
+                    <button className="btn-modal" onClick={props.onClose}>Aceptar</button>
+                </div>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import logo from '../../Images/logo.png';
 import imgBackground from "../../Images/img-login.jpeg";
@@ -9,12 +9,18 @@ import postUser from "../../api_functions/postUser";
 export const Login = () => {
    
     const navigate = useNavigate();
+    const getToken = localStorage.getItem("token");
+
+    useEffect(() => {
+        if(getToken){
+            navigate("/menu");
+        }
+    })
    
     // Valor inicial de los inputs ""
     const [data, setData] = useState({
         email : "",
         password : ""
-
     });
 
     // Para capturar el error
@@ -78,7 +84,6 @@ export const Login = () => {
                         <label> Usuario </label>
                             <input type = "email"
                                 className="dataInput"
-                                /* ref={emailRef} // hook para limpiar input */
                                 id="email"
                                 onChange = {(e) => setData({...data, email: e.target.value})}
                             />
@@ -86,7 +91,6 @@ export const Login = () => {
                         <label> Contraseña </label>
                             <input  type = "password"
                                 className="dataInput"
-                                /* ref={passwordRef} // hook para limpiar input */
                                 id="password"
                                 onChange = {(e) => setData({...data, password: e.target.value})}
                             />
