@@ -5,6 +5,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { homeComponent } from './components/Home/home.component';
@@ -15,12 +16,16 @@ import { PedidoComponent } from './components/pedido/pedido.component';
 import { LoginComponent } from './components/login/login.component';
 import { PedidosMeseroComponent } from './components/pedidos-mesero/pedidos-mesero.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { IngresoComponent } from './pages/ingreso/ingreso.component';
+import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { OrdenesComponent } from './pages/ordenes/ordenes.component';
 
 
-const appRoutes:Routes =[
-  {path:'', component:LoginComponent},
-  {path:'home', component:homeComponent}
-];
+// const appRoutes:Routes =[
+//   // {path:'', component:LoginComponent},
+//   // {path:'home', component:homeComponent}
+// ];
 
 @NgModule({
   declarations: [
@@ -31,12 +36,17 @@ const appRoutes:Routes =[
     ContadorComponent,
     PedidoComponent,
     LoginComponent,
-    PedidosMeseroComponent
+    PedidosMeseroComponent,
+    NotFoundComponent,
+    IngresoComponent,
+    PedidosComponent,
+    OrdenesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     HttpClientModule,
 
     ServiceWorkerModule.register('ngsw-worker.js', {
