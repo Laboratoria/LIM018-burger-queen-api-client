@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 import { Auth } from './../models/auth.model';
 import { TokenService } from './token.service';
 import { tap } from 'rxjs/operators'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private router: Router
   ) { }
 
   login(email: string, password: string) {
@@ -31,5 +33,9 @@ export class AuthService {
     .pipe(
       tap(response => this.tokenService.saveToken(response.token))
     );
+  }
+
+  logout(){
+    this.tokenService.removeToken();
   }
 }
