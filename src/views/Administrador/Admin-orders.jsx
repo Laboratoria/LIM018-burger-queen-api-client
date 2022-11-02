@@ -22,10 +22,13 @@ export const AdminViewOrders = () => {
     return (
         <section className="waiter">
             <Header log={managerImg} 
-            path="/admin-users" 
+            path="/admin-users"
+            path3="/admin-products" 
             active2= "active" 
             first= "Ver usuarios" 
             second = "Ver pedidos"
+            third = "Ver productos"
+            display= "see"
             />
             <div className="content-order">
                 {filteredByStatus.map((order, i) => {

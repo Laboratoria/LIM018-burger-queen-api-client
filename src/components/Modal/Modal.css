@@ -14,8 +14,8 @@
 
 .modal{
     background: var(--white);
-    max-width: 22rem;
-    max-height: 22rem;
+    max-width: 25rem;
+    max-height: 35rem;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
@@ -36,11 +36,16 @@
     padding-inline: 2.4rem;
     padding-block: 0.5rem;
     margin-top: 25px ;
+    margin-inline: 5px;
 }
 
 .btn-modal:hover{
-    cursor: pointer;
-    background: var(--brown);
+    background-color: rgba(224, 123, 84, 1);
+}
+
+.delete{
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .img-modal{
@@ -57,5 +62,25 @@
 }
 
 .text-modal{
+    font-size: 13px;
+}
+
+.close-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-content{
+    background-color: var(--white);
+    opacity: 85%;
+    width: 95%;
+    height: 2.1rem;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 2px solid rgb(230, 227, 227);
+}
+
+.label-content{
+    margin-block: 6px;
     font-size: 13px;
 }

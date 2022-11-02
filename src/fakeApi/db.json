@@ -7,7 +7,6 @@
       "roles": {
         "waiter": true
       }
-    
     },
     {
       "id": "002",
@@ -230,7 +229,7 @@
           "qty": 1
         }
       ],
-      "status": "delivering",
+      "status": "delivered",
       "dateEntry": "10/26/2022, 5:24:04 PM"
     },
     {
@@ -244,7 +243,7 @@
           "qty": 1
         }
       ],
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "10/26/2022, 5:25:16 PM"
     },
     {
@@ -252,7 +251,7 @@
       "userId": "1",
       "client": "Kam",
       "products": [],
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "10/26/2022, 5:25:30 PM"
     },
     {
@@ -271,7 +270,7 @@
           "qty": 1
         }
       ],
-      "status": "pending",
+      "status": "delivering",
       "dateEntry": "10/26/2022, 5:49:57 PM"
     },
     {
@@ -415,6 +414,25 @@
       ],
       "status": "pending",
       "dateEntry": "10/27/2022, 9:38:32 AM"
+    },
+    {
+      "id": 17,
+      "userId": "001",
+      "client": "yo",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/28/2022, 4:46:39 PM"
     }
   ]
 }

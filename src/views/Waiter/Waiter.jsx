@@ -12,6 +12,7 @@ import { Modal, ErrorModal } from "../../components/Modal/Modal";
 
 export const WaiterView = () => {
     const uId = localStorage.getItem("userId");
+    console.log(uId);
     // const navigate = useNavigate();
     
     const [menu, setMenu] = useState("breakfast");
@@ -129,7 +130,7 @@ export const WaiterView = () => {
 
     return (
         <section className="waiter">
-            <Header path="/orders" active1="active" first="Menú" second="Ver pedidos" log={waiterImage} />
+            <Header path2="/orders" display="hide" active1="active" first="Menú" second="Ver pedidos" log={waiterImage} />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">

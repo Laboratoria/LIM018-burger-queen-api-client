@@ -12,11 +12,13 @@ export const AdminViewUsers = () => {
     return (
         <section className="waiter">
             <Header log={managerImg} 
-            path="/admin-orders" 
+            path2="/admin-orders"
+            path3="/admin-products"
             active1= "active" 
             first= "Ver usuarios" 
             second= "Ver pedidos"
-            handleClick="/admin-orders"
+            third= "ver productos"
+            display= "see"
             />
             <button className='btn-create-user'>Crear usuario <img className="img-create-user" src={user} alt="user" /></button>
             <div className="content-names">
