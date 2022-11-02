@@ -231,6 +231,7 @@ export const WaiterView = () => {
                                 </tbody> 
                             </table>
                         </div>
+                        <Modal/>
                         <div className="container-total-sell">
                             <div className="total-sell">
                                 <h3>TOTAL:</h3>

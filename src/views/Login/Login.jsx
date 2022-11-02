@@ -8,7 +8,7 @@ import {postUser} from "../../api_functions/postUser";
 import { ErrorModal } from "../../components/Modal/Modal";
 
 export const Login = () => {
-   
+
     const navigate = useNavigate();
     const getToken = localStorage.getItem("token");
     
