@@ -40,11 +40,13 @@ export const AdminViewUsers = () => {
     return (
         <section className="waiter">
             <Header log={managerImg} 
-            path="/admin-orders" 
+            path2="/admin-orders"
+            path3="/admin-products"
             active1= "active" 
             first= "Ver usuarios" 
             second= "Ver pedidos"
-            handleClick="/admin-orders"
+            third= "ver productos"
+            display= "see"
             />
             <div className='container-btn'>
                 <button className='btn-create-user' onClick= {() => setShowModal(true)}>Crear usuario <img className="img-create-user" src={user} alt="user"/></button>

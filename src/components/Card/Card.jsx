@@ -10,9 +10,9 @@ export const CardMenu = (props) => {
                     <img src={props.image} alt="menu" className="card-item" />
                 </div>
                 <div className="item-controller">
-                    <button className="counter" onClick={props.adding}>+</button>
-                    <p className="money">{props.price}</p>
                     <button className="counter" onClick={props.substracting}>-</button>
+                    <p className="money">{props.price}</p>
+                    <button className="counter" onClick={props.adding}>+</button>
                 </div>
             </div>
         </>
