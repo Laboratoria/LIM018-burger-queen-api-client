@@ -1,0 +1,114 @@
+{
+  "products": [
+    {
+      "_id": "01",
+      "name": "Café Americano",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/924/924514.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "_id": "02",
+      "name": "Café con Leche",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "_id": "03",
+      "name": "Sandwich de jamón y queso",
+      "price": "10",
+      "image": "https://cdn-icons-png.flaticon.com/512/1625/1625062.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "_id": "04",
+      "name": "Juego de frutas natural",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/2738/2738730.png",
+      "type": "Desayuno",
+      "dataEntry": ""
+    },
+    {
+      "_id": "05",
+      "name": "Hamburguesa simple",
+      "price": 10,
+      "image": "https://cdn-icons-png.flaticon.com/512/5787/5787016.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "06",
+      "name": "Hamburguesa doble",
+      "price": 15,
+      "image": "https://cdn-icons-png.flaticon.com/512/676/676749.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "07",
+      "name": "Papas fritas",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/1046/1046837.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "08",
+      "name": "Aros de cebolla",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/706/706926.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "09",
+      "name": "Agua 500ml",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "10",
+      "name": "Agua 750ml",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "11",
+      "name": "Gaseosa 500ml",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/776/776120.png",
+      "type": "Especial",
+      "dataEntry": ""
+    },
+    {
+      "_id": "12",
+      "name": "Gaseosa 750ml",
+      "price": 10,
+      "image": "https://cdn-icons-png.flaticon.com/512/2522/2522843.png",
+      "type": "Especial",
+      "dataEntry": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "001",
+      "email": "olga@gmail.com",
+      "password": "123456",
+      "roles": "waiter"
+    },
+    {
+      "id": "002",
+      "email": "yadira@gmail.com",
+      "password": "123456",
+      "roles": "waiter"
+    }
+  ]
+}
