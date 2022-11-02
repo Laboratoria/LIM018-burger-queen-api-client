@@ -40,3 +40,23 @@
 .btn-entregar{
     display: none;
 }
+
+.price-zone{
+    width: 100%;
+    height: 40px;
+    background-color: var(--orange);
+    opacity: 75%;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-ev{
+    justify-content: space-evenly;
+}
+
+.shadow{
+    box-shadow: -1px -1px 23px 6px rgb(178, 154, 117);
+    cursor: pointer;
+}

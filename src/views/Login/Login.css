@@ -110,3 +110,7 @@ label{
     color: rgb(158, 33, 33);
     padding: 5px;
 }
+
+button:hover{
+    cursor: pointer;
+}

@@ -36,3 +36,11 @@ a:hover{
     width: 2.8rem;
     height: 2.8rem;
 }
+
+.hide{
+    display: none;
+}
+
+.see{
+    display: block;
+}

@@ -144,7 +144,9 @@ tr{
 .content-order{
     background: linear-gradient(180deg, rgba(224, 192, 151, 0.7) 2.61%, rgba(224, 192, 151, 0.8) 81.77%, #E0C097 100%);
     width: 90%;
-    height: 40rem;
+    height: 85vh;
+    margin-top: 40px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

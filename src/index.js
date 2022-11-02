@@ -7,6 +7,7 @@ import { Orders } from "./views/Waiter/Orders"
 /* import Orders from "./views/Waiter/Orders"; */
 import { AdminViewUsers } from "./views/Administrador/Admin-users";
 import { AdminViewOrders } from "./views/Administrador/Admin-orders";
+import { AdminViewProducts } from "./views/Administrador/Admin-products";
 import { ChefView} from "./views/Cheff/Chef"
 
 
@@ -22,6 +23,7 @@ root.render(
             <Route path="/orders" element={<Orders />} />
             <Route path="/admin-users" element={<AdminViewUsers />} />
             <Route path="/admin-orders" element={<AdminViewOrders />} />
+            <Route path="/admin-products" element={<AdminViewProducts />} />
             <Route path="/chef" element={<ChefView />} />
         </Routes>
     </BrowserRouter>
