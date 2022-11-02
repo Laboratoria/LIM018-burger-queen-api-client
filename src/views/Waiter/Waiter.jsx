@@ -7,10 +7,8 @@ import trashCan from "../../Images/delete.png"
 import './Waiter.css';
 import '../../components/Buttons/Button.css';
 import postOrders from "../../api_functions/postOrders";
-import waiterImg from "../../Images/camarero.png";
+import waiterImage from "../../Images/waiter.png";
 import { Modal, ErrorModal } from "../../components/Modal/Modal";
-import check from "../../Images/cheque.png";
-import ekis from "../../Images/borrar.png"
 
 export const WaiterView = () => {
     const uId = localStorage.getItem("userId");
@@ -42,13 +40,13 @@ export const WaiterView = () => {
             return prod.type === typeMenu 
         })
             
-        const cards = typeProducts.map((type)=> { // este es el objProd unico filtrado x tipo
+        const cards = typeProducts.map((type, i)=> { // este es el objProd unico filtrado x tipo
         //typeProducts es el array de obj
             return (<CardMenu 
+                key = {i} 
+                id = {type.id}
                 name = {type.name} // type es el prod
                 image = {type.image} 
-                key = {type.id} 
-                id = {type.id}
                 price = {`S/. ${type.price}`} 
                 adding = {() => addProduct(type)}
                 substracting = {() => subsProduct(type)}  
@@ -131,7 +129,7 @@ export const WaiterView = () => {
 
     return (
         <section className="waiter">
-            <Header path="/orders" active1="active" first="Menú" second="Ver pedidos" log={waiterImg} />
+            <Header path="/orders" active1="active" first="Menú" second="Ver pedidos" log={waiterImage} />
             <div className="content-waiter">
                 <div className="container-menu">
                     <nav className="nav-menu">
@@ -248,13 +246,16 @@ export const WaiterView = () => {
                 </div>
             </div>    
             <div className="back-blur"></div>
-            <Modal imgModal={check} open={rightModal} onClose={() => {
+            <Modal open={rightModal} 
+            onClose={() => {
                 setRightModal(false);
                 setArrayOfOrder([]);
                 setClient("")
-                }} 
-                message="Pedido enviado correctamente" />
-            <ErrorModal imgModal={ekis} error={errorModal} onClose={() => setErrorModal(false)} message="Por favor, complete todos los campos" />         
+            }} 
+            message="Pedido enviado a cocina correctamente" />
+            <ErrorModal error={errorModal} 
+            onClose={() => setErrorModal(false)} 
+            message="Por favor, complete todos los campos" />         
         </section>
     );
 }

@@ -5,15 +5,22 @@
     display: flex;
     font-size: 1.2rem;
     font-weight: 600;
-    text-align: center;
     width: 15rem;
     border-radius: 0.5rem;
+    border-style: none;
 }
 
 .img-create-user{
     height: 2rem;
     width: 2rem;
 
+}
+
+.container-btn{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 0.8rem;
 }
 
 .user-table{

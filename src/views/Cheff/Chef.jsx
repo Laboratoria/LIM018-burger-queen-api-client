@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Header from "../../components/Header/Header";
-import chefImg from "../../Images/sombrero-de-cocinero.png";
+import chefImg from "../../Images/chef.png";
 import CardChef from "../../components/Orders/CardChefOrder";
 import getOrders from "../../api_functions/getOrders";
 import { updateOrder } from "../../api_functions/updateOrder";

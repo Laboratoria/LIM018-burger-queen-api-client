@@ -1,7 +1,9 @@
 const BASE_URL= "http://localhost:3001";
-const authPath = "/auth"; 
+const authPath = "/auth";
+const userPath = "/users";
+const token = localStorage.getItem("token");
 
-const postUser = async(data) => {
+export const postUser = async(data) => {
     const res = await fetch(`${BASE_URL}${authPath}`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
@@ -12,4 +14,14 @@ const postUser = async(data) => {
     return result;
 }
 
-export default postUser;
+export const createUser = async(data) => {
+    const res = await fetch (`${BASE_URL}${userPath}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json;charset=UTF-8",
+        "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(data)
+    });
+    const result = await res.json();
+    return result;
+}

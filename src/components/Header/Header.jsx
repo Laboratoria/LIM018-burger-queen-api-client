@@ -8,7 +8,10 @@ const Header = (props) => {
     const navigate = useNavigate();
     const handleClick = (e) => navigate(path);
     
-    const toLogin = () => navigate("/");
+    const toLogin = () => {
+        navigate("/");
+        localStorage.clear();
+    };
 
     return (
         <>
