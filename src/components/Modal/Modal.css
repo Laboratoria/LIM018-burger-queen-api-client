@@ -15,7 +15,7 @@
 .modal{
     background: var(--white);
     max-width: 25rem;
-    max-height: 35rem;
+    max-height: 40rem;
     overflow: hidden;
     position: relative;
     border-radius: 10px;
@@ -65,9 +65,25 @@
     font-size: 13px;
 }
 
+/* 
+Modal administrador */
+.btn-regis-cancel{
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.img-modal-admin{
+    width: 25%;
+}
+
 .close-container{
     display: flex;
     justify-content: flex-end;
+    width: 90%;
+}
+
+.form-container{
+    padding: 0.8rem;
 }
 
 .input-content{
