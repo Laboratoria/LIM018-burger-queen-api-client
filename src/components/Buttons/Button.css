@@ -1,0 +1,26 @@
+.btn-menu{
+    width: 9rem;
+    height: 2.2rem;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+
+}
+
+.btn-menu:focus {
+    background: var(--orange);
+}
+
+.active{
+    background-color: var(--orange);
+    display: block;
+}
+
+.bg-orange{
+    background-color: var(--orange);
+}
+

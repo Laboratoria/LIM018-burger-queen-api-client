@@ -1,0 +1,69 @@
+/* Admin users */
+.btn-create-user{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 15rem;
+    border-radius: 0.5rem;
+    border-style: none;
+}
+
+.img-create-user{
+    height: 2rem;
+    width: 2rem;
+
+}
+
+.container-btn{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    padding: 0.8rem;
+}
+
+.user-table{
+ width: 60rem;
+ padding: 0.5rem;
+ margin: 2rem;
+}
+
+.etiquetas{
+    font-size: 1.2rem;
+    /* justify-content: space-around; */
+}
+
+.content{
+    justify-content: space-around;
+}
+
+.img{
+    height: 2rem;
+}
+
+/* Admin orders */
+
+.btn-entregar{
+    display: none;
+}
+
+.price-zone{
+    width: 100%;
+    height: 40px;
+    background-color: var(--orange);
+    opacity: 75%;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space-ev{
+    justify-content: space-evenly;
+}
+
+.shadow{
+    box-shadow: -1px -1px 23px 6px rgb(178, 154, 117);
+    cursor: pointer;
+}

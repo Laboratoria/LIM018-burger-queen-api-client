@@ -1,0 +1,464 @@
+{
+  "users": [
+    {
+      "id": "001",
+      "email": "a.mesero@burger.queen",
+      "password": "123456",
+      "roles": {
+        "waiter": true
+      }
+    },
+    {
+      "id": "002",
+      "email": "a.cocinero@burger.queen",
+      "password": "123456",
+      "roles": {
+        "chef": true
+      }
+    },
+    {
+      "id": "003",
+      "email": "a.admin@burger.queen",
+      "password": "123456",
+      "roles": {
+        "admin": true
+      }
+    },
+    {
+      "name": "Gaby",
+      "email": "mesero1@gmail.com",
+      "password": "123456",
+      "rol": "Cheff",
+      "id": "CVlLB4L"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Cafe Americano",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/590/590749.png",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": 2,
+      "name": "Cafe con Leche",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/2701/2701581.png",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": 3,
+      "name": "Jugo Natural",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/2738/2738804.png",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": 4,
+      "name": "sandwich de Queso",
+      "price": 10,
+      "image": "https://cdn-icons-png.flaticon.com/512/2821/2821805.png",
+      "type": "breakfast",
+      "dateEntry": ""
+    },
+    {
+      "id": 5,
+      "name": "Agua 500 ml",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
+      "type": "drinks",
+      "dateEntry": ""
+    },
+    {
+      "id": 6,
+      "name": "Agua 750 ml",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/824/824239.png",
+      "type": "drinks",
+      "dateEntry": ""
+    },
+    {
+      "id": 7,
+      "name": "Gaseosa 500 ml",
+      "price": 7,
+      "image": "https://cdn-icons-png.flaticon.com/512/536/536658.png",
+      "type": "drinks",
+      "dateEntry": ""
+    },
+    {
+      "id": 8,
+      "name": "Soda 750 ml",
+      "price": 10,
+      "image": "https://cdn-icons-png.flaticon.com/512/536/536658.png",
+      "type": "drinks",
+      "dateEntry": ""
+    },
+    {
+      "id": 9,
+      "name": "Hamburguesa Clasica",
+      "price": 10,
+      "image": "https://cdn-icons-png.flaticon.com/512/4385/4385092.png",
+      "type": "dinner",
+      "dateEntry": ""
+    },
+    {
+      "id": 10,
+      "name": "Hamburguesa Doble",
+      "price": 15,
+      "image": "https://cdn-icons-png.flaticon.com/512/1522/1522452.png",
+      "type": "dinner",
+      "dateEntry": ""
+    },
+    {
+      "id": 11,
+      "name": "Papas Fritas",
+      "price": 5,
+      "image": "https://cdn-icons-png.flaticon.com/512/1046/1046786.png",
+      "type": "other",
+      "dateEntry": "",
+      "menu": "dinner"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 10,
+          "qty": 2
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/25/2022, 5:11:42 PM"
+    },
+    {
+      "id": 2,
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 10,
+          "qty": 2
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/25/2022, 5:00:42 PM"
+    },
+    {
+      "id": 3,
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 10,
+          "qty": 2
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/25/2022, 5:50:42 PM"
+    },
+    {
+      "id": 4,
+      "userId": "1",
+      "client": "Caro",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/26/2022, 5:04:07 PM"
+    },
+    {
+      "id": 5,
+      "userId": "1",
+      "client": "Judy",
+      "products": [
+        {
+          "name": "Jugo Natural",
+          "price": 7,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 10,
+          "qty": 2
+        },
+        {
+          "name": "Gaseosa 500 ml",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "delivered",
+      "dateEntry": "10/26/2022, 5:24:04 PM"
+    },
+    {
+      "id": 6,
+      "userId": "1",
+      "client": "Kami",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "10/26/2022, 5:25:16 PM"
+    },
+    {
+      "id": 7,
+      "userId": "1",
+      "client": "Kam",
+      "products": [],
+      "status": "delivering",
+      "dateEntry": "10/26/2022, 5:25:30 PM"
+    },
+    {
+      "id": 8,
+      "userId": "1",
+      "client": "Katherine",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "10/26/2022, 5:49:57 PM"
+    },
+    {
+      "id": 9,
+      "userId": "1",
+      "client": "Bles",
+      "products": [
+        {
+          "name": "Jugo Natural",
+          "price": 14,
+          "qty": 2
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "10/26/2022, 5:53:46 PM"
+    },
+    {
+      "id": 10,
+      "userId": "1",
+      "client": "Blessy",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "delivering",
+      "dateEntry": "10/26/2022, 5:56:06 PM"
+    },
+    {
+      "id": 11,
+      "userId": null,
+      "client": "Gaby",
+      "products": [
+        {
+          "name": "Jugo Natural",
+          "price": 7,
+          "qty": 1
+        },
+        {
+          "name": "Hamburguesa Doble",
+          "price": 15,
+          "qty": 1
+        },
+        {
+          "name": "Papas Fritas",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 7:07:46 PM"
+    },
+    {
+      "id": 12,
+      "userId": null,
+      "client": "Gaby",
+      "products": [
+        {
+          "name": "Papas Fritas",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 7:08:24 PM"
+    },
+    {
+      "id": 13,
+      "userId": null,
+      "client": "Karla",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 7:13:10 PM"
+    },
+    {
+      "id": 14,
+      "userId": null,
+      "client": "Romy",
+      "products": [
+        {
+          "name": "Hamburguesa Clasica",
+          "price": 10,
+          "qty": 1
+        },
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 11:41:58 PM"
+    },
+    {
+      "id": 15,
+      "userId": null,
+      "client": "Mariel",
+      "products": [
+        {
+          "name": "Hamburguesa Clasica",
+          "price": 10,
+          "qty": 1
+        },
+        {
+          "name": "Agua 500 ml",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/26/2022, 11:58:54 PM"
+    },
+    {
+      "id": 16,
+      "userId": null,
+      "client": "Kamicita",
+      "products": [
+        {
+          "name": "Cafe con Leche",
+          "price": 7,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/27/2022, 9:38:32 AM"
+    },
+    {
+      "id": 17,
+      "userId": "001",
+      "client": "yo",
+      "products": [
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        },
+        {
+          "name": "sandwich de Queso",
+          "price": 10,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "10/28/2022, 4:46:39 PM"
+    },
+    {
+      "id": 18,
+      "userId": "001",
+      "client": "Vania",
+      "products": [
+        {
+          "name": "sandwich de Queso",
+          "price": 20,
+          "qty": 2
+        },
+        {
+          "name": "Cafe Americano",
+          "price": 5,
+          "qty": 1
+        }
+      ],
+      "status": "pending",
+      "dateEntry": "11/3/2022, 5:16:09 PM"
+    }
+  ]
+}

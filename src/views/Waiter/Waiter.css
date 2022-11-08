@@ -1,0 +1,211 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.waiter{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-waiter{
+    width: 97%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+}
+
+.container-menu{
+   margin: 20px;
+}
+
+.container-card-menu{
+    background: linear-gradient(180deg, #5C3D2E 33.33%, rgba(18, 17, 17, 0.59) 100%);
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    
+}
+
+.nav-menu{
+    background-color: var(--black);
+    color: var(--white);
+    height: 70px;
+    border-radius: 10px;
+    margin-block: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.info-user-order{
+    display: flex;
+    margin-inline: 7px;
+}
+
+.container-orders{
+    background-color: var(--beige);
+    width: 100%;
+    height: 75vh;
+    padding: 20px;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    align-content: space-between;
+}
+
+.total-sell{
+    background-color: var(--white);
+    width: 80%;
+    height: 2.2rem;
+    border-radius: 2.5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container-total-sell{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.showCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-option-menu{
+    display: none;
+}
+
+.show{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 95%;
+    margin: 10px;
+}
+
+.header-order{
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+}
+
+.btn-delete{
+    background-color: var(--beige);
+    border-style: none;
+}
+
+.img-trash{
+    width: 2rem;
+    height: 2rem;
+}
+
+#container-table{
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#container-table td, #container-table th{
+    padding: 8px 5px;
+    font-weight: 500;
+} 
+
+#container-table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: 800;
+    font-size: large;
+}
+
+#container-table td{
+    font-weight: 500;
+}
+
+.overflow{
+    width: 100%;
+    max-height: 100% ;
+    overflow-y: scroll;
+}
+
+.content-order{
+    background: linear-gradient(180deg, rgba(224, 192, 151, 0.7) 2.61%, rgba(224, 192, 151, 0.8) 81.77%, #E0C097 100%);
+    width: 90%;
+    height: 85vh;
+    margin-top: 40px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--brown);
+    height: 5px; 
+    border-radius: 10px;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--black); 
+}
+
+/* Admin */
+
+.content-names{
+    background: linear-gradient(180deg, rgba(224, 192, 151, 0.7) 2.61%, rgba(224, 192, 151, 0.8) 81.77%, #E0C097 100%);
+    width: 90%;
+    height: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+
+
+.client{
+    width: 7.5rem;
+    height: 1.7rem;
+    margin-left: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
