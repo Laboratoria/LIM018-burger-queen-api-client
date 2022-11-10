@@ -1,0 +1,30 @@
+.container-active-tables{
+    
+}
+    
+.active-tables{
+    width: 100%;
+    /* height: 29vh; */
+    /* display: grid; */
+    /* grid-template-columns: 200px 200px 200px; */
+    /* justify-items: start; */
+    /* gap: 90px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tables-order{
+    width: 30%;
+}
+
+.text-number-table{
+        align-items: center;
+}
+
+.tb{
+    text-align: center;
+    border: 5px solid rgb(154, 247, 154);
+    margin: 16px;
+    
+}

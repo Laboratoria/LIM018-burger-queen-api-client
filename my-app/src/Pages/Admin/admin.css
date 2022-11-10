@@ -1,0 +1,85 @@
+.container-product-admin{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.product-admin{
+    border: 2px solid #F84141;
+    width: 21%;
+    margin: 13px;
+    text-align: center;
+}
+
+.current-product{
+  
+    width: 50%;
+    text-align: center;
+}
+
+
+.add-product-admin{
+    background: #f84141;
+    width: 30%;
+    height: 35px;
+    border: 3px solid #f84141;
+    border-radius: 7px;
+    color: #Fff;
+    text-align: center;
+    margin: 8px;
+}
+
+.image-pproduct-admin{
+    width: 10%;
+}
+
+.products-btn{
+    width: 122px;
+    height: 61px;
+    border: 3px solid #F84141;
+    border-radius: 12px;
+    background: #ffff;
+    margin: 3px;
+    color: #F84141
+}
+
+.employes-btn{
+    width: 122px;
+    height: 61px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    background: #F84141;
+    margin: 3px;
+    color: #d7d5d5;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-btn-admin{
+    width: 15%;
+}
+
+.add-admin{
+    display: flex;
+    justify-content: flex-end;
+    margin: 14px;
+}
+
+.container-btn-admin{
+    margin: 7px;
+}
+
+
+.product-content {
+    position: absolute;
+    top: 57%;
+    left: 22%;
+    /* display: flex; */
+    background: #d7d5d5;
+    border: 6px;
+    border-radius: 14px;
+    /* justify-content: flex-start; */
+    align-items: center;
+}
