@@ -1,0 +1,167 @@
+<app-headeradmin></app-headeradmin>
+<div class="dashboard-river">
+
+    <div class="dashboard-container">
+
+        <div class="dashboard">
+
+            <div class="ui-row-1">
+
+
+
+                <div class="search">
+                    <input type="search" id="search" name="search" placeholder="Buscar...">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </div>
+
+                <div class="profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bell-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                    </svg>
+                    <div></div>
+                </div>
+
+
+
+            </div>
+
+            <div class="ui-row-2">
+
+
+
+                <div class="main-content">
+
+                    <div class="header">
+
+
+
+
+
+                        <button class="category" (click)="mostrarUsuarios()">Usuarios</button>
+
+
+
+
+                        <button class="category" (click)=" mostrarProductos()">Productos</button>
+
+
+
+
+                        <button class="category" (click)="mostrarOrdenes()">Ordenes</button>
+
+
+                    </div>
+
+
+
+                    <hr>
+
+                    <div class="featured-clay">
+
+
+                        <div *ngFor="let product of products" class="products-div">
+
+                            <h2>{{product.name}}</h2>
+                            <img [src]="product.image" alt="">
+                            <p>{{product.price}}</p>
+
+                        </div>
+
+
+                        <div *ngFor="let order of orders" class="orders-div">
+
+                            <h1> {{order.client}} </h1>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Pedido</th>
+                                        <th>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr *ngFor="let suborder of order.products">
+                                        <ng-container *ngFor="let item of suborder.product">
+                                            <td>{{item.name}}</td>
+
+                                        </ng-container>
+                                        <td>{{suborder.qty}} </td>
+
+
+
+
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="status">
+                                <h4> {{order.status}} </h4>
+                            </div>
+
+                        </div>
+
+
+                        <div *ngFor="let user of users" class="users-div">
+
+
+
+                            <div *ngIf="user.email=='leyla@gmail.com'">
+
+                                <h1>ID: {{user._id}}</h1>
+                                <h2>ADMINISTRA: {{user.email}}</h2>
+                                <caption> <button><img src="../../../assets/images/image-removebg-preview15.png "></button>
+                                </caption>
+
+
+
+                            </div>
+                            <div *ngIf="user.email!='leyla@gmail.com'">
+                                <h2>ID: {{user._id}}</h2>
+                                <h3>USUARIO: {{user.email}}</h3>
+                                <div>
+                                    <button (click)="deleteU(user.id)"><img src="../../../assets/images/image-removebg-preview13.png    "></button>
+                                    <button><img src="../../../assets/images/image-removebg-preview14.png "></button>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <hr>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

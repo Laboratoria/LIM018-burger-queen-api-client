@@ -1,0 +1,42 @@
+<app-header></app-header>
+<section id="carta">
+
+    
+    <div id="divProductos">
+
+        <form [formGroup]="clientForm" (keyup)="onClient(clientForm.value)">
+            <input id="inputNameUsuario" type="text" placeholder="Ingresa nombre del cliente" formControlName="client" >
+            <input id="numMesa" type="number" placeholder="N° de mesa" formControlName="mesa" min="1" max="20">
+          
+        </form>
+
+        <div class="bttn-type">
+            <button (click)="mostrarDesayuno()">Desayuno</button>
+            <button (click)="mostrarAlmuerzoycena()">Almuerzo</button>
+        </div>
+
+        <hr><div class="products--grid">
+
+            <app-products [product]="product" *ngFor="let product of products" (addedProduct)="onAddtoShopping($event)">
+            </app-products>
+        </div>
+    <hr>
+
+        
+
+        <p>
+            Pedido: {{myOrder.length}}
+        </p>
+
+
+        
+        
+    </div>
+    
+    
+
+
+    <app-order [formCli]="clientFormValues" id="divTomarOrden"></app-order>
+
+
+</section>

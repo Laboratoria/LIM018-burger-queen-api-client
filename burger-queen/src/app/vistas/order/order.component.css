@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Cookie|Raleway:300,700,400);
+
+td button {
+    background-color: transparent;
+    border: 0px;
+}
+
+table {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(253, 250, 245, 0.836);
+    border-radius: 8px;
+    align-items: center;
+    text-align: center;
+    margin-top:8em;
+    font-weight: bold;
+    font-size: 120%;
+    min-width: 31em;
+    box-shadow: 0 0 10px rgb(185, 94, 8);
+    padding: 1%;
+    
+
+    
+    
+    
+}
+
+th {
+    background-color: rgb(255, 60, 0);
+    color: white;
+    margin: 1px;
+    border-radius: 8px;
+}
+
+td {
+    padding: 8px;
+    background: rgb(255, 255, 254);
+    
+    color: #c65314;
+    border-top: 1px solid transparent;
+    text-align: center;
+    
+}
+
+tr:hover td {
+    background: #f89a4d;
+    color: #fffefe;
+
+
+}
+
+#btnOrder {
+    background: #fa8500fa;
+    padding: 4%;
+    color: white;
+    font-size: 130%;
+    font-weight: lighter;
+    margin-left: 35%;
+    border-radius: 20px;
+    border: 0;
+    margin-top: 10%;
+}
+
+#btnOrder:hover {
+    font-size: 130%;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+}
