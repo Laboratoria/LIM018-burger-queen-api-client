@@ -1,0 +1,40 @@
+
+.text-orders{
+    text-align: center;
+}
+
+.div-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.text-product{
+    margin: 1rem;
+}
+
+.btn-serve{
+    background: #ff3647;
+    border: 2px solid #f84141;
+    border-radius: 6px;
+    width: 60%;
+    color: #fff;
+    margin: 9px;
+    
+}
+
+.order-div{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    justify-content: center;
+    border-radius: 15px;
+    gap: 50px;
+    text-align: center;
+    
+}
+
+
+.order-products{
+    border: 2px solid #f84141;
+   text-align: center;
+}

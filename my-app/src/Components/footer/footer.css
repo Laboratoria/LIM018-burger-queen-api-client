@@ -1,0 +1,14 @@
+.footer{
+    border: 0.2px solid #F7C42F;
+    background: #F7C42F;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 6vh;
+    bottom: 0;
+}
+
+
+.text-footer{
+    padding:1px;
+}

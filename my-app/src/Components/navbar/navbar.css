@@ -1,0 +1,33 @@
+.exit, .list {
+    margin: 10px;
+    width: 54px;
+}
+
+.listImg, .exittImg {
+    width: 45px;
+}
+
+.logoImg {
+    width: 60px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px 3px rgb(0 0 0 / 50%);
+    height: 72px;
+}
+
+.containerRigth{
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo {
+    margin: 9%;
+}
+
+
+.btnWaiter{
+    display: flex;
+}
